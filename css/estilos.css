@@ -4,3 +4,13 @@ color: aqua;
 background: blue;
 
 }
+
+body{
+    background-color: white;
+}
+
+.cabecalho{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(0, 0, 0);
+}
