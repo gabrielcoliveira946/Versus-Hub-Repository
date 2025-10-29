@@ -1,16 +1,25 @@
-.titulo {
+.cabecalho {
 color: aqua;
     font-style: italic;
-background: blue;
-,klkmlklmkl
+background: rgb(172, 8, 8);
+margin-top: -8px;
+margin-left: -8px;
+height: 70px;
+margin-right: -8px;
+
 }
 
 body{
-    background-color: white;
+    background-color: rgb(24, 22, 22);
 }
 
-.cabecalho{
-    height: 200px;
-    width: 200px;
-    background-color: rgb(0, 0, 0);
+
+#logo_homepage {
+
+height: 150px;
+width: auto;
+margin: -25px;
+margin-left: -10px;
+background: black;
+
 }
