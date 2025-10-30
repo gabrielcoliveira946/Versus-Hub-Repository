@@ -1,6 +1,6 @@
 .cabecalho {
     background: #b00;
-    height: 70px;
+    height: 100px;
 
     display: flex;
     align-items: center;
@@ -18,7 +18,7 @@ margin-left: 20px;
 }
 
 .hp_hitbox img {
-    height: 65px;
+    height: 90px;
     width: auto;
     margin-top: 8px;
     background: none;
@@ -27,7 +27,7 @@ margin-left: 20px;
 
 
 .menu_3_linha img {
-     height: 70px;
+     height: 100px;
     width: auto;
     margin-left: -10px;
     margin-top: 5px;
