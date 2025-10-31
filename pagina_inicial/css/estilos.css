@@ -1,6 +1,20 @@
+
+        /* BODY É O CORPO COMO VCS JÁ SABEM */
+
+body{
+        background-image: url('/images/Image_fx\ \(9\).jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 120vh;
+        
+}
+
+    
+  /* PARTE DA CABEÇA DO SITE (LA ELE), ESSA É A PARTE VERMELHA COM A LOGO E ETC */
+
 .cabecalho {
-    background: #b00;
-    height: 100px;
+    background: rgb(158, 8, 8);
+    height: 80px;
 
     display: flex;
     align-items: center;
@@ -11,6 +25,7 @@
    margin-top: -12px;
 }
 
+    /* ESSE HP_HITBOX É A LOGO QUE FICA NA CABEÇA DO SITE */
 
 .hp_hitbox {
 
@@ -18,29 +33,22 @@ margin-left: 20px;
 }
 
 .hp_hitbox img {
-    height: 90px;
+    height: 70px;
     width: auto;
     margin-top: 8px;
     background: none;
 }
 
-
+    /* PARTE DO MENUZINHO Q TEM 3 LINHAS */
 
 .menu_3_linha img {
-     height: 100px;
+
+     height: 60px;
     width: auto;
-    margin-left: -10px;
-    margin-top: 5px;
-    background: wheat;
+    margin-left: 10px;
+    margin-top: 15px;
+    background: none;
 }
 
-
-body{
-        background-image: url('/images/Image_fx\ \(9\).jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 120vh;
-        
-}
-
+/* PARTE DO CARROSSEL DE TORNEIOS, ESSA É A PARTE QUE FICA PASSANDO AS IMAGENS DOS TORNEIOS */
 
