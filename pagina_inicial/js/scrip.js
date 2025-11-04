@@ -21,5 +21,8 @@ document.getElementById("btproximo").addEventListener("click", () => {
 document.getElementById("btanterior").addEventListener("click", () => {
     index = (index - 1 + imagens.length) % imagens.length;
     mostraSlide();
+
+    
 });
+
 
