@@ -1,36 +1,43 @@
 
         /* BODY É O CORPO COMO VCS JÁ SABEM */
 
+
 body{
-        background-image: url('/images/Image_fx\ \(9\).jpg');
+        background: rgb(15, 13, 26);
         background-repeat: no-repeat;
         background-size: cover;
-        height: 120vh;
-        
+        height: fit-content;
+        width: 100%;
 }
 
-    
+
+   
   /* PARTE DA CABEÇA DO SITE (LA ELE), ESSA É A PARTE VERMELHA COM A LOGO E ETC */
+
 
 .cabecalho {
     background: rgb(158, 8, 8);
     height: 80px;
-
-    display: flex;
-    align-items: center;
+    width: 100%;
+    border: solid rgb(38, 38, 48);
     padding-left: 10px;
    margin-left: -10px;
    margin-right: -10px;
-
    margin-top: -12px;
 }
 
+
     /* ESSE HP_HITBOX É A LOGO QUE FICA NA CABEÇA DO SITE */
+
 
 .hp_hitbox {
 
+
 margin-left: 20px;
+
+
 }
+
 
 .hp_hitbox img {
     height: 70px;
@@ -39,9 +46,12 @@ margin-left: 20px;
     background: none;
 }
 
+
     /* PARTE DO MENUZINHO Q TEM 3 LINHAS */
 
+
 .menu_3_linha img {
+
 
      height: 60px;
     width: auto;
@@ -50,5 +60,109 @@ margin-left: 20px;
     background: none;
 }
 
+
 /* PARTE DO CARROSSEL DE TORNEIOS, ESSA É A PARTE QUE FICA PASSANDO AS IMAGENS DOS TORNEIOS */
+
+
+/* CONTAINER DO CARROSSEL */
+
+
+
+
+.carrossel {
+   
+    position: relative;
+    width: 800px;
+    margin-top: 40px;
+    margin-left: 1000px;
+    overflow: hidden  ;
+    border-radius: 10px;
+    background: rgb(38, 38, 48);
+    border: solid 5px rgb(38, 38, 48);
+}
+
+
+/* LINHA COM AS IMAGENS */
+
+
+.slides {
+
+
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* CADA IMAGEM */
+
+
+.slides img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+
+/* BOTÕES */
+
+
+.btanterior,
+.btproximo {
+    position: fixed;
+    margin-top: -180px;  
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.btproximo {
+
+
+    margin-right: 50%;
+
+
+}
+
+
+
+
+.btanterior {
+
+
+    margin-left: 24%;
+
+
+}
+
+
+.btanterior img,
+.btproximo img {
+    width: 50px;
+    height: 50px;
+    opacity: 0.85;
+    transition: 0.50s;
+}
+
+
+.btanterior img:hover,
+.btproximo img:hover {
+    opacity: 1;
+    transform: scale(1.25);
+}
+
+
+/* LADO ESQUERDO */
+.btanterior {
+    left: 10px;
+}
+
+
+/* LADO DIREITO */
+.btproximo {
+    right: 10px;
+}
+
+
 
