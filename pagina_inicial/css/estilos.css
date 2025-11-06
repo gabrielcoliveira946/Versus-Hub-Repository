@@ -3,10 +3,9 @@
 
 
 body{
-        background: rgb(15, 13, 26);
-        background-repeat: no-repeat;
+        background: linear-gradient(rgb(5, 4, 10), rgb(21, 19, 34));
         background-size: cover;
-        height: fit-content;
+        height: 200vh;
         width: 100%;
 }
 
@@ -16,6 +15,7 @@ body{
 
 
 .cabecalho {
+    
     background: rgb(158, 8, 8);
     height: 80px;
     width: 100%;
@@ -72,39 +72,47 @@ margin-left: 20px;
     /* Faz o carrossel ser uma "caixa" isolada */
     position: relative;
 
+    align-content: center;
+
     /* Ajustando para que o carrossel tenha 80% da largura da tela, e o máximo de 1080px */
-    width: 80%;
-    max-width: 1080px;
+    width: 40%;
+    
 
     /* Centraliza automaticamente */
-    margin: 40px auto;
+    margin: 0px auto;
+
+    top: -18px;
 
     /* Limita o conteúdo visível */
-    overflow: hidden;
+    overflow: inherit;
 
     /* Borda e arredondamento */
     border-radius: 10px;
-    background: rgb(38, 38, 48);
-    border: solid 5px rgb(38, 38, 48);
+    background: none;
+    box-shadow: red 1px 1px 20px;
+    border: none;
 }
 
 /* LINHA QUE SEGURA AS IMAGENS */
 .slides {
-    display: flex; /* Deixa as imagens lado a lado */
+    
+    display: inline-flex; /* Deixa as imagens lado a lado */
     transition: transform 1s ease-in-out; /* Animação ao trocar */
+    
 }
 
 /* CADA IMAGEM */
 .slides img {
-    width: 100%;       /* A imagem ocupa toda a largura do espaço */
-    height: 350px;     /* A altura pode ser ajustada aqui, para controlar a visualização */
+    width: 120%;       /* A imagem ocupa toda a largura do espaço */
+    height: 490px;     /* A altura pode ser ajustada aqui, para controlar a visualização */
     min-width: 100%;   /* Garante que cada imagem ocupe 100% da largura do carrossel */
+    margin-left: 20px;
 
-    /* O object-fit: contain garante que a imagem seja redimensionada sem cortar, 
+    /* O object-fit: fill garante que a imagem seja redimensionada sem cortar, 
        o fundo será mostrado nas partes em branco, caso a imagem seja menor que o espaço */
-    object-fit: contain; /* Garantir que a imagem se ajuste sem cortar */
-    border-radius: 10px;
-    background: rgb(38, 38, 48); /* Aparece caso a img não preencha totalmente */
+    object-fit: fill; /* Garantir que a imagem se ajuste sem cortar */
+    border-radius: 20px;
+    background: none; /* Aparece caso a img não preencha totalmente */
 }
 
 /* ============================================================
@@ -114,8 +122,9 @@ margin-left: 20px;
 /* BOTÕES DE NAVEGAÇÃO */
 .btanterior,
 .btproximo {
-    position: absolute;          /* Ficam em cima do carrossel */
-    top: 50%;                    /* Centraliza verticalmente */
+    position: relative;          /* Ficam em cima do carrossel */
+    top: 50%; 
+    left: 80%;                   /* Centraliza verticalmente */
     transform: translateY(-50%); /* Ajusta pro meio certinho */
 
     background: none;
