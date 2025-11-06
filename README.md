@@ -1,5 +1,6 @@
 Contextualização
 
+
 1) Problema que motivou a aplicação
 
 A cada ano que passa o cenário de jogos cresce mais, isso acaba resultando em torneios grandes (E-Sports) e  independentes. A organização desses eventos em grande parte, com planilhas, grupos de mensagem e redes sociais e formulários que acabam complicando a criação de eventos tanto para o organizador quanto para os jogadores e espectadores. Isso gera:

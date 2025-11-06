@@ -1,159 +1,482 @@
+/* ===========================
+   RESET E VARIÁVEIS GLOBAIS
+   =========================== */
 
-        /* BODY É O CORPO COMO VCS JÁ SABEM */
+   #imgtorneio2 {
+    height: 100%;
+    width: 100%;
+   }
 
 
-body{
-        background: linear-gradient(rgb(5, 4, 10), rgb(21, 19, 34));
-        background-size: cover;
-        height: 200vh;
-        width: cover;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores principais */
+  --primary-red: #9a1717;
+  --dark-bg: #1a1a1a;
+  --white: #ffffff;
+  --gray-light: #e0e0e0;
+  --gray-dark: #333333;
+
+  /* Transições */
+  --transition: all 0.3s ease;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ===========================
+   HEADER STYLING
+   =========================== */
+
+.header {
+  /* Container flexível para organizar elementos horizontalmente */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(187, 23, 23);
+  padding: 12px 24px;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu hambúrguer: Oculto em telas grandes */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  gap: 6px;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background-color: var(--dark-bg);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Logo: Estilo do branding VersusHub */
+
+#logoversus {
+
+    height: auto;
+width: 160px;
+margin-right: 600px;
 }
 
 
-   
-  /* PARTE DA CABEÇA DO SITE (LA ELE), ESSA É A PARTE VERMELHA COM A LOGO E ETC */
-
-
-.cabecalho {
-    
-    background: rgb(158, 8, 8);
-    height: 80px;
-    width: 200%;
-    border: solid rgb(38, 38, 48);
-    padding-left: 10px;
-   margin-left: -10px;
-   margin-right: -10px;
-   margin-top: -12px;
+/* Navegação: Menu principal com links */
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+ 
 }
 
-
-    /* ESSE HP_HITBOX É A LOGO QUE FICA NA CABEÇA DO SITE */
-
-
-.hp_hitbox {
-
-
-margin-left: 20px;
-
-
+.nav-link {
+  color: var(--white);
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 16px;
+  transition: var(--transition);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
 }
 
-
-.hp_hitbox img {
-    height: 64px;
-    width: auto;
-    margin-top: 8px;
-    background: none;
+.nav-link:hover {
+  opacity: 0.8;
+  border-bottom-color: var(--white);
 }
 
-
-    /* PARTE DO MENUZINHO Q TEM 3 LINHAS */
-
-
-.menu_3_linha img {
-
-
-     height: 50px;
-    width: auto;
-    margin-left: 10px;
-    margin-top: 15px;
-    background: none;
+/* Barra de pesquisa: Input customizado */
+.search-container {
+  display: flex;
+  align-items: center;
 }
 
-
-/* PARTE DO CARROSSEL DE TORNEIOS, ESSA É A PARTE QUE FICA PASSANDO AS IMAGENS DOS TORNEIOS */
-
-/* ============================================================
-    CARROSSEL PRINCIPAL
-   ============================================================ */
-
-/* CONTAINER DO CARROSSEL */
-.carrossel {
-    /* Faz o carrossel ser uma "caixa" isolada */
-    position: relative;
-
-    align-content: center;
-
-    /* Ajustando para que o carrossel tenha 80% da largura da tela, e o máximo de 1080px */
-    width: 55%;
-    
-
-    /* Centraliza automaticamente */
-    margin: 0px auto;
-
-    top: -18px;
-
-    /* Limita o conteúdo visível */
-    overflow: inherit;
-
-    /* Borda e arredondamento */
-    border-radius: 10px;
-    background: none;
-    box-shadow: red 1px 1px 20px;
-    border: none;
+.search-input {
+  background-color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 24px;
+  padding: 10px 16px;
+  width: 280px;
+  font-size: 14px;
+  color: var(--gray-dark);
+  transition: var(--transition);
 }
 
-/* LINHA QUE SEGURA AS IMAGENS */
-.slides {
-    
-    display: inline-flex; /* Deixa as imagens lado a lado */
-    transition: transform 1s ease-in-out; /* Animação ao trocar */
-    
+.search-input::placeholder {
+  color: #999;
 }
 
-/* CADA IMAGEM */
-.slides img {
-    width: 100%;       /* A imagem ocupa toda a largura do espaço */
-    height: 490px;     /* A altura pode ser ajustada aqui, para controlar a visualização */
-    min-width: 100%;   /* Garante que cada imagem ocupe 100% da largura do carrossel */
-    margin-left: 20px;
-
-    /* O object-fit: fill garante que a imagem seja redimensionada sem cortar, 
-       o fundo será mostrado nas partes em branco, caso a imagem seja menor que o espaço */
-    object-fit: fill; /* Garantir que a imagem se ajuste sem cortar */
-    border-radius: 20px;
-    background: none; /* Aparece caso a img não preencha totalmente */
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
-/* ============================================================
-    SETAS DE CONTROLE
-   ============================================================ */
-
-/* BOTÕES DE NAVEGAÇÃO */
-.btanterior,
-.btproximo {
-    position: relative;          /* Ficam em cima do carrossel */
-    top: 50%; 
-    left: 80%;                   /* Centraliza verticalmente */
-    transform: translateY(-50%); /* Ajusta pro meio certinho */
-
-    background: none;
-    border: none;
-    cursor: pointer;
+/* Botão login: Estilo primário */
+.btn-login {
+  background-color: var(--dark-bg);
+  color: var(--white);
+  border: 2px solid var(--white);
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
 }
 
-/* SETA ESQUERDA – próxima da borda do carrossel */
-.btanterior {
-    left: -50px; /* Ajuste fino — aproxima ou afasta da borda */
+.btn-login:hover {
+  background-color: var(--white);
+  color: var(--primary-red);
 }
 
-/* SETA DIREITA – próxima da borda do carrossel */
-.btproximo {
-    right: -50px; /* Ajuste fino — aproxima ou afasta da borda */
+/* Ícone de usuário */
+.user-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--dark-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
 }
 
-/* ÍCONES DAS SETAS */
-.btanterior img,
-.btproximo img {
-    width: 45px;
-    height: 45px;
-    opacity: 0.85;
-    transition: 0.3s;
+.user-icon:hover {
+  background-color: var(--gray-dark);
 }
 
-/* ANIMAÇÃO HOVER DAS SETAS */
-.btanterior img:hover,
-.btproximo img:hover {
-    opacity: 1;
-    transform: scale(1.25);
+/* ===========================
+   MAIN CONTENT
+   =========================== */
+
+.main-content {
+  padding: 32px 24px;
+  min-height: calc(100vh - 70px);
+}
+
+/* ===========================
+   CAROUSEL STYLING
+   =========================== */
+
+.carousel-container {
+  /* Container principal: Flexível com botões nas laterais */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.carousel-wrapper {
+  /* Wrapper que contém os slides */
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 590px;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Slide individual: Posicionado absolutamente */
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Slide ativo: Visível com opacidade 1 */
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 10;
+}
+
+/* Conteúdo do slide: Texto centralizado */
+.slide-content {
+  text-align: center;
+  color: var(--white);
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.slide-logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.slide-title {
+  font-size: 64px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.slide-subtitle {
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, var(--primary-red), #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+}
+
+.slide-tagline {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.slide-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.ea-logo {
+  background-color: var(--white);
+  color: var(--dark-bg);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.game-title {
+  color: var(--white);
+}
+
+/* Botões do carousel: Navegação anterior/próximo */
+.carousel-btn {
+  background: none;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--white);
+  flex-shrink: 0;
+  z-index: 20;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+/* ===========================
+   CAROUSEL DOTS (INDICADORES)
+   =========================== */
+
+.carousel-dots {
+  /* Container dos dots: Centralizado */
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--gray-dark);
+  border: 2px solid var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active {
+  background-color: var(--primary-red);
+  border-color: var(--primary-red);
+  transform: scale(1.3);
+}
+
+.dot:hover {
+  background-color: var(--gray-light);
+}
+
+/* ===========================
+   RESPONSIVIDADE MOBILE
+   =========================== */
+
+@media (max-width: 1024px) {
+  .carousel-wrapper {
+    height: 300px;
+  }
+
+  .slide-title {
+    font-size: 48px;
+  }
+
+  .slide-subtitle {
+    font-size: 40px;
+  }
+
+  .search-input {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header em mobile */
+  .header {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    order: 1;
+  }
+
+  .logo {
+    order: 2;
+    flex: 0 0 auto;
+  }
+
+  .nav-menu {
+    display: none;
+    order: 3;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .search-container {
+    order: 4;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .btn-login {
+    order: 5;
+  }
+
+  .user-icon {
+    order: 6;
+  }
+
+  /* Carousel em mobile */
+  .carousel-container {
+    gap: 12px;
+  }
+
+  .carousel-wrapper {
+    height: 250px;
+  }
+
+  .slide-title {
+    font-size: 36px;
+  }
+
+  .slide-subtitle {
+    font-size: 28px;
+  }
+
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 8px 12px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .carousel-wrapper {
+    height: 200px;
+    border-radius: 16px;
+  }
+
+  .slide-title {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .slide-subtitle {
+    font-size: 20px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn-login {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
 }
