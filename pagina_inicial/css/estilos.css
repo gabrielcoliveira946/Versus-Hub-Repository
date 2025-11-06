@@ -6,7 +6,7 @@ body{
         background: linear-gradient(rgb(5, 4, 10), rgb(21, 19, 34));
         background-size: cover;
         height: 200vh;
-        width: 100%;
+        width: cover;
 }
 
 
@@ -18,7 +18,7 @@ body{
     
     background: rgb(158, 8, 8);
     height: 80px;
-    width: 100%;
+    width: 200%;
     border: solid rgb(38, 38, 48);
     padding-left: 10px;
    margin-left: -10px;
@@ -75,7 +75,7 @@ margin-left: 20px;
     align-content: center;
 
     /* Ajustando para que o carrossel tenha 80% da largura da tela, e o máximo de 1080px */
-    width: 40%;
+    width: 55%;
     
 
     /* Centraliza automaticamente */
@@ -103,7 +103,7 @@ margin-left: 20px;
 
 /* CADA IMAGEM */
 .slides img {
-    width: 120%;       /* A imagem ocupa toda a largura do espaço */
+    width: 100%;       /* A imagem ocupa toda a largura do espaço */
     height: 490px;     /* A altura pode ser ajustada aqui, para controlar a visualização */
     min-width: 100%;   /* Garante que cada imagem ocupe 100% da largura do carrossel */
     margin-left: 20px;
