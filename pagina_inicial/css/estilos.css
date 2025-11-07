@@ -41,11 +41,9 @@ body {
 
 .header-center-buttons {
 
-
-  position: relative;
-  right: 140px;
   display: flex;
-  background: none;
+  
+  background: black;
   max-width: 80%;
   right: 155px;
   gap: 15px;
