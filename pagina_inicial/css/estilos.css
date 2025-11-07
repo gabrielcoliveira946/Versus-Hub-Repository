@@ -4,8 +4,9 @@
 
 /* Base */
 body {
-  background: rgb(15, 13, 26);
+  background: linear-gradient(rgb(5, 5, 10), rgb(16, 13, 36));
   color: #680909;
+  height: 220vh;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
@@ -36,24 +37,28 @@ body {
 .menu-button img { width: 34px; height: 34px; display: block; background: none; border: none; }
 
 
-.logo img { height: 52px; width: 170px; display: block; position: relative; right: 70px;}
+.logo img { height: 52px; width: 170px; display: block; position: relative; right: 45px;}
 
 
 .header-center-buttons {
-
-  display: flex;
   
-  background: black;
+  position: relative;
+  right: 72px;
+  display: flex;
+  background: yellowgreen;
   max-width: 80%;
-  right: 155px;
+  margin-left: -99px;
+  margin-right: -100px;
   gap: 15px;
   flex: 1;
   justify-content: center;
+
 }
 
 
 .header-center-buttons button {
   background: #000;
+ position: relative;
  
   border: 10px solid #b61313;
   color: #ffffff;
@@ -86,11 +91,12 @@ body {
 
 /* Container do carrossel */
 .carousel {
+
   position: relative;
   width: min(50%);
   height: min(550px);
   box-shadow: rgb(255, 0, 0) 1px 1px 30px;
- 
+ top: 12px;
   overflow: hidden;
   border-radius: 16px;
   border: 4px solid rgb(38, 38, 48);
@@ -103,7 +109,7 @@ body {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: ease-in-out 0.5s;
   border-radius: 16px;
 }
 
@@ -113,18 +119,6 @@ body {
 .carousel-slide.active { opacity: 1; }
 
 
-
-
-.carousel-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  background: var(--bg) center/cover no-repeat;
-  filter: blur(18px);
-  transform: scale(1.06);
-  opacity: 0.45;
-}
 
 
 /* A IMAGEM DO SLIDE (SEM CORTAR) */
@@ -188,17 +182,23 @@ body {
 
 /* ===== INDICADORES (bolinhas) ===== */
 #carouselIndicators {
+
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 10px;
+
 }
 
 
 #carouselIndicators span {
-    width: 12px;
-    height: 12px;
-    background: #777;
+
+  position: relative;
+  top: 15px;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border: solid rgb(141, 131, 131) 2px;
     border-radius: 50%;
     display: block;
     cursor: pointer;
@@ -207,7 +207,18 @@ body {
 
 
 #carouselIndicators span.active {
+   
     background: #ff0000;  
+    border: solid white 1px;
     transform: scale(1.4);
+    transform: border-color black;
+    box-shadow: #ff0000 0px 4px 15px;
 }
 
+
+.logo {
+position: relative;
+background-color: none;
+width: fit-content;
+right: 60px;
+}
