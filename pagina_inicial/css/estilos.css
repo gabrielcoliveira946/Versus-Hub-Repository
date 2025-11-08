@@ -37,7 +37,7 @@ body {
 .menu-button img { width: 34px; height: 34px; display: block; background: none; border: none; }
 
 
-.logo img { height: 52px; width: 170px; display: block; position: relative; right: 0px;}
+.logo img { height: 52px; width: 170px; display: block; position: relativ;}
 
 
 .header-center-buttons {
@@ -93,7 +93,7 @@ body {
 .carousel {
 
   position: relative;
-  width: min(60%);
+  width: 58%;
   height: min(550px);
   box-shadow: rgb(255, 0, 0) 1px 1px 30px;
  top: 12px;
@@ -104,12 +104,43 @@ body {
 }
 
 
+
+/* animação: gradualmente "clarear" o box-shadow até o estado normal */
+.carousel.pulse {
+  animation: shadowPulse 250ms ease-in-out ;
+}
+
+/* animação que aumenta lentamente a intensidade/raio/alpha do box-shadow */
+@keyframes shadowPulse {
+  0% {
+    box-shadow: none; /* começa sem sombra (após .shadow-off) */
+  }
+  25% {
+    box-shadow: 1px 1px 12px rgba(255, 0, 0, 0.12);
+  }
+   45% {
+    box-shadow: 1px 1px 12px rgba(255, 0, 0, 0.288);
+  }
+  60% {
+    box-shadow: 1px 1px 36px rgba(255, 0, 0, 0.425);
+  }
+  100% {
+    box-shadow: rgb(255, 0, 0) 1px 1px 30px; /* chega ao shadow "normal" */
+  }
+}
+
+/* classe que apaga o shadow com transição suave (mantida) */
+.carousel.shadow-off {
+  box-shadow: none !important;
+  transition: box-shadow 100ms ease-in-out;
+}
+
 /* Cada slide */
 .carousel-slide {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.3s;
   border-radius: 16px;
 }
 
@@ -220,7 +251,7 @@ body {
 position: relative;
 background-color: none;
 width: fit-content;
-right: 60px;
+right: 105px;
 }
 
 .btscategorias {
@@ -228,19 +259,21 @@ right: 60px;
 position: relative;
 display: flex;
 top: 65px;
-
+gap: 8px;
+align-items: center;
+justify-content: center;
 }
 
 .btscategorias img {
 
-height: 260px;
-width: 260px;
+height: 230px;
+width: 230px;
 }
 
 
 .btscategorias button {
 
- margin: 0 auto;
+ margin: 0 20px;
   border: none;
 background: none;
 cursor: pointer;
