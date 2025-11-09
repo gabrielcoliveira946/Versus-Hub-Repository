@@ -1,13 +1,12 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body{
-    font-family: 'poppins', sans-serif;
-    background-color: #000;
-    background-image: url('/images/Image_fx\ \(9\).jpg');
+ 
+ 
+   background: linear-gradient(rgb(5, 5, 10), rgb(16, 13, 36));
+  
+ 
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -19,7 +18,7 @@ body{
 
 .barranav {
   width: 100%;
-  background-color: #b60000;
+   background: rgb(158, 8, 8);
   height: 70px;
   display: flex;
   align-items: center;
@@ -27,30 +26,26 @@ body{
   padding-left: 40px;
 }
 
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+
+
+
+.logo {
+position: relative;
+background-color: none;
+width: fit-content;
+left: -1px;
 }
 
-.logo img.versusicon{
-    width: 270px;
-    height: 55px;
-}
-
-.logo img.menu{
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-}
+.logo img { height: 52px; width: 170px; display: block; position: relative;}
 
 /* === Container do Formulário === */
 .container{
     margin-top: 100px;
-    width: 35rem;
-    background: #b60000;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #ff0000;
+    width: 20%;
+    height: 500px;
+    background: linear-gradient(rgb(13, 9, 49),rgb(18, 19, 82));
+    border-radius: 100px;
+    box-shadow: 0 0 39px #ff0000;
     padding: 65px;
 }
 
@@ -62,7 +57,7 @@ body{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #b60000;
+    box-shadow: 0px 0px 30px red;
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -72,7 +67,7 @@ form input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: none;
+    border: solid 8px black;
     border-radius: 20px;
     text-align: center;
     font-size: 14px;
@@ -87,8 +82,8 @@ form input::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ff0000;
-    color: rgb(0, 0, 0);
+    background-color: #272424;
+    color: rgb(248, 248, 248);
     font-size: 17px;
     margin-top: 30px;
 }
