@@ -1,0 +1,178 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+/* Base */
+body {
+  background: linear-gradient(rgb(5, 5, 10), rgb(16, 13, 36));
+  color: #680909;
+  height: 220vh;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* Header */
+.header {
+  width: 100%;
+  height: 64px;
+  background: rgb(158, 8, 8);
+  border-bottom: 3px solid rgb(38, 38, 48);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 12px;
+}
+
+
+.menu-button{
+
+
+  background: none;
+  border: none;
+}
+
+
+.menu-button img { width: 34px; height: 34px; display: block; background: none; border: none; }
+
+
+.logo img { height: 52px; width: 170px; display: block; position: relativ;}
+
+.header-center-buttons {
+  
+  position: relative;
+  right: 72px;
+  display: flex;
+  background: none;
+  max-width: 70%;
+  margin-left: 11px;
+  margin-right: 112px;
+  gap: 15px;
+  flex: 1;
+  justify-content: center;
+
+}
+
+.header-center-buttons button {
+  background: #000;
+ position: relative;
+ 
+  border: 10px solid #b61313;
+  color: #ffffff;
+  padding: 6px 14px;
+
+
+  cursor: pointer;
+  font-size: 13px;
+  transition: 1s;
+}
+.header-center-buttons button:hover {
+  background: #a31313;
+  transform: scale(1.2);
+}
+
+
+.user-icon img { width: 34px; height: 34px; display: block; }
+
+
+
+/* PARTE DE BAIXO DO SITE (NAV CLASS) */
+
+.espaco{
+  height: 50px;
+  width: 100px;
+}
+
+
+.info{
+  background: rgb(255, 255, 255);
+  margin-left: 65px;
+  padding-top: 25px;
+  padding-left: 20px;
+  height: 1000px;
+  width: 1400px;
+  border-radius: 50px;
+}
+
+.container{
+    justify-items: start;
+    padding-top: 5px;
+    padding-left: 20px;
+    height: 110px;
+    width: 500px;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border-radius: 45px;
+}
+
+.perfil{
+  display: flex;
+  align-items: center;
+}
+/* Parte das opções da conta */
+
+.linhacima{
+  height: 5px;
+  width: 1250px;
+  background: black;
+
+}
+.pags{
+  height: 35px;
+  width: 1210px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+  background: rgb(213, 210, 210);
+  border-radius: 100px;
+  color: black;
+}
+
+.pags a{
+  color: inherit;
+}
+
+.primeiro{
+  height: 20px;
+  width: 200px;
+}
+
+.segundo{
+  height: 20px;
+  width: 200px
+}
+
+.terceira{
+  height: 10px;
+  width: 200px;
+}
+
+.linhabaixo{
+  height: 5px;
+  width: 1250px;
+  background: #000;
+}
+
+
+.mensagem{
+  margin-top: 250px;
+  justify-content: end;
+}
+
+.seta{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.aviso{
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
