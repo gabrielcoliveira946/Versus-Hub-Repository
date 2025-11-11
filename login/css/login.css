@@ -16,23 +16,27 @@ body{
 }
 
 .barranav {
-  width: 100%;
-   background: rgb(158, 8, 8);
-  height: 70px;
+  margin-top: -10px;
+ width: 100%;
+  height: 64px;
+  background: rgb(158, 8, 8);
+  border-bottom: 3px solid rgb(38, 38, 48);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 40px;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 12px;
 }
 
 
 
 
 .logo {
+
 position: relative;
 background-color: none;
 width: fit-content;
-left: -1px;
+left: 16px;
 }
 
 .logo img { height: 52px; width: 170px; display: block; position: relative;}
@@ -103,7 +107,6 @@ button:hover {
 #cliquecadastro {
 
 color: rgb(211, 23, 23);
-;
  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 font-size: 15px;
  position: relative;

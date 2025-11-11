@@ -95,3 +95,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// parte do menu quando clica na imagem
+
+const userBtn = document.getElementById("userBtn");
+const menuUser = document.getElementById("menuUser");
+
+userBtn.addEventListener("click", () => {
+  menuUser.style.display =
+    menuUser.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", (e) => {
+  if (!document.querySelector(".user-icon").contains(e.target)) {
+    menuUser.style.display = "none";
+  }
+});
+
+
+
+

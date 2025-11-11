@@ -16,13 +16,16 @@ body{
 }
 
 .barranav {
+   margin-top: -10px;
   width: 100%;
-   background: rgb(158, 8, 8);
-  height: 70px;
+  height: 64px;
+  background: rgb(158, 8, 8);
+  border-bottom: 3px solid rgb(38, 38, 48);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 40px;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 12px;
 }
 
 
@@ -32,7 +35,7 @@ body{
 position: relative;
 background-color: none;
 width: fit-content;
-left: -1px;
+left: 16px;
 }
 
 .logo img { height: 52px; width: 170px; display: block; position: relative;}
