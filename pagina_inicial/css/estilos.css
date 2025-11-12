@@ -40,14 +40,15 @@ body {
 
 
 .header-center-buttons { 
-  position: static;
-  right: 72px;
+  position: relative;
+
+  left: 1%;
+  background:none;
   display: flex;
-  background: none;
   max-width: 70%;
-  margin-left: 11px;
-  margin-right: 112px;
-  gap: 15px;
+
+ 
+  gap: 1%;
   flex: 1;
   justify-content: center;
  
@@ -55,7 +56,7 @@ body {
 
 
 .header-center-buttons button {
-  background: #000;
+  background: #000000;
  position: static;
  
   border: 10px solid #b61313;
@@ -68,11 +69,12 @@ body {
 }
 .header-center-buttons button:hover {
   background: #a31313;
-  transform: scale(1.2);
+  filter: brightness(1.2);
+  transform: scale(1.05);
 }
 
 
-.user-icon img { width: 34px; height: 34px; display: block; }
+.user-icon img { width: 34px; height: 34px; display: flex; }
 
 
 .user-icon  :hover {
@@ -84,10 +86,17 @@ transition: 0.3s ease-in-out;
 
 }
 
+.logo {
+
+position: relative;
+right: 5%;
+
+}
+
 /* Carrossel */
 .hero {
   width: 100%;
-  margin: 22px 0 10px;
+   
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,7 +111,7 @@ transition: 0.3s ease-in-out;
   width: 58%;
   height: min(550px);
   box-shadow: rgb(255, 0, 0) 1px 1px 30px;
- top: 12px;
+   top: 22px;
   overflow: hidden;
   border-radius: 16px;
   border: 4px solid rgb(38, 38, 48);
@@ -113,7 +122,7 @@ transition: 0.3s ease-in-out;
 
 /* animação: gradualmente "clarear" o box-shadow até o estado normal */
 .carousel.pulse {
-  animation: shadowPulse 250ms ease-in-out ;
+  animation: shadowPulse 0.5ms ease-in-out ;
 }
 
 /* animação que aumenta lentamente a intensidade/raio/alpha do box-shadow */
@@ -138,7 +147,7 @@ transition: 0.3s ease-in-out;
 /* classe que apaga o shadow com transição suave (mantida) */
 .carousel.shadow-off {
   box-shadow: none !important;
-  transition: box-shadow 100ms ease-in-out;
+  transition: box-shadow 0ms ease-in-out;
 }
 
 /* Cada slide */
@@ -146,7 +155,7 @@ transition: 0.3s ease-in-out;
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.2s;
   border-radius: 16px;
 }
 
@@ -164,7 +173,7 @@ transition: 0.3s ease-in-out;
   position: relative;          
   width: 100%;
   height: 100%;
-  object-fit: fill;          
+  object-fit: cover;          
   border-radius: 16px;
 
 
@@ -208,13 +217,6 @@ transition: 0.3s ease-in-out;
 }
 
 
-@media (max-width: 1200px){
-    .carousel-button {
-        font-size: 28px;
-    }
-    .carousel-button.prev { left: 4px; }
-    .carousel-button.next { right: 4px; }
-}
 
 
 /* ===== INDICADORES (bolinhas) ===== */
@@ -252,13 +254,6 @@ transition: 0.3s ease-in-out;
     box-shadow: #ff0000 0px 4px 15px;
 }
 
-
-.logo {
-position: relative;
-background-color: none;
-width: fit-content;
-right: 105px;
-}
 
 
 
@@ -356,7 +351,7 @@ box-shadow: none;
 #btcadastrar {
 
 position: relative;
-left:785px;
+left: 345%;
 height: 40px;
 font-size: 16px;
 top: 5px;
@@ -364,13 +359,12 @@ font-weight: bold;
 border: #000 2px solid;
 background: #d41111;
 border-radius: 20px;
-
 }
 
 #btentrar {
 
 position: relative;
-left: 790px;
+left: 500%;
 width: 90px;
 font-size: 16px;
 top: 5px;
@@ -418,5 +412,28 @@ right: 45px;
 hr {
 position: relative;
 top: -35px;
+
+}
+
+#divisacategorias {
+
+position: relative;
+top: 100px;
+width: 1600%;
+left: 150px;
+border: solid 1px gray;
+}
+
+#joguinhosdestaque {
+color: red;
+border: solid black 3px;  
+position: relative;
+top: 95px;
+right: -140px;
+background: rgb(8, 8, 8);
+width: 5%;
+text-align: center;
+border-radius: 30px;
+
 
 }
