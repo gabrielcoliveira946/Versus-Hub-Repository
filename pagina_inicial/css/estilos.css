@@ -317,10 +317,10 @@ transform: scale(1.1);
   list-style: none;
   margin: 2px;
   padding: 10px;
-  width: 700%;
-  height: 400px;
+  width: 550%;
+  height: 150px;
   background: #252531;
-  
+  border-radius: 15px;
   border: 3px solid #000000;
   position: absolute;
   top: 36px;
@@ -328,12 +328,26 @@ transform: scale(1.1);
   display: none;
 }
 
+#menuUser:hover {
+
+ 
+  transform: scale(1);
+ 
+box-shadow: none;
+
+}
+
 #menuUser li {
+  position: relative;
+  top: -35px;
+  left: 35px;
   margin: 15px 0;
-  margin-bottom: 40px;
+
+  margin-bottom: 14px;
 }
 
 #menuUser li a {
+  
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
@@ -391,4 +405,18 @@ filter: brightness(1.2);
 }
 
 
+#portalogin {
 
+position: relative;
+top: 25px;
+right: 45px;
+
+
+}
+
+
+hr {
+position: relative;
+top: -35px;
+
+}
