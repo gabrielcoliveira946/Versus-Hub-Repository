@@ -8,9 +8,10 @@
 body {
   background: linear-gradient(rgb(5, 5, 10), rgb(16, 13, 36));
   color: #680909;
-  height: 220vh;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
+  height: 120vh;
+  
+ 
+  background-size: cover;
 }
 
 
@@ -97,12 +98,12 @@ body {
 
 
 
-.user-icon  :hover {
+.user-icon:hover {
 
 
-box-shadow: 2px 2px 10px rgb(255, 255, 255);
+ 
 border-radius: 30px;
-transform: scale(1.1 );
+transform: scale(1.01 );
 transition: 0.3s ease-in-out;
 
 
@@ -368,6 +369,7 @@ transform: scale(1.1);
 .user-icon {
   position: relative;
   display: inline-block;
+  transition: 0.3s ease-in-out;
 }
 
 
@@ -408,9 +410,9 @@ box-shadow: none;
 
 #menuUser li {
   position: relative;
-  top: -35px;
+  top: -38px;
   left: 35px;
-  margin: 15px 0;
+  margin: 15px ;
 
 
   margin-bottom: 14px;
@@ -419,6 +421,7 @@ box-shadow: none;
 
 #menuUser li a {
  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
@@ -495,7 +498,7 @@ filter: brightness(1.2);
 
 
 position: relative;
-top: 25px;
+top: 29px;
 right: 45px;
 
 
@@ -516,12 +519,12 @@ top: -35px;
 
 #divisacategorias {
 
-
 position: relative;
-top: 100px;
+top: 103px;
 width: 90%;
 left: 150px;
-border: solid 1px gray;
+border: solid 1px rgb(34, 27, 59);
+
 }
 
 
@@ -532,11 +535,12 @@ position: relative;
 top: 95px;
 right: -140px;
 background: rgb(8, 8, 8);
-width: fit-content;
-padding: 7px;
+width: fit-content ;
+padding: 5px;
+height: fit-content;
 text-align: center;
-border-radius: 30px;
-
+border-radius: 10px;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
 
 
 
@@ -596,10 +600,10 @@ max-height: 55%;
 .filatorneios{
 
 
-background: rgb(24, 5, 58);
+background: rgb(14, 11, 32);
 height: 500px;
 border: solid rgb(44, 42, 42) 5px;
-border-radius: 20px;
+border-radius: 10px;
 transition: 0.3s ease-in-out;
 }
 
@@ -634,26 +638,155 @@ width: fit-content;
 padding: 7px;
 text-align: center;
 border-radius: 30px;
- 
+border-radius: 10px;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+
 }
 
 #divisacategorias2 {
 
 position: relative;
-top: 100px;
-border: solid 1px gray;
+top: 105px;
+border: solid 1px rgb(58, 55, 102);
  width: 90%;
 left: 150px;
-border: solid 1px gray;
+
 
 }
 
 
+#h3nomejogo {
+
+color: #7373a0;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+margin-left: 10px ;
+font-weight: bold;
+}
+
+#h2nometorneio {
+
+margin-left: 10px;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+color: white;
+
+}
+
 footer{
 
 margin-top: 80px;
-height: 40%;
+height: 20%;
 background: #9b1010;
 width: 100%;
+margin-bottom: 0  ;
+}
+
+
+#logofooter {
+
+  height: 65%;
+  width: 20;
+  position: relative;
+  right: 2.5%;
+
+
+}
+
+.h1dofooter {
+color: cyan;
+ font-size: 15px;
+font-family:   'Arial Narrow Bold', sans-serif
+ 
+}
+
+#sobrenosft {
+
+position: relative;
+left: 13%;
+bottom: 45%;
+color: cyan;
+ 
+font-family:   'Arial Narrow Bold', sans-serif
+
+
+}
+
+.paragrafosfooter {
+
+color: white;
+font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+font-size: 15px;
+}
+
+#parasobrenos {
+
+position: relative;
+ bottom: 55%;
+left: 13%;
+width: 20%;
+
+}
+
+#vshft {
+
+position: relative;
+left: 47%;
+bottom: 107%;
+}
+
+#paravshft {
+ 
+  position: relative;
+  left: 47%;
+  bottom: 103%;
+
+
+}
+
+
+#politicasft {
+
+position: relative;
+left: 75%;
+bottom: 145%;
+
+
+}
+
+#parapolift {
+
+position: relative;
+left: 75%;
+bottom: 140%;
+
+}
+
+.politicas {
+
+position: relative;
+bottom: 160%;
+
+}
+
+.versushubfooter {
+
+position: relative;
+bottom: 115%;
+
+
+}
+
+
+.sobrenosfooter {
+
+position: relative;
+bottom: 55%;
+
+}
+
+#linhafooter {
+
+position: static;
+border: solid 2px gray;
+bottom: -100px;
 
 }
