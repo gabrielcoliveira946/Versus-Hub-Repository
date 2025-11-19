@@ -1,0 +1,125 @@
+
+body{
+ 
+ 
+   background: linear-gradient(rgb(5, 5, 10), rgb(16, 13, 36));
+  
+ 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;  overflow-x: hidden;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+.barranav {
+  margin-top: -10px;
+ width: 100%;
+  height: 64px;
+  background: rgb(158, 8, 8);
+  border-bottom: 3px solid rgb(38, 38, 48);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 12px;
+}
+
+
+
+
+.logo {
+
+position: relative;
+background-color: none;
+width: fit-content;
+left: 16px;
+}
+
+.logo img { height: 52px; width: 170px; display: block; position: relative;}
+
+/* === Container do Formulário === */
+.container{
+    
+    margin-top: 65px;
+    width: 15%;
+    height: 440px;
+    background: linear-gradient(rgb(13, 9, 49),rgb(18, 19, 82));
+    border-radius: 15px;
+    box-shadow: 0 0 35px #ff0000;
+    padding: 65px;
+}
+
+.form-box {
+
+    text-align: center;
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px red;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+form input {
+  
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: solid 8px black;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 15px;
+    outline: none;
+}
+
+form input::placeholder {
+  color: #888;
+}
+
+ 
+ 
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff0000;
+  color: white;
+}
+
+#cliquecadastro {
+
+color: rgb(211, 23, 23);
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+font-size: 15px;
+ position: relative;
+top: 40px;
+}
+
+#cadastrop {
+
+color: white;
+background:  rgba(170, 8, 8, 0.945);
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+font-size: 17px;
+
+
+
+}

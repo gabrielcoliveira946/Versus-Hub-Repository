@@ -320,16 +320,18 @@ box-shadow: red 17px 17px 50px, rgb(190, 2, 2) -21px -11px 30px;
 position: relative;
 display: flex;
 gap: 8px;
+height: 140;
 align-items: center;
 justify-content: center;
+background: none;
 }
 
 
 .btscategorias img {
 
 
-height: 230px;
-width: 230px;
+height: 130px;
+width: 130px;
 }
 
 
