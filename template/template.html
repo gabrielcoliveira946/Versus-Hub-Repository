@@ -1,54 +1,421 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/login/css/login.css">
-    <title>VersusHub_Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/pagina_inicial/css/estilos.css" />
+  <title>VersusHub</title>
 </head>
+
+
+
+
 <body>
-    <!-- Criando o Header da Pagina-->
-    <header class="barranav">
-        <div class="logo">
-        
-          <a href="/equipe/css/template.css"> <img class="versusicon" src="/image/logo plus tipo textura.png" alt="Logo"> 
-
-            </a>
-
-      
-
-               
-
-        </div>
-    </header>
-
-    <!-- Criando o Formulario da Aba Login -->
-        <div class="container">
-            <div class="form-box">
-                <div class="avatar">
-                    <img src="/image/boneco logo.png" alt="avatar">
-                    
-                </div>
-        
-                <h2 id="cadastrop">Login</h2>
-
-                <form action="">
-                    
-                    <input type="email" placeholder="E-mail" required>
-                    <input type="password" placeholder="Senha" required>
-
-                    
-                    <button type="submit" class="btn">Cadastrar</button>
-
-                </form>
-                  <a id="cliquecadastro" href="/cadastro/cadastro.html">Ainda não possui uma conta? Clique para Cadastrar-se </a>
+  <!-- HEADER -->
+  <header class="header">
+    <button class="menu-button">
+      <img src="/images/pngtree-menu-icon-image_1344445.png" alt="menu">
+    </button>
 
 
-            </div>
-        </div>
-<script src="/equipe/js/scrip.js"></script>
+
+    <a href="/index.html" class="logo">
+      <img src="/image/logo plus tipo textura.png" alt="VersusHub Logo">
+    </a>
+
+
+
+
+    <nav class="header-center-buttons">
+      <button>Ao Vivo</button>
+      <button>Criar Torneio</button>
+      <button>Equipes</button>
+
+
+      <a href="/login/login.html"><button id="btentrar">Entrar</button></a>
+
+
+
+
+      <a href="/cadastro/cadastro.html"><button id="btcadastrar">Cadastrar-se</button></a>
+
+
+    </nav>
+
+
+    <div class="user-icon">
+      <img src="/image/boneco logo.png" alt="Usuário" id="userBtn">
+
+
+      <ul id="menuUser" class="hidden">
+
+
+
+
+        <li><a href="/login/login.html"> <img src="/image/icone-de-login.png" alt="" id="portalogin"> Login</a></li>
+        <hr>
+        <li><a href="/cadastro/cadastro.html">Cadastro</a></li>
+      </ul>
+    </div>
+
+
+  </header>
+
+
+
+
+  
+    <!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
+
+    <footer>
+      <img src="/image/logo.png" alt="" id="logofooter">
+
+        <br>
+        <br>
+
+        <div class="sobrenosfooter">
+
+      <h1 id="sobrenosft" class="h1dofooter">Sobre Nós</h1>
+      <br><br>
+
+      <p id="parasobrenos" class="paragrafosfooter">O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports em um só lugar. Oferecemos torneios competitivos, rankings dinâmicos e recompensas exclusivas para quem ama competir. Nosso objetivo é tornar a experiência gamer mais acessível, divertida e profissional — seja você um iniciante ou um pro player.</p>
+
+          </div>
+
+      <div class="versushubfooter">
+
+      <h1 id="vshft" class="h1dofooter">Versus Hub</h1>
+
+      <p id="paravshft" class="paragrafosfooter">
+  
+ Torneios e Rankings atualizados <br><br>
+ Sistema seguro e fácil de participar <br><br>
+ Suporte ativo todos os dias
+
+</p>
+
+  </div>
+
+    <div class="politicas">
+
+     <h1 id="politicasft" class="h1dofooter">Políticas</h1>
+
+      <p id="parapolift" class="paragrafosfooter">
+  
+ • Termos de uso <br><br><br>
+ • Política de Privacidade <br><br><br>
+ • Política de Reembolso (para eventos pagos)
+ 
+</p>
+
+  <hr id="linhafooter">
+
+
+</div>
+    
+    </footer>
+
+<!-- --------------------------------------------------- -->
+
+  </div>
+  </div>
+
+
+  <script src="/pagina_inicial/js/scrip.js"></script>
 </body>
+
+
+</html>      <ul id="menuUser" class="hidden">
+
+
+
+
+        <li><a href="/login/login.html"> <img src="/image/icone-de-login.png" alt="" id="portalogin"> Login</a></li>
+        <hr>
+        <li><a href="/cadastro/cadastro.html">Cadastro</a></li>
+      </ul>
+    </div>
+
+
+  </header>
+
+
+
+
+  <!-- HERO / CARROSSEL -->
+  <section class="hero">
+    <div class="carousel" id="carousel">
+
+
+
+
+      <!-- Slides com <img> (nada de background aqui) -->
+      <div class="carousel-slide active">
+        <img src="/images/torneio_fifa_22.jpg" alt="Torneio FIFA 22">
+      </div>
+
+
+
+
+      <div class="carousel-slide">
+        <img src="/images/ff_championsbrasil.jpg" alt="Free Fire Champions Brasil">
+      </div>
+
+
+
+
+      <div class="carousel-slide">
+        <img src="/images/fifa23_globalseries.webp" alt="FIFA 23 Global Series">
+      </div>
+
+
+
+
+      <div class="carousel-slide">
+        <img src="/images/cerradocup.jpg" alt="Cerrado Cup">
+      </div>
+
+
+
+
+      <div class="carousel-slide">
+        <img src="/images/contracup.jpeg" alt="Contra Cup">
+      </div>
+
+
+
+
+      <!-- Setas (fora do card) -->
+      <button class="carousel-button prev" id="prevBtn" aria-label="Anterior">❮</button>
+      <button class="carousel-button next" id="nextBtn" aria-label="Próximo">❯</button>
+    </div>
+
+
+
+
+    <!-- Bolinhas -->
+    <div class="carousel-indicators" id="carouselIndicators"></div>
+  </section>
+
+
+
+
+  <!-- BOTÕES CATEGORIAS -->
+
+
+  <div class="btscategorias">
+
+
+    <!--  BOTÃO JOGOS DE MOBA-->
+
+
+    <button> <img src="/image/moba.png" alt=""></button>
+
+
+    <!--  BOTÃO JOGOS DE LUTA-->
+
+
+    <button><img src="/image/luta.png" alt=""></button>
+
+
+    <!--  BOTÃO JOGOS DE TIRO-->
+
+
+    <button><img src="/image/tiro.png" alt=""></button>
+
+
+    <!--  BOTÃO JOGOS DE ESPORTES-->
+
+
+    <button><img src="/image/esportes.png" alt=""></button>
+
+
+    <!--  BOTÃO JOGOS DE CARTA-->
+
+
+    <button><img src="/image/card_game.png" alt=""></button>
+
+
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+
+
+  <!--  Videos e subcategorias de jogos que ficam abaixo dos botões vermelhos  -->
+
+ <h2 id="joguinhosdestaque">CS-GO</h2> 
+    <hr id="divisacategorias">
+
+
+  <div class="torneiosdestacadosabaixo">
+
+    <div class="torneioscontainer">
+
+      <div id="fileiratorneios1_1" class="filatorneios"><img src="/images/cerradocup.jpg" alt="">
+        <h3 id="h3nomejogo">CS-GO</h3>
+      <br><br><br>
+        <h2 id="h2nometorneio">Evo Championship Series</h2>
+        <br><br><br><br>
+         <h3 id="h3nomejogo">Início: 22/03/2026</h3>
+
+      </div>
+
+      <div id="fileiratorneios1_2" class="filatorneios"> <img src="/images/contracup.jpeg" alt="">
+     <h3 id="h3nomejogo">CS-GO</h3>
+      <br><br><br>
+        <h2 id="h2nometorneio">Gamescom Latam</h2>
+        <br><br><br><br>
+         <h3 id="h3nomejogo">Início: 01/03/2026</h3>
+
+      </div>
+
+      <div id="fileiratorneios1_3" class="filatorneios"> <img src="/images/fileiracsgo.jpeg" alt="">
+      <h3 id="h3nomejogo">CS-GO</h3>
+      <br><br><br>
+        <h2 id="h2nometorneio">PARANÁ STARTUPS CHALLENGE </h2>
+        <br><br><br><br>
+         <h3 id="h3nomejogo">Início: 04/04/2026</h3>
+
+      </div>
+  
+    </div>
+
+
+  <h2 id="joguinhosdestaque2">Free Fire</h2>
+  <hr id="divisacategorias2">
+
+      <div class="torneioscontainer">
+
+      <div id="fileiratorneios1_1" class="filatorneios"><img src="/images/ff_championsbrasil.jpg" alt="">
+     <h3 id="h3nomejogo">Free Fire</h3>
+      <br><br><br>
+        <h2 id="h2nometorneio">Evo Championship series</h2>
+        <br><br><br><br>
+         <h3 id="h3nomejogo">Início: 22/02/2026</h3>
+
+      </div>
+
+      <div id="fileiratorneios1_2" class="filatorneios"> <img src="/images/ffcopaff.png" alt="">
+      <h3 id="h3nomejogo">Free Fire</h3>
+      <br><br><br>
+        <h2 id="h2nometorneio">C.O.P.A - FREE FIRE</h2>
+        <br><br><br><br>
+         <h3 id="h3nomejogo">Início: 23/01/2026</h3>
+
+      </div>
+
+      <div id="fileiratorneios1_3" class="filatorneios"> <img src="/images/liga-ff-brasil.jpeg" alt="">
+      <h3 id="h3nomejogo">Free Fire</h3>
+      <br><br><br>
+        <h2 id="h2nometorneio">Liga FF Brasil</h2>
+        <br><br><br><br>
+         <h3 id="h3nomejogo">Início: 29/02/2026</h3>
+      
+      </div>
+  
+    </div>
+
+        <h2 id="joguinhosdestaque2">FIFA</h2>
+        <hr id="divisacategorias2">
+
+              <div class="torneioscontainer">
+
+      <div id="fileiratorneios1_1" class="filatorneios"><img src="/images/cerradocup.jpg" alt="">
+       <h3 id="h3nomejogo">FIFA</h3>
+      <br><br><br>
+        <h2 id="h2nometorneio">FIFA Global Series</h2>
+        <br><br><br><br>
+         <h3 id="h3nomejogo">Início: 22/02/2026</h3>
+
+       </div>
+
+      <div id="fileiratorneios1_2" class="filatorneios"> <img src="/images/contracup.jpeg" alt="">
+      <h3 id="h3nomejogo">FIFA</h3>
+      <br><br><br>
+        <h2 id="h2nometorneio">ARENA - FC25</h2>
+        <br><br><br><br>
+         <h3 id="h3nomejogo">Início: 21/03/2026</h3>
+
+      </div>
+       
+      <div id="fileiratorneios1_3" class="filatorneios"> <img src="/images/fileiracsgo.jpeg" alt="">
+     <h3 id="h3nomejogo">FIFA</h3>
+      <br><br><br>
+        <h2 id="h2nometorneio">eFootball Championship</h2>
+        <br><br><br><br>
+         <h3 id="h3nomejogo">Início: 22/04/2026</h3>
+      
+      </div>
+  
+    </div>
+    </div>
+  </div>
+
+    <!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
+
+    <footer>
+      <img src="/image/logo.png" alt="" id="logofooter">
+
+        <br>
+        <br>
+
+        <div class="sobrenosfooter">
+
+      <h1 id="sobrenosft" class="h1dofooter">Sobre Nós</h1>
+      <br><br>
+
+      <p id="parasobrenos" class="paragrafosfooter">O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports em um só lugar. Oferecemos torneios competitivos, rankings dinâmicos e recompensas exclusivas para quem ama competir. Nosso objetivo é tornar a experiência gamer mais acessível, divertida e profissional — seja você um iniciante ou um pro player.</p>
+
+          </div>
+
+      <div class="versushubfooter">
+
+      <h1 id="vshft" class="h1dofooter">Versus Hub</h1>
+
+      <p id="paravshft" class="paragrafosfooter">
+  
+ Torneios e Rankings atualizados <br><br>
+ Sistema seguro e fácil de participar <br><br>
+ Suporte ativo todos os dias
+
+</p>
+
+  </div>
+
+    <div class="politicas">
+
+     <h1 id="politicasft" class="h1dofooter">Políticas</h1>
+
+      <p id="parapolift" class="paragrafosfooter">
+  
+ • Termos de uso <br><br><br>
+ • Política de Privacidade <br><br><br>
+ • Política de Reembolso (para eventos pagos)
+ 
+</p>
+
+  <hr id="linhafooter">
+
+
+</div>
+    
+    </footer>
+
+<!-- --------------------------------------------------- -->
+
+  </div>
+  </div>
+
+
+  <script src="/pagina_inicial/js/scrip.js"></script>
+</body>
+
+
 </html>
 
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?F75A7A537127B8D4C971DFCDD5E4E4398FD8
