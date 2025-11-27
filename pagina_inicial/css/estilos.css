@@ -18,7 +18,7 @@ body {
 
 /* Header */
 .header {
-  width: 100%;
+  width:min (100%);
   height: 64px;
   background: rgb(158, 8, 8);
   border-bottom: 3px solid rgb(38, 38, 48);
@@ -59,7 +59,7 @@ body {
   background:none;
   display: flex;
   max-width: 70%;
-
+  
 
  
   gap: 1%;
@@ -667,122 +667,36 @@ color: white;
 
 }
 
+
+
+/* PARTE DO FOOTER */
+
+
 footer{
 
-margin-top: 80px;
-height: 20%;
-background: #9b1010;
-width: 100%;
-margin-bottom: 0  ;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  color: aliceblue;
+  
 }
 
+footer h1{
+  color: rgb(10, 160, 230);
+}
+
+#footer_content {
+
+background-color:rgb(158, 8, 8);
+display: grid;  
+grid-template-columns: repeat(5, 1fr);
+gap: 20px;
+}
 
 #logofooter {
 
-  height: 65%;
-  width: 20;
-  position: relative;
-  right: 2.5%;
+  height: 72%;
+  width: 72%;
 
 
-}
-
-.h1dofooter {
-color: cyan;
- font-size: 15px;
-font-family:   'Arial Narrow Bold', sans-serif
- 
-}
-
-#sobrenosft {
-
-position: relative;
-left: 13%;
-bottom: 45%;
-color: cyan;
- 
-font-family:   'Arial Narrow Bold', sans-serif
-
-
-}
-
-.paragrafosfooter {
-
-color: white;
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-font-size: 15px;
-}
-
-#parasobrenos {
-
-position: relative;
- bottom: 55%;
-left: 13%;
-width: 20%;
-
-}
-
-#vshft {
-
-position: relative;
-left: 47%;
-bottom: 107%;
-}
-
-#paravshft {
- 
-  position: relative;
-  left: 47%;
-  bottom: 103%;
-
-
-}
-
-
-#politicasft {
-
-position: relative;
-left: 75%;
-bottom: 145%;
-
-
-}
-
-#parapolift {
-
-position: relative;
-left: 75%;
-bottom: 140%;
-
-}
-
-.politicas {
-
-position: relative;
-bottom: 160%;
-
-}
-
-.versushubfooter {
-
-position: relative;
-bottom: 115%;
-
-
-}
-
-
-.sobrenosfooter {
-
-position: relative;
-bottom: 55%;
-
-}
-
-#linhafooter {
-
-position: static;
-border: solid 2px gray;
-bottom: -100px;
 
 }
