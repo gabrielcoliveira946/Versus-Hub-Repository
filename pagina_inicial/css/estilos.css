@@ -6,8 +6,7 @@
 
 /* Base */
 body {
-  background: linear-gradient(rgb(5, 5, 10), rgb(16, 13, 36));
-  color: #680909;
+ background: linear-gradient(#0e0e0e);
   height: 120vh;
 
  
@@ -135,27 +134,23 @@ right: 5%;
 
 /* Container do carrossel */
 .carousel {
-
-
   position: relative;
   width: 58%;
   height: min(550px);
-  box-shadow: rgba(252, 252, 252, 0.315) 1px 1px 30px;
    top: 22px;
   overflow: hidden;
   border-radius: 16px;
   border: 4px solid rgb(38, 38, 48);
   background: rgb(38, 38, 48);
-  transition: 0.5s ease-in;
+  transition: 0.3s ease-in-out;
 }
 
 
 .carousel:hover {
-transition: 0.5s ease-in-out;
+transition: 0.3s ease-in-out;
 cursor: pointer;
-box-shadow: red 17px 17px 50px, rgb(190, 2, 2) -21px -11px 30px;
 
-
+border: solid 8px rgb(163, 8, 8)
 }
 
 
@@ -616,15 +611,14 @@ transition: 0.3s ease-in-out;
 transform: scale(1.1);
 box-shadow: rgb(241, 7, 7) 1px 1px 10px, rgb(182, 182, 238) -1px -1px 10px;
 transition: 0.3s ease-in-out;
+
+ 
 }
 
 
 #fileiratorneios1_3 {
 float: right;
 position: relative;
-
-
-
 
 }
 
