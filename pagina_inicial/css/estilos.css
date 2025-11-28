@@ -15,46 +15,64 @@ body {
 
 
 /* Header */
+
 header {
-  width:100%;
+  width: 100%;
   height: 70px;
   background: rgb(158, 8, 8);
-  border-bottom: 3px solid rgb(158, 8, 8);
+  border-bottom: 3px solid rgb(38, 38, 48);
   margin-top: 0;
-  overflow: hidden;
-  
+  overflow: visible; /* deixa o dropdown do usuário aparecer pra fora */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
-
-
 
 .navbar {
-
-  background-color:rgb(158, 8, 8);
-display: flex;  
-
+   width: 100%;                /* ocupa a largura toda */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* esquerda – centro – direita */
+  padding: 0 9px;            /* controla o “respiro” das bordas */
+  background-color: rgb(158, 8, 8);
 }
 
-.logo_header {
 
-position: relative;
-left: 20px;
-
+/* Bloco esquerdo: menu + logo */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.logo_header img{
+/* Bloco direito: Entrar / Cadastrar / ícone usuário */
 
-  margin-top: 10px;
-width: 150px;
-height: 68%;
-position: relative;
-left: 5px;
-top: 2px;
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
 }
 
+.logo_header img {
+  margin-top: 0;
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.menu_header img {
+  height: 36px;
+  width: 36px;
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 .menu_header img {
   position: relative;
- left: 10px;
+ 
   margin-top: 10px;
   background: none;
   height:57px;
@@ -65,27 +83,97 @@ top: 2px;
 /* botoes header */
 
 .botoes_header {
+  flex: 1;  
+  position: relative;
+  left: 20px;                     /* ocupa o espaço entre esquerda e direita */
+  display: flex;
+  justify-content: center;       /* centraliza de verdade */
+  gap: 20px;
+  border-radius: 24px;
+  padding: 4px 16px;
+  transition: 0.3s ease-in-out;
+}
 
-background: #0e0e0e;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 20px;
-border: #ff0000 solid 4px;
-position: relative;
-left: 852px }
+.botoes_header button {
+
+background: #252531;
+padding: 15px;
+color: whitesmoke;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: bolder;
+border: solid 5px red;
+transition: 0.2s ease-in-out;
+}
+
+.botoes_header button:hover{
+
+transform: scale(1.1);
+transition: 0.3s ease-in-out ;
+filter: brightness(1.1);
+
+}
+
+/* -------------------------------- */
+
+/* Botão ENTRAR */
+#btentrar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #000;
+  background: rgb(71, 67, 67);
+  border-radius: 40px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Botão CADASTRAR-SE */
+#btcadastrar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 18px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #000;
+  background: #d41111;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+#btentrar:hover,
+#btcadastrar:hover {
+ 
+  filter: brightness(1.05);
+  transition: 0.4s ease-in-out;
+}
+
+#btentrar:hover {
+
+ filter: brightness(1.4);
+  transition: 0.4s ease-in-out;
+
+}
+
+.user-icon {
+  position: relative;
+  display: inline-block;
+  transition: 0.3s ease-in-out;
+}
 
 
-
-
-
-/* FIM DO HEADER */
-
-
-
-
-
-.user-icon img { width: 34px; height: 34px; display: flex; transition:  0.3s ease-out; }
-
+.user-icon img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
 
 
 
@@ -94,23 +182,18 @@ left: 852px }
 
  
 border-radius: 30px;
-transform: scale(1.01 );
+transform: scale(1.03 );
 transition: 0.3s ease-in-out;
 
 
 }
 
-
-.logo {
-
-
-position: relative;
-right: 5%;
+/* FIM DO HEADER */
 
 
-}
 
 
+ 
 /* Carrossel */
 .hero {
   width: 100%;
@@ -405,72 +488,6 @@ box-shadow: none;
   color: #ffffff;
   font-weight: bold;
 }
-
-
-#btcadastrar {
-
-
-position: relative;
-left: 345%;
-height: 40px;
-font-size: 16px;
-top: 5px;
-font-weight: bold;
-border: #000 2px solid;
-background: #d41111;
-border-radius: 20px;
-}
-
-
-#btentrar {
-
-
-position: relative;
-left: 500%;
-width: 90px;
-font-size: 16px;
-top: 5px;
-height: 40px;
-font-weight: bold;
-border: solid 2px black;
-background: rgb(71, 67, 67);
-border-radius: 40px;
-
-
-
-
-}
-
-
-#btentrar:hover{
-
-
-  transition: 10ms ease-in-out;
-transform: scale(1.03);
-filter: brightness(1.3);
- 
-
-
- 
-}
-
-
-
-
-
-
-#btcadastrar:hover{
-
-
-transform: scale(1.03);
-filter: brightness(1.2);
- 
-
-
- 
-}
-
-
 
 
 #portalogin {
