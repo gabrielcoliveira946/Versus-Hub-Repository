@@ -13,117 +13,137 @@
 
 
 <body>
- <!-- HEADER -->
-  <header>
-    <nav class="navbar">
 
-      <!-- ESQUERDA: menu + logo -->
-      <div class="header-left">
-        <div class="menu_header">
-          <a href="#">
-            <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
-          </a>
-        </div>
+ <!-- ========== HEADER GLOBAL VERSUSHUB (INÍCIO) ========== -->
+<header>
+  <nav class="navbar">
 
-        <div class="logo_header">
-          <a href="/pagina_inicial/index.html">
-            <img src="/image/logo plus tipo textura.png" alt="VersusHub">
-          </a>
-        </div>
+    <!-- ESQUERDA: menu lateral + logo -->
+    <div class="header-left">
+
+      <!-- Botão do menu lateral (hambúrguer) -->
+      <button id="menuToggle" class="menu-button">
+        <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
+      </button>
+
+      <!-- LOGO -->
+      <div class="logo_header">
+        <a href="/pagina_inicial/index.html">
+          <img src="/image/logo plus tipo textura.png" alt="VersusHub">
+        </a>
       </div>
 
-      <!-- CENTRO: botões principais -->
-      <div class="botoes_header">
-        <button id="aovivo_header">Ao Vivo</button>
-        <button id="criar_header">Criar Torneio</button>
-        <button id="equipes_header">Equipes</button>
-      </div>
-
-      <!-- DIREITA: entrar / cadastrar / usuário -->
-      <div class="header-right">
-        <a href="/login/login.html" id="btentrar">Entrar</a>
-        <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
-
-        <div class="user-icon">
-          <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
-
-          <ul id="menuUser" class="hidden">
-            <li>
-              <a href="/login/login.html">
-                <img src="/image/icone-de-login.png" alt="" id="portalogin">
-                Login
-              </a>
-            </li>
-            <hr>
-            <li><a href="/cadastro/cadastro.html">Cadastro</a></li>
-          </ul>
-        </div>
-      </div>
-
-    </nav>
-  </header>
-  <!-- FIM HEADER -->
- 
-
-    <!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
-
-    <footer>
-
-      <div id="footer_content">
-        <div id="footer_logo">
-          <img src="/image/logo.png" alt="" id="logofooter">
-
-        </div>
-      
-      <div id="footer_sobrenos">
-
-         <h1>Sobre Nós</h1>
-        <br>
-         <p>O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports em um só lugar. Oferecemos torneios competitivos, rankings dinâmicos e recompensas exclusivas para quem ama competir. Nosso objetivo é tornar a experiência gamer mais acessível, divertida e profissional — seja você um iniciante ou um pro player.</p>
-
-      </div>
-
-      <div id="footer_versushub">
-
-         <h1>Versus Hub</h1>
-        <br>
-          <p>
-              Torneios e Rankings atualizados 
-              <br><br> 
-              Sistema seguro e fácil de participar 
-              <br><br>
-              Suporte ativo todos os dias
-          </p>
-
-
-      </div>
-      
-      <div id="footer_politicas">
-
-          <h1>Políticas</h1><br>
-          <li>
-              Termos de uso  </li><br>
-<li>
-  Política de Privacidade  </li><br>
-   <li>
-  Política de Reembolso (para eventos pagos) </li>
-
- </div>
     </div>
-  
+
+    <!-- CENTRO: botões principais -->
+    <div class="botoes_header">
+      <button id="aovivo_header">Ao Vivo</button>
+      <button id="criar_header">Criar Torneio</button>
+      <button id="equipes_header">Equipes</button>
+    </div>
+
+    <!-- DIREITA: pesquisa + entrar + cadastrar + usuário -->
+    <div class="header-right">
+
+      <!-- BARRA DE PESQUISA NO HEADER -->
+      <form class="search-header" action="#" onsubmit="return false">
+        <input
+          type="text"
+          placeholder="Buscar torneios, jogos..."
+          id="searchInput"
+        >
+        <button type="submit" id="searchBtn">🔍</button>
+      </form>
+
+      <!-- BOTÕES À DIREITA -->
+      <a href="/login/login.html" id="btentrar">Entrar</a>
+      <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
+
+      <!-- ÍCONE DO USUÁRIO -->
+      <div class="user-icon">
+        <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
+
+        <!-- MENU DO USUÁRIO (dropdown) -->
+        <ul id="menuUser">
+          <li>
+            <a href="/login/login.html">Login</a>
+          </li>
+          <hr>
+          <li><a href="/cadastro/cadastro.html">Cadastro</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </nav>
+</header>
+<!-- ========== HEADER GLOBAL VERSUSHUB (FIM) ========== -->
+
+
+<!-- ========== SIDEBAR GLOBAL (MENU LATERAL) – INÍCIO ========== -->
+<aside id="sidebar" class="sidebar">
+  <h2 class="sidebar-title"></h2>
+
+  <nav class="sidebar-nav">
+    <a href="/pagina_inicial/index.html">🏠 Início</a>
+    <a href="#torneios">🏆 Torneios</a>
+    <a href="#categorias">🎮 Categorias</a>
+    <a href="#feedback">⭐ Enviar feedback</a>
+    <a href="#suporte">❓ Suporte</a>
+  </nav>
+</aside>
+
+<!-- Fundo escuro por trás da sidebar -->
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+<!-- ========== SIDEBAR GLOBAL (MENU LATERAL) – FIM ========== -->
+
+
+<!-- (AQUI FICA O CONTEÚDO ESPECÍFICO DE CADA PÁGINA) -->
+<!-- =================================================== -->
+
+
+<!-- ========== FOOTER GLOBAL VERSUSHUB (INÍCIO) ========== -->
+<footer>
+  <div id="footer_content">
+
+    <div id="footer_logo">
+      <img src="/image/logo.png" alt="Logo VersusHub" id="logofooter">
+    </div>
+
+    <div id="footer_sobrenos">
+      <h1>Sobre Nós</h1>
+      <br>
+      <p>
+        O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports em um só lugar. Oferecemos torneios competitivos, rankings dinâmicos e recompensas exclusivas para quem ama competir. Nosso objetivo é tornar a experiência gamer mais acessível, divertida e profissional — seja você um iniciante ou um pro player.
+      </p>
+    </div>
+
+    <div id="footer_versushub">
+      <h1>Versus Hub</h1>
+      <br>
+      <p>
+        Torneios e Rankings atualizados
+        <br><br>
+        Sistema seguro e fácil de participar
+        <br><br>
+        Suporte ativo todos os dias
+      </p>
+    </div>
+
+    <div id="footer_politicas">
+      <h1>Políticas</h1><br>
+      <li>Termos de uso</li><br>
+      <li>Política de Privacidade</li><br>
+      <li>Política de Reembolso (para eventos pagos)</li>
+    </div>
+
   </div>
+</footer>
+<!-- ========== FOOTER GLOBAL VERSUSHUB (FIM) ========== -->
 
 
-    
-    </footer>
 
-<!-- --------------------------------------------------- -->
-
-  </div>
-  </div>
-
-
-  <script src="/pagina_inicial/js/scrip.js"></script>
+  <script src="/template/js/template.js"></script>
 </body>
 
 

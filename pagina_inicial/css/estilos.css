@@ -9,6 +9,7 @@ body {
  background: linear-gradient(#0e0e0e);
   height: 120vh; 
   background-size: cover;
+  padding-top: 70px; /* mesma altura do header fixo */
 }
 
 
@@ -18,48 +19,59 @@ body {
 
 header {
   width: 100%;
-  height: px;
+  height: 70px;
   background: rgb(158, 8, 8);
   border-bottom: 3px solid rgb(38, 38, 48);
   margin-top: 0;
-  overflow: visible; /* deixa o dropdown do usuário aparecer pra fora */
+  overflow: visible;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+  position: fixed;
+  top: 0;
+  z-index: 2000;
 }
 
 .navbar {
-   width: 100%;                /* ocupa a largura toda */
+ width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;  /* esquerda – centro – direita */
-  padding: 0 9px;            /* controla o “respiro” das bordas */
+  /* não precisa space-between porque vamos usar flex:1 nos lados */
+  padding: 0 9px;
   background-color: rgb(158, 8, 8);
 }
 
 
 /* Bloco esquerdo: menu + logo */
 .header-left {
-  display: flex;
+ display: flex;
   align-items: center;
   gap: 12px;
+  flex: 1;              /* ocupa 1 parte do espaço restante */
 }
 
 /* Bloco direito: Entrar / Cadastrar / ícone usuário */
 
 .header-right {
-  display: flex;
+   display: flex;
   align-items: center;
+  justify-content: flex-end;  /* tudo encostado à direita */
   gap: 10px;
   white-space: nowrap;
+  flex: 1;                    /* mesma “força” da esquerda */
+
 }
 
+/* logo do header */
+
 .logo_header img {
+  margin-left: 10px;
   margin-top: 0;
-  width: 150px;
+  width: 160px;
   height: auto;
   display: block;
 }
+
+/* menu de 3 linhas (versão antiga com .menu_header – pode ficar aqui, não atrapalha) */
 
 .menu_header img {
   height: 36px;
@@ -69,37 +81,80 @@ header {
   cursor: pointer;
    position: relative;
   margin-top: 10px;
-
-  
+ bottom: 30px;
+ right: 20px;
+ list-style: none;
+  color: white;
+  list-style: none;
 }
 
+.menu_header[open]{
 
+filter: opacity(0.25s);
+color: white;
+list-style: none;
+}
+
+a {
+
+  text-decoration: none;
+  color: white;
+  list-style: none;
+}
+
+details {
+width: 23px;
+height: 10px;
+transition: width 0.3s;
+border-radius: 7px;
+box-shadow: 0 4px 4px 4px Orgba(0, 0, 0, 0.15);
+list-style: none;
+position: relative;
+
+}
+
+details[open] {
+height: 360px;
+width: 150px;
+position: relative;
+top: 146px;
+background: rgb(28, 29, 29);
+color: white;
+ list-style: none;
+
+}
+
+summary {
+cursor: pointer;
+list-style: none;
+padding: 40px;
+position: relative;
+
+}
 
 /* botoes header */
 
 .botoes_header {
-  flex: 1;  
-  position: relative;
-  left: 65px;
- 
-  margin-right: 74px;                   /* ocupa o espaço entre esquerda e direita */
   display: flex;
-  justify-content: center;       /* centraliza de verdade */
+  justify-content: center;
   gap: 20px;
   border-radius: 24px;
   padding: 4px 16px;
   transition: 0.3s ease-in-out;
+  flex: 0;              /* largura só do conteúdo (os botões) */
 }
 
 .botoes_header button {
-
-background: #252531;
-padding: 15px;
+width: 150px;
+background: none;
+padding: 5px;
 color: whitesmoke;
 font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 font-weight: bolder;
 border: solid 5px red;
+border-radius: 9px;
 transition: 0.2s ease-in-out;
+cursor: pointer;
 }
 
 .botoes_header button:hover{
@@ -162,8 +217,30 @@ filter: brightness(1.1);
   position: relative;
   display: inline-block;
   transition: 0.3s ease-in-out;
+  align-items: center;
 }
 
+.user-icon li{
+position: relative;;
+padding: 10px;
+align-items: center;
+justify-content: center;
+}
+
+.user-icon hr{
+
+position: relative;
+top: -10px;
+
+}
+
+.user-icon li:hover {
+  position: relative;
+  transition: 0.3s ease-in-out;
+ width: 45%;
+ border-radius: 15px;
+  background: #ff0000;
+}
 
 .user-icon img {
   width: 40px;
@@ -174,17 +251,173 @@ filter: brightness(1.1);
 
 
 
-.user-icon:hover {
-border-radius: 30px;
-transform: scale(1.03 );
-transition: 0.3s ease-in-out;
+/* parte do menu quando clica aparece opções */
+
+
+.user-icon {
+
+  position: relative;
+  display: inline-block;
+  transition: 0.3s ease-in-out;
 }
+
+
+.user-icon img {
+  width: 40px;
+  cursor: pointer;
+}
+
+
+/* menu escondido */
+#menuUser {
+  list-style: none;
+  margin: 2px;
+  padding: 10px;
+  width: 550%;
+  height: 170px;
+  background: #1c1c1d;
+  border-radius: 10px;
+  border: 3px solid #000000;
+  position: absolute;
+  top: 36px;
+  left: -178px;
+  display: none;
+}
+
+
+
+
+
+#menuUser li {
+  position: relative;
+  top: -8px;
+  left: 35px;
+  margin: 15px ;
+
+
+  margin-bottom: 14px;
+}
+
+
+#menuUser li a {
+ 
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+menuUser li a:hover {
+  background: #ff0000;
+}
+
+
+
+
+hr {
+position: relative;
+top: -35px;
+
+
+}
+
+
+
 
 /* FIM DO HEADER */
 
+/* ===== SIDEBAR LATERAL QUE ABRE PELO MENU ===== */
 
+/* Botão do menu no header (a imagem das 3 linhas) */
+.menu-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
 
+.menu-button img {
+  height: 32px;
+  width: 32px;
+  display: block;
+}
 
+/* Caixa da sidebar */
+.sidebar {
+  position: fixed;                 /* fica presa na tela */
+  top: 70px;                       /* começa logo abaixo do header (70px) */
+  left: 0;
+  width: 290px;
+  height: calc(100vh - 70px);      /* altura da tela menos o header */
+  background: #151515;
+  border-right: 2px solid #252531;
+  padding: 16px 12px;
+  color: #f5f5f5;
+  transform: translateX(-100%);    /* ESCONDIDA pra fora da tela */
+  transition: transform 0.3s ease-in-out;
+  z-index: 1500;                   /* fica na frente do conteúdo */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+}
+
+/* Quando tiver a classe .open, ela aparece */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Título da sidebar */
+.sidebar-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+/* Lista de links da sidebar */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-nav a {
+  font-size: 16px;  /* fonte maior na sidebar */
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #f5f5f5;
+  display: block;
+  transition: 0.2s ease-in-out;
+
+}
+
+.sidebar-nav a:hover {
+  background: #d41111;
+  filter: brightness(1.1);
+}
+
+/* Fundo escuro atrás da sidebar */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;                         /* ocupa a tela toda */
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;             /* não clica quando está invisível */
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1400;
+  
+}
+
+/* Quando a sidebar abre, o overlay também aparece */
+.sidebar-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Quando a sidebar estiver aberta, o body não rola */
+body.sidebar-locked {
+  overflow: hidden;
+  height: 100vh;
+}
  
 /* Carrossel */
 .hero {
@@ -196,7 +429,52 @@ transition: 0.3s ease-in-out;
   gap: 10px;
 }
 
+/* ===== BARRA DE PESQUISA NO HEADER ===== */
 
+.search-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #252531;
+  padding: 4px 10px;
+  border-radius: 999px;          /* bem arredondado */
+  height: 36px;                  /* não passa da altura do header */
+}
+
+.search-header input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 13px;
+  width: 180px;                  /* largura da caixinha */
+}
+
+/* cor do placeholder (texto apagado) */
+.search-header input::placeholder {
+  color: #bbbbbb;
+}
+
+/* botãozinho da lupa */
+.search-header button {
+  border: none;
+  background: #d41111;
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+
+.search-header button:hover {
+  filter: brightness(1.15);
+  transform: scale(1.05);
+}
 
 
 /* Container do carrossel */
@@ -263,8 +541,6 @@ border: solid 8px rgb(163, 8, 8)
 
 
 
-
-
 /* BOTÕES DE NAVEGAÇÃO */
 .carousel-button {
     position: absolute;
@@ -302,8 +578,6 @@ border: solid 8px rgb(163, 8, 8)
 .carousel-button.next {
     right: 10px;      
 }
-
-
 
 
 
@@ -359,8 +633,6 @@ border: solid 8px rgb(163, 8, 8)
 
 
 
-
-
 .btscategorias {
  top: 60px;
 position: relative;
@@ -407,98 +679,6 @@ transform: scale(1.1);
 
 
 }
-
-
-
-
-/* parte do menu quando clica aparece opções */
-
-
-.user-icon {
-
-  position: relative;
-  display: inline-block;
-  transition: 0.3s ease-in-out;
-}
-
-
-.user-icon img {
-  width: 40px;
-  cursor: pointer;
-}
-
-
-/* menu escondido */
-#menuUser {
-  list-style: none;
-  margin: 2px;
-  padding: 10px;
-  width: 550%;
-  height: 150px;
-  background: #252531;
-  border-radius: 15px;
-  border: 3px solid #000000;
-  position: absolute;
-  top: 36px;
-  right: -13px;
-  display: none;
-}
-
-
-#menuUser:hover {
-
-
- 
-  transform: scale(1);
- 
-box-shadow: none;
-
-
-}
-
-
-#menuUser li {
-  position: relative;
-  top: -38px;
-  left: 35px;
-  margin: 15px ;
-
-
-  margin-bottom: 14px;
-}
-
-
-#menuUser li a {
- 
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-
-#portalogin {
-
-
-position: relative;
-top: 29px;
-right: 45px;
-
-
-
-
-}
-
-
-
-
-hr {
-position: relative;
-top: -35px;
-
-
-}
-
 
 #divisacategorias {
 

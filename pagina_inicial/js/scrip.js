@@ -111,6 +111,28 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// ===== MENU LATERAL (SIDEBAR) =====
+
+// Pegamos os elementos do HTML pelo id
+const menuToggle = document.getElementById('menuToggle');      // botão com ícone do menu
+const sidebar = document.getElementById('sidebar');            // a <aside> da sidebar
+const sidebarOverlay = document.getElementById('sidebarOverlay'); // fundo escuro
+
+// Se existir o botão (garantia caso use o script em outra página)
+if (menuToggle && sidebar && sidebarOverlay) {
+
+  // Quando clicar no botão do menu, abre/fecha a sidebar
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('open');         // adiciona/remove a classe .open
+    sidebarOverlay.classList.toggle('open');  // mostra/esconde o overlay
+  });
+
+  // Quando clicar no fundo escuro, fecha a sidebar
+  sidebarOverlay.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('open');
+  });
+}
 
 
 
