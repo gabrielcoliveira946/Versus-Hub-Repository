@@ -19,7 +19,7 @@ body {
 
 header {
   width: 100%;
-  height: 70px;
+  height: px;
   background: rgb(158, 8, 8);
   border-bottom: 3px solid rgb(38, 38, 48);
   margin-top: 0;
@@ -67,18 +67,13 @@ header {
   width: 36px;
   display: block;
   background: none;
-  border: none;
   cursor: pointer;
+   position: relative;
+  margin-top: 10px;
+
+  
 }
 
-.menu_header img {
-  position: relative;
- 
-  margin-top: 10px;
-  background: none;
-  height:57px;
-  border: none;
-}
 
 
 /* botoes header */
@@ -86,7 +81,8 @@ header {
 .botoes_header {
   flex: 1;  
   position: relative;
-  left: 20px;                     /* ocupa o espaço entre esquerda e direita */
+  left: 40px;
+                      /* ocupa o espaço entre esquerda e direita */
   display: flex;
   justify-content: center;       /* centraliza de verdade */
   gap: 20px;
@@ -179,17 +175,13 @@ filter: brightness(1.1);
 
 
 .user-icon:hover {
-
-
- 
 border-radius: 30px;
 transform: scale(1.03 );
 transition: 0.3s ease-in-out;
-
-
 }
 
 /* FIM DO HEADER */
+
 
 
 /* PARTE DO FOOTER */
