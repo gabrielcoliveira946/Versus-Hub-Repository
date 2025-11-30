@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="/pagina_inicial/css/estilos.css" />
   <!-- estilos específicos desta página -->
   <link rel="stylesheet" href="/torneio/detalhes.css" />
-  <title>Cerrado Cup CS:GO - VersusHub</title>
+  <title>FIFA Global Series - VersusHub</title>
 </head>
 <body>
 
-  <!-- ========= HEADER (o mesmo de sempre) ========= -->
+  <!-- ========= HEADER ========= -->
   <header>
     <nav class="navbar">
 
@@ -35,11 +35,7 @@
 
       <div class="header-right">
         <form class="search-header" action="#" onsubmit="return false">
-          <input
-            type="text"
-            placeholder="Buscar torneios, jogos..."
-            id="searchInput"
-          >
+          <input type="text" placeholder="Buscar torneios, jogos..." id="searchInput">
           <button type="submit" id="searchBtn">🔍</button>
         </form>
 
@@ -68,101 +64,100 @@
     </nav>
   </aside>
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
-  <!-- ========= FIM SIDEBAR ========= -->
 
-  <!-- ========= CONTEÚDO DA PÁGINA DE TORNEIO ========= -->
+  <!-- ========= CONTEÚDO ========= -->
   <main class="torneio-page">
 
     <!-- HERO DO TORNEIO -->
     <section class="torneio-hero">
       <div class="torneio-banner">
-        <img src="/images/cerradocup.jpg" alt="Cerrado Cup CS:GO">
+        <img src="/images/fifa_torneio1.jpg" alt="FIFA Global Series">
         <div class="torneio-status-badge status-aberto">
           Inscrições abertas
         </div>
       </div>
 
       <div class="torneio-hero-info">
-        <h1>Cerrado Cup CS:GO</h1>
-        <p class="torneio-meta">CS:GO • FPS • PC</p>
-        <p class="torneio-data">Início: 03/01/2026 às 19h</p>
+        <h1>FIFA Global Series</h1>
+        <p class="torneio-meta">FIFA • Esportes • Console</p>
+        <p class="torneio-data">Início: 22/02/2026 às 18h</p>
 
         <div class="torneio-tags">
-          <span>Formato 5x5</span>
-          <span>Eliminação simples</span>
-          <span>Servidor Brasil</span>
+          <span>1x1 competitivo</span>
+          <span>PlayStation / Xbox</span>
+          <span>Ranking oficial</span>
         </div>
       </div>
     </section>
 
-    <!-- LAYOUT EM 2 COLUNAS: INFO + LATERAL -->
+    <!-- LAYOUT EM 2 COLUNAS -->
     <section class="torneio-layout">
 
-      <!-- COLUNA ESQUERDA: DESCRIÇÃO / REGRAS / CRONOGRAMA -->
+      <!-- COLUNA ESQUERDA -->
       <div class="torneio-col-info">
 
         <div class="torneio-card-box">
           <h2>Sobre o torneio</h2>
           <p>
-            A Cerrado Cup CS:GO reúne times de todo o Brasil em uma competição
-            acirrada em formato eliminatório. Ideal para equipes amadoras e
-            semiprofissionais que querem ganhar visibilidade e experiência em
-            cenário competitivo.
+            O FIFA Global Series é um campeonato voltado para jogadores competitivos 
+            que buscam desafiar outros atletas de alto nível. O torneio segue o formato 
+            tradicional competitivo, com partidas intensas e sistema de pontos oficial.
           </p>
         </div>
 
         <div class="torneio-card-box">
           <h2>Regras principais</h2>
           <ul>
-            <li>Times de 5 jogadores (até 2 reservas cadastrados).</li>
-            <li>Map pool padrão competitivo (Dust II, Mirage, Inferno, Nuke, Overpass, Vertigo, Ancient).</li>
-            <li>Partidas MD1 até a semifinal, final MD3.</li>
-            <li>É obrigatório estar no servidor 10 minutos antes do horário marcado.</li>
-            <li>Uso de cheats, macros ou scripts resulta em desclassificação imediata.</li>
+            <li>Partidas 1x1 no modo competitivo do FIFA.</li>
+            <li>Permitido jogar em PlayStation ou Xbox.</li>
+            <li>MD1 até as oitavas; a partir das quartas MD3.</li>
+            <li>Jogador deve estar online 10 minutos antes da rodada.</li>
+            <li>Uso de bugs proibidos resulta em desclassificação.</li>
           </ul>
         </div>
 
         <div class="torneio-card-box">
           <h2>Cronograma</h2>
           <ul>
-            <li><strong>22/03 – 19h:</strong> Fase de grupos / chaveamento inicial.</li>
-            <li><strong>23/03 – 19h:</strong> Quartas de final.</li>
-            <li><strong>24/03 – 19h:</strong> Semifinais.</li>
-            <li><strong>25/03 – 20h:</strong> Grande final.</li>
+            <li><strong>22/02 – 18h:</strong> Rodada qualificatória.</li>
+            <li><strong>23/02 – 18h:</strong> Fase de grupos.</li>
+            <li><strong>24/02 – 18h:</strong> Eliminatórias.</li>
+            <li><strong>25/02 – 20h:</strong> Final.</li>
           </ul>
         </div>
 
       </div>
 
-      <!-- COLUNA DIREITA: INSCRIÇÃO / PREMIAÇÃO / REQUISITOS -->
+      <!-- COLUNA DIREITA -->
       <aside class="torneio-col-side">
 
         <div class="torneio-card-box destaque-inscricao">
           <h2>Inscrições</h2>
           <ul class="info-list">
             <li><span>Taxa:</span> Gratuito</li>
-            <li><span>Vagas:</span> 32 equipes</li>
-            <li><span>Plataforma:</span> PC (Steam)</li>
-            <li><span>Servidor:</span> Brasil – São Paulo</li>
+            <li><span>Vagas:</span> 128 jogadores</li>
+            <li><span>Plataformas:</span> PS5 / Xbox Series S|X</li>
+            <li><span>Servidor:</span> Brasil</li>
           </ul>
-          <button class="btn-principal">Inscrever equipe</button>
+          <button class="btn-principal">Inscrever-se</button>
         </div>
 
         <div class="torneio-card-box">
           <h2>Premiação</h2>
           <ul class="info-list">
-            <li><span>1º lugar:</span> R$ 2.000 + medalhas</li>
-            <li><span>2º lugar:</span> R$ 1.000</li>
-            <li><span>3º lugar:</span> R$ 500</li>
+            <li><span>1º lugar:</span> R$ 3.000 + troféu</li>
+            <li><span>2º lugar:</span> R$ 1.500</li>
+            <li><span>3º lugar:</span> R$ 800</li>
           </ul>
         </div>
 
         <div class="torneio-card-box">
           <h2>Requisitos dos jogadores</h2>
           <ul>
-            <li>Conta Steam sem banimentos VAC.</li>
+            <li>Conta na plataforma escolhida com ID real.</li>
+            <li>Versão atualizada do FIFA.</li>
             <li>Idade mínima: 16 anos.</li>
-            <li>Microfone e Discord para comunicação com a staff.</li>
+            <li>Discord obrigatório para comunicação.</li>
           </ul>
         </div>
 
@@ -170,9 +165,8 @@
 
     </section>
   </main>
-  <!-- ========= FIM CONTEÚDO ========= -->
 
-  <!-- ========= FOOTER GLOBAL ========= -->
+  <!-- ========= FOOTER ========= -->
   <footer>
     <div id="footer_content">
       <div id="footer_logo">
@@ -182,7 +176,7 @@
       <div id="footer_sobrenos">
         <h1>Sobre Nós</h1>
         <br>
-        <p>O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports em um só lugar. Oferecemos torneios competitivos, rankings dinâmicos e recompensas exclusivas para quem ama competir. Nosso objetivo é tornar a experiência gamer mais acessível, divertida e profissional — seja você um iniciante ou um pro player.</p>
+        <p>O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports.</p>
       </div>
 
       <div id="footer_versushub">
@@ -190,7 +184,7 @@
         <br>
         <p>
           Torneios e Rankings atualizados <br><br>
-          Sistema seguro e fácil de participar <br><br>
+          Sistema seguro <br><br>
           Suporte ativo todos os dias
         </p>
       </div>
@@ -199,13 +193,11 @@
         <h1>Políticas</h1><br>
         <li>Termos de uso</li><br>
         <li>Política de Privacidade</li><br>
-        <li>Política de Reembolso (para eventos pagos)</li>
+        <li>Reembolsos</li>
       </div>
     </div>
   </footer>
-  <!-- ========= FIM FOOTER ========= -->
 
-  <!-- mesmo JS global que você já usa (sidebar, login fake, busca, etc) -->
   <script src="/pagina_inicial/js/scrip.js"></script>
 </body>
 </html>
