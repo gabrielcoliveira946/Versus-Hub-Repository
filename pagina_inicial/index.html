@@ -39,7 +39,7 @@
 
     <!-- CENTRO: botões principais -->
     <div class="botoes_header">
-      <button id="aovivo_header">Ao Vivo</button>
+     <a href="/aovivo/aovivo.html"> <button id="aovivo_header">Ao Vivo</button></a>
       <button id="criar_header">Criar Torneio</button>
       <button id="equipes_header">Equipes</button>
     </div>
@@ -90,7 +90,7 @@
 
     <nav class="sidebar-nav">
       <a href="/pagina_inicial/index.html">🏠 Início</a>
-      <a href="#torneios">🏆 Torneios</a>
+      <a href="/pagina_inicial/torneios.html">🏆 Torneios</a>
       <a href="#categorias">🎮 Categorias</a>
       <a href="#feedback">⭐ Enviar feedback</a>
       <a href="#suporte">❓ Suporte</a>
@@ -207,113 +207,193 @@
 
   <!--  Videos e subcategorias de jogos que ficam abaixo dos botões vermelhos  -->
 
- <h2 id="joguinhosdestaque">CS-GO</h2> 
-    <hr id="divisacategorias">
+ <!-- BLOCO: CS-GO -->
+  <section class="bloco-categoria" id="categorias">
 
+    <h2 class="titulo-categoria">CS-GO</h2>
+    <hr class="linha-categoria">
 
-  <div class="torneiosdestacadosabaixo">
+    <div class="grid-torneios">
 
-    <div class="torneioscontainer">
+      <article class="card-torneio"
+        data-nome="Evo Championship Series"
+        data-jogo="csgo"
+        data-categoria="fps"
+        data-plataforma="pc"
+        data-status="aberto">
 
-      <div id="fileiratorneios1_1" class="filatorneios"><img src="/images/cerradocup.jpg" alt="">
-        <h3 id="h3nomejogo">CS-GO</h3>
-      <br><br><br>
-        <h2 id="h2nometorneio">Evo Championship Series</h2>
-        <br><br><br><br>
-         <h3 id="h3nomejogo">Início: 22/03/2026</h3>
+        <img src="/images/cerradocup.jpg" alt="Evo Championship Series - CS:GO">
+        <div class="card-info">
+          <h2>Evo Championship Series</h2>
+          <p class="jogo">Jogo: CS:GO • FPS • PC</p>
+          <p class="data">Início: 22/03/2026</p>
+          <p class="status status-aberto">Inscrições abertas</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
 
-      </div>
+      <article class="card-torneio"
+        data-nome="Gamescom Latam CS:GO"
+        data-jogo="csgo"
+        data-categoria="fps"
+        data-plataforma="pc"
+        data-status="andamento">
 
-      <div id="fileiratorneios1_2" class="filatorneios"> <img src="/images/contracup.jpeg" alt="">
-     <h3 id="h3nomejogo">CS-GO</h3>
-      <br><br><br>
-        <h2 id="h2nometorneio">Gamescom Latam</h2>
-        <br><br><br><br>
-         <h3 id="h3nomejogo">Início: 01/03/2026</h3>
+        <img src="/images/contracup.jpeg" alt="Gamescom Latam - CS:GO">
+        <div class="card-info">
+          <h2>Gamescom Latam</h2>
+          <p class="jogo">Jogo: CS:GO • FPS • PC</p>
+          <p class="data">Início: 01/03/2026</p>
+          <p class="status status-andamento">Em andamento</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
 
-      </div>
+      <article class="card-torneio"
+        data-nome="PARANÁ STARTUPS CHALLENGE CS:GO"
+        data-jogo="csgo"
+        data-categoria="fps"
+        data-plataforma="pc"
+        data-status="encerrado">
 
-      <div id="fileiratorneios1_3" class="filatorneios"> <img src="/images/fileiracsgo.jpeg" alt="">
-      <h3 id="h3nomejogo">CS-GO</h3>
-      <br><br><br>
-        <h2 id="h2nometorneio">PARANÁ STARTUPS CHALLENGE </h2>
-        <br><br><br><br>
-         <h3 id="h3nomejogo">Início: 04/04/2026</h3>
+        <img src="/images/fileiracsgo.jpeg" alt="PARANÁ STARTUPS CHALLENGE - CS:GO">
+        <div class="card-info">
+          <h2>PARANÁ STARTUPS CHALLENGE</h2>
+          <p class="jogo">Jogo: CS:GO • FPS • PC</p>
+          <p class="data">Início: 04/04/2026</p>
+          <p class="status status-encerrado">Encerrado</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
 
-      </div>
-  
     </div>
+  </section>
 
 
-  <h2 id="joguinhosdestaque2">Free Fire</h2>
-  <hr id="divisacategorias2">
+  <!-- BLOCO: FREE FIRE -->
+  <section class="bloco-categoria">
 
-      <div class="torneioscontainer">
+    <h2 class="titulo-categoria">Free Fire</h2>
+    <hr class="linha-categoria">
 
-      <div id="fileiratorneios1_1" class="filatorneios"><img src="/images/ff_championsbrasil.jpg" alt="">
-     <h3 id="h3nomejogo">Free Fire</h3>
-      <br><br><br>
-        <h2 id="h2nometorneio">Evo Championship series</h2>
-        <br><br><br><br>
-         <h3 id="h3nomejogo">Início: 22/02/2026</h3>
+    <div class="grid-torneios">
 
-      </div>
+      <article class="card-torneio"
+        data-nome="FF Evo Championship Series"
+        data-jogo="freefire"
+        data-categoria="battle-royale"
+        data-plataforma="mobile"
+        data-status="aberto">
 
-      <div id="fileiratorneios1_2" class="filatorneios"> <img src="/images/ffcopaff.png" alt="">
-      <h3 id="h3nomejogo">Free Fire</h3>
-      <br><br><br>
-        <h2 id="h2nometorneio">C.O.P.A - FREE FIRE</h2>
-        <br><br><br><br>
-         <h3 id="h3nomejogo">Início: 23/01/2026</h3>
+        <img src="/images/ff_championsbrasil.jpg" alt="Evo Championship Series - Free Fire">
+        <div class="card-info">
+          <h2>Evo Championship Series</h2>
+          <p class="jogo">Jogo: Free Fire • Battle Royale • Mobile</p>
+          <p class="data">Início: 22/02/2026</p>
+          <p class="status status-aberto">Inscrições abertas</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
 
-      </div>
+      <article class="card-torneio"
+        data-nome="C.O.P.A - FREE FIRE"
+        data-jogo="freefire"
+        data-categoria="battle-royale"
+        data-plataforma="mobile"
+        data-status="andamento">
 
-      <div id="fileiratorneios1_3" class="filatorneios"> <img src="/images/liga-ff-brasil.jpeg" alt="">
-      <h3 id="h3nomejogo">Free Fire</h3>
-      <br><br><br>
-        <h2 id="h2nometorneio">Liga FF Brasil</h2>
-        <br><br><br><br>
-         <h3 id="h3nomejogo">Início: 29/02/2026</h3>
-      
-      </div>
-  
+        <img src="/images/ffcopaff.png" alt="C.O.P.A - FREE FIRE">
+        <div class="card-info">
+          <h2>C.O.P.A - FREE FIRE</h2>
+          <p class="jogo">Jogo: Free Fire • Battle Royale • Mobile</p>
+          <p class="data">Início: 23/01/2026</p>
+          <p class="status status-andamento">Em andamento</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
+
+      <article class="card-torneio"
+        data-nome="Liga FF Brasil"
+        data-jogo="freefire"
+        data-categoria="battle-royale"
+        data-plataforma="mobile"
+        data-status="encerrado">
+
+        <img src="/images/liga-ff-brasil.jpeg" alt="Liga FF Brasil">
+        <div class="card-info">
+          <h2>Liga FF Brasil</h2>
+          <p class="jogo">Jogo: Free Fire • Battle Royale • Mobile</p>
+          <p class="data">Início: 29/02/2026</p>
+          <p class="status status-encerrado">Encerrado</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
+
     </div>
+  </section>
 
-        <h2 id="joguinhosdestaque2">FIFA</h2>
-        <hr id="divisacategorias2">
 
-              <div class="torneioscontainer">
+  <!-- BLOCO: FIFA -->
+  <section class="bloco-categoria">
 
-      <div id="fileiratorneios1_1" class="filatorneios"><img src="/images/cerradocup.jpg" alt="">
-       <h3 id="h3nomejogo">FIFA</h3>
-      <br><br><br>
-        <h2 id="h2nometorneio">FIFA Global Series</h2>
-        <br><br><br><br>
-         <h3 id="h3nomejogo">Início: 22/02/2026</h3>
+    <h2 class="titulo-categoria">FIFA</h2>
+    <hr class="linha-categoria">
 
-       </div>
+    <div class="grid-torneios">
 
-      <div id="fileiratorneios1_2" class="filatorneios"> <img src="/images/contracup.jpeg" alt="">
-      <h3 id="h3nomejogo">FIFA</h3>
-      <br><br><br>
-        <h2 id="h2nometorneio">ARENA - FC25</h2>
-        <br><br><br><br>
-         <h3 id="h3nomejogo">Início: 21/03/2026</h3>
+      <article class="card-torneio"
+        data-nome="FIFA Global Series"
+        data-jogo="fifa"
+        data-categoria="esportes"
+        data-plataforma="console"
+        data-status="aberto">
 
-      </div>
-       
-      <div id="fileiratorneios1_3" class="filatorneios"> <img src="/images/fileiracsgo.jpeg" alt="">
-     <h3 id="h3nomejogo">FIFA</h3>
-      <br><br><br>
-        <h2 id="h2nometorneio">eFootball Championship</h2>
-        <br><br><br><br>
-         <h3 id="h3nomejogo">Início: 22/04/2026</h3>
-      
-      </div>
-  
+        <img src="/images/cerradocup.jpg" alt="FIFA Global Series">
+        <div class="card-info">
+          <h2>FIFA Global Series</h2>
+          <p class="jogo">Jogo: FIFA • Esportes • Console</p>
+          <p class="data">Início: 22/02/2026</p>
+          <p class="status status-aberto">Inscrições abertas</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
+
+      <article class="card-torneio"
+        data-nome="ARENA - FC25"
+        data-jogo="fifa"
+        data-categoria="esportes"
+        data-plataforma="console"
+        data-status="andamento">
+
+        <img src="/images/contracup.jpeg" alt="ARENA - FC25">
+        <div class="card-info">
+          <h2>ARENA - FC25</h2>
+          <p class="jogo">Jogo: FIFA • Esportes • Console</p>
+          <p class="data">Início: 21/03/2026</p>
+          <p class="status status-andamento">Em andamento</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
+
+      <article class="card-torneio"
+        data-nome="eFootball Championship"
+        data-jogo="fifa"
+        data-categoria="esportes"
+        data-plataforma="console"
+        data-status="encerrado">
+
+        <img src="/images/fileiracsgo.jpeg" alt="eFootball Championship">
+        <div class="card-info">
+          <h2>eFootball Championship</h2>
+          <p class="jogo">Jogo: FIFA • Esportes • Console</p>
+          <p class="data">Início: 22/04/2026</p>
+          <p class="status status-encerrado">Encerrado</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
+
     </div>
-    </div>
-  </div>
+  </section>
 
     <!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
 

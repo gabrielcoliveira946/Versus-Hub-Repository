@@ -226,12 +226,6 @@ padding: 10px;
 align-items: center;
 justify-content: center;
 }
-.username-header {
-  margin-left: 6px;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 14px;
-}
 
 .user-icon hr{
 
@@ -240,18 +234,12 @@ top: -10px;
 
 }
 
-.vh-user-name {
-
-color: white;
-}
-
-
 .user-icon li:hover {
   position: relative;
   transition: 0.3s ease-in-out;
- width: fit-content;
- border-radius: 5px;
-  box-shadow: #2c2c3b 0px 1px 14px;
+ width: 45%;
+ border-radius: 15px;
+  background: #ff0000;
 }
 
 .user-icon img {
@@ -286,7 +274,7 @@ color: white;
   margin: 2px;
   padding: 10px;
   width: 550%;
-  height: 270px;
+  height: 170px;
   background: #1c1c1d;
   border-radius: 10px;
   border: 3px solid #000000;
@@ -294,7 +282,6 @@ color: white;
   top: 36px;
   left: -178px;
   display: none;
-
 }
 
 
@@ -304,7 +291,7 @@ color: white;
 #menuUser li {
   position: relative;
   top: -8px;
-  
+  left: 35px;
   margin: 15px ;
 
 
@@ -321,8 +308,7 @@ color: white;
 }
 
 menuUser li a:hover {
-  background: #c4b9b9;
-  width: fit-content;
+  background: #ff0000;
 }
 
 
@@ -336,22 +322,6 @@ top: -35px;
 }
 
 
-/* nome do usuário ao lado do ícone no header */
-.username-header {
-  margin-left: 8px;
-  font-weight: 600;
-  color: #ffffff;
-  font-size: 14px;
-  display: none; /* só mostra quando tiver usuário logado */
-}
-
-/* nome dentro do menu dropdown */
-.user-name-item {
-  font-weight: 700;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 4px;
-}
 
 
 /* FIM DO HEADER */
@@ -710,51 +680,261 @@ transform: scale(1.1);
 
 }
 
+#divisacategorias {
+
+position: relative;
+top: 103px;
+width: 90%;
+left: 150px;
+border: solid 1px rgb(34, 27, 59);
+
+}
+
+
+#joguinhosdestaque {
+color: red;
+border: solid black 3px;  
+position: relative;
+top: 95px;
+right: -140px;
+background: rgb(8, 8, 8);
+width: fit-content ;
+padding: 5px;
+height: fit-content;
+text-align: center;
+border-radius: 10px;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+
+
+
+}
+
+
 
 
   /* fileiras de torneios */
 
-  /* ===== CARDS DE TORNEIO (ESTILO GLOBAL) ===== */
 
-/* ===== BLOCOS DE CATEGORIA NA HOME ===== */
+#fileiratorneios {
 
-.bloco-categoria {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
-  max-width: 1200px;
-  margin: 80px auto 0;
-  padding: 0 20px;
+
+position: relative;
+top: 70px;
+background: blueviolet;
+height: 400px;
+margin: 0 auto;
+width: 20%;
+background: blueviolet;
+height: 400px;
+margin: 0 auto;
 }
 
-.bloco-categoria + .bloco-categoria {
-  margin-top: 60px;
+
+
+
+
+
+.torneiosdestacadosabaixo img {
+
+
+width: 100%;
+object-fit: fill;
+max-height: 55%;
+
+
 }
 
-.titulo-categoria {
-  font-size: 22px;
-  font-weight: bold;
-  background: #150f25;
-  color: #fff;
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 8px;
-  margin-bottom: 10px;
+
+.filatorneios img {
+  width: 400px;
+  height: 300px
 }
 
-.linha-categoria {
+
+.torneioscontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 150px;
+}
+
+
+.filatorneios{
+
+
+background: rgb(14, 11, 32);
+height: 500px;
+border: solid rgb(44, 42, 42) 5px;
+border-radius: 10px;
+transition: 0.3s ease-in-out;
+}
+
+
+.filatorneios:hover {
+
+
+transform: scale(1.1);
+box-shadow: rgb(241, 7, 7) 1px 1px 10px, rgb(182, 182, 238) -1px -1px 10px;
+transition: 0.3s ease-in-out;
+
+ 
+}
+
+
+#fileiratorneios1_3 {
+float: right;
+position: relative;
+
+}
+
+
+#joguinhosdestaque2 {
+color: red;
+border: solid black 3px;  
+position: relative;
+top: 100px;
+right: -140px;
+background: rgb(8, 8, 8);
+width: fit-content;
+padding: 7px;
+text-align: center;
+border-radius: 30px;
+border-radius: 10px;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+
+}
+
+#divisacategorias2 {
+
+position: relative;
+top: 105px;
+border: solid 1px rgb(58, 55, 102);
+ width: 90%;
+left: 150px;
+
+
+}
+
+
+#h3nomejogo {
+
+color: #7373a0;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+margin-left: 10px ;
+font-weight: bold;
+}
+
+#h2nometorneio {
+
+margin-left: 10px;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+color: white;
+
+}
+
+
+
+/* PARTE DO FOOTER */
+
+
+footer{
   position: relative;
-  top: -9px;
-  border: none;
-  height: 2px;
-  background: #2c2c3b;
-  margin-bottom: 25px;
+  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  color: aliceblue;
+  margin-top: 40px;
+  
 }
 
-/* GRID DOS CARDS NA HOME */
-.grid-torneios {
+footer h1{
+  color: rgb(255, 123, 0);
+}
+
+#footer_content {
+
+padding: 30px; 
+padding-bottom: 80px;
+background-color:rgb(158, 8, 8);
+display: grid;  
+grid-template-columns: repeat(5, 1fr);
+gap: 100px;
+}
+
+
+#logofooter {
+
+
+  height: 72%;
+  width: 72%;
+  object-fit: cover;
+
+
+}
+
+/* ===== PÁGINA DE TORNEIOS GERAIS ===== */
+
+.pagina-torneios {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* FILTROS */
+
+.filtros-torneios h1 {
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.linha-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #151515;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid #252531;
+}
+
+.campo-filtro {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 160px;
+}
+
+.campo-filtro label {
+  color: #ccc;
+  font-size: 13px;
+}
+
+.campo-filtro input,
+.campo-filtro select {
+  background: #252531;
+  border: 1px solid #3b3b4a;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.campo-filtro input::placeholder {
+  color: #999;
+}
+
+/* LISTA DE TORNEIOS */
+
+.lista-torneios {
+  margin-top: 24px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 26px;
+  gap: 20px;
 }
 
 .card-torneio {
@@ -770,7 +950,7 @@ transform: scale(1.1);
 .card-torneio img {
   width: 100%;
   height: 160px;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .card-info {
@@ -832,90 +1012,9 @@ transform: scale(1.1);
   border-color: #d41111;
 }
 
-
-
-
-
-
-.torneiosdestacadosabaixo img {
-
-
-width: 100%;
-object-fit: fill;
-max-height: 55%;
-
-
-}
-
-
-
-
-
-#fileiratorneios1_3 {
-float: right;
-position: relative;
-
-}
-
-
-
-
-
-
-#h3nomejogo {
-
-color: #7373a0;
-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-margin-left: 10px ;
-font-weight: bold;
-}
-
-#h2nometorneio {
-
-margin-left: 10px;
-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-color: white;
-
-}
-
-
-
-/* PARTE DO FOOTER */
-
-
-footer{
-  position: relative;
-  
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  width: 100%;
-  font-size: 15px;
-  font-weight: 600;
-  color: aliceblue;
-  margin-top: 40px;
-  
-}
-
-footer h1{
-  color: rgb(255, 123, 0);
-}
-
-#footer_content {
-
-padding: 30px; 
-padding-bottom: 80px;
-background-color:rgb(158, 8, 8);
-display: grid;  
-grid-template-columns: repeat(5, 1fr);
-gap: 100px;
-}
-
-
-#logofooter {
-
-
-  height: 72%;
-  width: 72%;
-  object-fit: cover;
-
-
+/* um ajuste responsivo leve */
+@media (max-width: 768px) {
+  .linha-filtros {
+    flex-direction: column;
+  }
 }

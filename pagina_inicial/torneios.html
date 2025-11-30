@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/pagina_inicial/css/torneios.css" />
+  <title>Todos os Torneios - VersusHub</title>
+</head>
+<body>
+
+  <!-- ========== HEADER GLOBAL VERSUSHUB (COPIAR O MESMO DE SEMPRE) ========== -->
+   <!-- HEADER -->
+<header>
+  <nav class="navbar">
+
+    <!-- ESQUERDA: menu + logo -->
+    <div class="header-left">
+
+      <!-- Botão do menu lateral (hambúrguer) -->
+      <button id="menuToggle" class="menu-button">
+        <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
+      </button>
+
+      <!-- LOGO -->
+      <div class="logo_header">
+        <a href="/pagina_inicial/index.html">
+          <img src="/image/logo plus tipo textura.png" alt="VersusHub">
+        </a>
+      </div>
+
+    </div>
+
+    <!-- CENTRO: botões principais -->
+    <div class="botoes_header">
+      <button id="aovivo_header">Ao Vivo</button>
+      <button id="criar_header">Criar Torneio</button>
+      <button id="equipes_header">Equipes</button>
+    </div>
+
+    <!-- DIREITA: pesquisa + entrar + cadastrar + usuário -->
+    <div class="header-right">
+
+      <!-- BARRA DE PESQUISA NO HEADER -->
+      <form class="search-header" action="#" onsubmit="return false">
+        <input
+          type="text"
+          placeholder="Buscar torneios, jogos..."
+          id="searchInput"
+        >
+        <button type="submit" id="searchBtn">🔍</button>
+      </form>
+
+          <!-- BOTÕES À DIREITA -->
+      <a href="/login/login.html" id="btentrar">Entrar</a>
+      <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
+
+      <!-- ÍCONE DO USUÁRIO + NOME -->
+      <div class="user-icon">
+        <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
+        <!-- nome ao lado do ícone (mostra só quando logado) -->
+        <span id="usernameHeader" class="username-header"></span>
+
+        <ul id="menuUser" class="hidden">
+          <!-- topo do menu, mostrando o nome do usuário quando logado -->
+          <li id="menuUserNome" class="logged-only user-name-item"></li>
+          <hr class="logged-only">
+
+          <!-- opções quando ESTÁ logado -->
+          <li class="logged-only"><a href="#" id="linkPerfil">Perfil</a></li>
+          <li class="logged-only"><a href="#" id="trocarConta">Mudar de conta</a></li>
+          <li class="logged-only"><a href="#" id="sairConta">Sair da conta</a></li>
+
+          <!-- opções quando NÃO está logado -->
+          <li class="guest-only">
+            <a href="/login/login.html">Login</a>
+          </li>
+          <hr class="guest-only">
+          <li class="guest-only"><a href="/cadastro/cadastro.html">Cadastro</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </nav>
+</header>
+<!-- FIM HEADER -->
+ <!-- SIDEBAR LATERAL (começa escondida) -->
+<aside id="sidebar" class="sidebar">
+  <h2 class="sidebar-title"></h2>
+
+  <nav class="sidebar-nav">
+    <a href="/pagina_inicial/index.html">🏠 Início</a>
+    <a href="#torneios">🏆 Torneios</a>
+    <a href="#categorias">🎮 Categorias</a>
+    <a href="#feedback">⭐ Enviar feedback</a>
+    <a href="#suporte">❓ Suporte</a>
+  </nav>
+</aside>
+
+<!-- Fundo escuro por trás da sidebar -->
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+  <!-- ... header / navbar / sidebar ... -->
+
+  <!-- CONTEÚDO ESPECÍFICO DA PÁGINA DE TORNEIOS -->
+  <main class="pagina-torneios">
+
+    <!-- FILTROS -->
+    <section class="filtros-torneios">
+      <h1>Todos os Torneios</h1>
+
+      <div class="linha-filtros">
+
+        <!-- Busca por texto -->
+        <div class="campo-filtro">
+          <label for="filtroBusca">Buscar</label>
+          <input
+            type="text"
+            id="filtroBusca"
+            placeholder="Nome do torneio, jogo..."
+          >
+        </div>
+
+        <!-- Categoria geral: FPS, MOBA, Esportes... -->
+        <div class="campo-filtro">
+          <label for="filtroCategoria">Categoria</label>
+          <select id="filtroCategoria">
+            <option value="todos">Todas</option>
+            <option value="fps">FPS</option>
+            <option value="moba">MOBA</option>
+            <option value="battle-royale">Battle Royale</option>
+            <option value="esportes">Esportes</option>
+            <option value="cartas">Card Game</option>
+          </select>
+        </div>
+
+        <!-- Jogo específico -->
+        <div class="campo-filtro">
+          <label for="filtroJogo">Jogo</label>
+          <select id="filtroJogo">
+            <option value="todos">Todos</option>
+            <option value="csgo">CS:GO</option>
+            <option value="freefire">Free Fire</option>
+            <option value="fifa">FIFA / FC</option>
+            <option value="valorant">Valorant</option>
+            <option value="lol">League of Legends</option>
+          </select>
+        </div>
+
+        <!-- Plataforma -->
+        <div class="campo-filtro">
+          <label for="filtroPlataforma">Plataforma</label>
+          <select id="filtroPlataforma">
+            <option value="todas">Todas</option>
+            <option value="pc">PC</option>
+            <option value="console">Console</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </div>
+
+        <!-- Status -->
+        <div class="campo-filtro">
+          <label for="filtroStatus">Status</label>
+          <select id="filtroStatus">
+            <option value="todos">Todos</option>
+            <option value="aberto">Inscrições abertas</option>
+            <option value="andamento">Em andamento</option>
+            <option value="encerrado">Encerrado</option>
+          </select>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LISTA DE TORNEIOS -->
+    <section class="lista-torneios" id="listaTorneios">
+
+      <!-- Cada card representa um torneio
+           Use data-* pros filtros funcionarem -->
+      <article class="card-torneio"
+        data-nome="Cerrado Cup CS:GO"
+        data-jogo="csgo"
+        data-categoria="fps"
+        data-plataforma="pc"
+        data-status="aberto">
+        
+        <img src="/images/cerradocup.jpg" alt="Cerrado Cup CS:GO">
+        <div class="card-info">
+          <h2>Cerrado Cup CS:GO</h2>
+          <p class="jogo">Jogo: CS:GO • FPS • PC</p>
+          <p class="data">Início: 22/03/2026</p>
+          <p class="status status-aberto">Inscrições abertas</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
+
+      <article class="card-torneio"
+        data-nome="Contra Cup Free Fire"
+        data-jogo="freefire"
+        data-categoria="battle-royale"
+        data-plataforma="mobile"
+        data-status="andamento">
+        
+        <img src="/images/contracup.jpeg" alt="Contra Cup Free Fire">
+        <div class="card-info">
+          <h2>Contra Cup Free Fire</h2>
+          <p class="jogo">Jogo: Free Fire • Battle Royale • Mobile</p>
+          <p class="data">Início: 01/03/2026</p>
+          <p class="status status-andamento">Em andamento</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
+
+      <article class="card-torneio"
+        data-nome="Liga FF Brasil"
+        data-jogo="freefire"
+        data-categoria="battle-royale"
+        data-plataforma="mobile"
+        data-status="encerrado">
+        
+        <img src="/images/liga-ff-brasil.jpeg" alt="Liga FF Brasil">
+        <div class="card-info">
+          <h2>Liga FF Brasil</h2>
+          <p class="jogo">Jogo: Free Fire • Battle Royale • Mobile</p>
+          <p class="data">Início: 29/02/2026</p>
+          <p class="status status-encerrado">Encerrado</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
+
+      <article class="card-torneio"
+        data-nome="FIFA Global Series"
+        data-jogo="fifa"
+        data-categoria="esportes"
+        data-plataforma="console"
+        data-status="aberto">
+        
+        <img src="/images/fifa23_globalseries.webp" alt="FIFA Global Series">
+        <div class="card-info">
+          <h2>FIFA Global Series</h2>
+          <p class="jogo">Jogo: FIFA • Esportes • Console</p>
+          <p class="data">Início: 22/02/2026</p>
+          <p class="status status-aberto">Inscrições abertas</p>
+          <button class="btn-detalhes">Ver detalhes</button>
+        </div>
+      </article>
+
+      <!-- Você pode continuar adicionando mais cards seguindo esse padrão -->
+
+    </section>
+  </main>
+
+  <!-- ========== FOOTER GLOBAL VERSUSHUB (COPIAR O MESMO DE SEMPRE) ========== -->
+    <!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
+
+    <footer>
+
+      <div id="footer_content">
+        <div id="footer_logo">
+          <img src="/image/logo.png" alt="" id="logofooter">
+
+        </div>
+      
+      <div id="footer_sobrenos">
+
+         <h1>Sobre Nós</h1>
+        <br>
+         <p>O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports em um só lugar. Oferecemos torneios competitivos, rankings dinâmicos e recompensas exclusivas para quem ama competir. Nosso objetivo é tornar a experiência gamer mais acessível, divertida e profissional — seja você um iniciante ou um pro player.</p>
+
+      </div>
+
+      <div id="footer_versushub">
+
+         <h1>Versus Hub</h1>
+        <br>
+          <p>
+              Torneios e Rankings atualizados 
+              <br><br> 
+              Sistema seguro e fácil de participar 
+              <br><br>
+              Suporte ativo todos os dias
+          </p>
+
+
+      </div>
+      
+      <div id="footer_politicas">
+
+          <h1>Políticas</h1><br>
+          <li>
+              Termos de uso  </li><br>
+<li>
+  Política de Privacidade  </li><br>
+   <li>
+  Política de Reembolso (para eventos pagos) </li>
+
+ </div>
+    </div>
+  
+     
+     
+
+     
+
+     
+
+
+
+     
+
+
+  </div>
+
+
+    
+    </footer>
+
+<!-- --------------------------------------------------- -->
+
+  </div>
+  </div>
+  <!-- ... footer global ... -->
+
+  
+  <script src="/pagina_inicial/js/torneios.js"></script>
+</body>
+</html>
