@@ -4,39 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="/pagina_inicial/css/estilos.css">
     <title>Gerenciar Torneios</title>
 </head>
 <body>
-     <!-- HEADER -->
-  <header class="header">
-    <button class="menu-button">
-      <img src="/images/pngtree-menu-icon-image_1344445.png" alt="menu">
-    </button>
+     <!-- ===== HEADER GLOBAL (MESMO DE SEMPRE) ===== -->
+  <header>
+    <nav class="navbar">
 
+      <!-- ESQUERDA: menu + logo -->
+      <div class="header-left">
+        <button id="menuToggle" class="menu-button">
+          <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
+        </button>
 
-    <a href="/pagina_inicial/index.html" class="logo">
-      <img src="/image/logo plus tipo textura.png" alt="VersusHub Logo">
-    </a>
+        <div class="logo_header">
+          <a href="/pagina_inicial/index.html">
+            <img src="/image/logo plus tipo textura.png" alt="VersusHub">
+          </a>
+        </div>
+      </div>
 
+      <!-- CENTRO: botões principais -->
+      <div class="botoes_header">
+        <!-- se quiser, depois podemos deixar esse botão com estilo "ativo" -->
+        <button id="aovivo_header">Ao Vivo</button>
+        <button id="criar_header">Criar Torneio</button>
+        <button id="equipes_header">Equipes</button>
+      </div>
 
-    <nav class="header-center-buttons">
-      <button>Ao Vivo</button>
-      <button>Criar Torneio</button>
-      <button>Equipes</button>
+      <!-- DIREITA -->
+      <div class="header-right">
+
+        <!-- busca -->
+        <form class="search-header" action="#" onsubmit="return false">
+          <input
+            type="text"
+            placeholder="Buscar torneios, jogos..."
+            id="searchInput"
+          >
+          <button type="submit" id="searchBtn">🔍</button>
+        </form>
+
+        <!-- entrar / cadastrar -->
+        <a href="/login/login.html" id="btentrar">Entrar</a>
+        <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
+
+        <!-- usuário -->
+        <div class="user-icon">
+          <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
+
+          <ul id="menuUser" class="hidden">
+            <!-- conteúdo é montado via JS (login fake) -->
+          </ul>
+        </div>
+      </div>
+
     </nav>
-
-    <div class="notificacao">
-      <img src="/image/notificacao.png" width="40" height="40" alt="notificacao">
-    </div>
-
-    <div class="pesquisa">
-      <input id="pesquisa2" type="search" value="Pesquisar Competição/Competidor/ID">
-    </div>
-    <div class="user-icon">
-      <img src="/image/boneco_logo_ofc.png" alt="Usuário">
-    </div>
   </header>
-  <!-- Gerenciar torneios -->
+  <!-- ===== FIM HEADER ===== -->  <!-- Gerenciar torneios -->
+
+
+<!-- SIDEBAR LATERAL (começa escondida) -->
+
+  <aside id="sidebar" class="sidebar">
+    <h2 class="sidebar-title"></h2>
+
+    <nav class="sidebar-nav">
+      <a href="/pagina_inicial/index.html">🏠 Início</a>
+      <a href="/pagina_inicial/torneios.html">🏆 Torneios</a>
+      <a href="/gerenciartorneios/gerentornindex.html">📋 Gerenciar Torneios</a>
+      <a href="#feedback">⭐ Enviar feedback</a>
+      <a href="#suporte">❓ Suporte</a>
+    </nav>
+  </aside>
+
+  <!-- Fundo escuro por trás da sidebar -->
+
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+<!-- Fim sidebar lateral -->
+
+
   <div class="espaco">
   </div>
       <div class="info">
@@ -73,16 +121,76 @@
       </div>
       </div>
  <!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
+<!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
 
     <footer>
-      <img src="/image/logo.png" alt="" id="logofooter">
+
+      <div id="footer_content">
+        <div id="footer_logo">
+          <img src="/image/logo.png" alt="" id="logofooter">
+
+        </div>
+      
+      <div id="footer_sobrenos">
+
+         <h1>Sobre Nós</h1>
+        <br>
+         <p>O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports em um só lugar. Oferecemos torneios competitivos, rankings dinâmicos e recompensas exclusivas para quem ama competir. Nosso objetivo é tornar a experiência gamer mais acessível, divertida e profissional — seja você um iniciante ou um pro player.</p>
+
+      </div>
+
+      <div id="footer_versushub">
+
+         <h1>Versus Hub</h1>
+        <br>
+          <p>
+              Torneios e Rankings atualizados 
+              <br><br> 
+              Sistema seguro e fácil de participar 
+              <br><br>
+              Suporte ativo todos os dias
+          </p>
+
+
+      </div>
+      
+      <div id="footer_politicas">
+
+          <h1>Políticas</h1><br>
+          <li>
+              Termos de uso  </li><br>
+<li>
+  Política de Privacidade  </li><br>
+   <li>
+  Política de Reembolso (para eventos pagos) </li>
+
+ </div>
+    </div>
+  
+     
+     
+
+     
+
+     
+
+
+
+     
+
+
+  </div>
+
+
+    
+    </footer>
+ 
 
       
 
 
 
 <!-- --------------------------------------------------- -->
-
-
+<script src="/pagina_inicial/js/scrip.js"></script>
 </body>
 </html>
