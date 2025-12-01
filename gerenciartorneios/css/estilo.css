@@ -125,7 +125,7 @@
 
 /* O main ocupa o espaço entre header fixo e footer */
 .manage-page {
-  max-width: 1200px;
+ 
   margin: 110px auto 40px;  /* desce um pouco por causa do header fixo */
   padding: 0 16px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
