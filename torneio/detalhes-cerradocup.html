@@ -145,7 +145,42 @@
             <li><span>Plataforma:</span> PC (Steam)</li>
             <li><span>Servidor:</span> Brasil – São Paulo</li>
           </ul>
-          <button class="btn-principal">Inscrever equipe</button>
+<button class="btn-principal" id="btnInscrever">Inscrever equipe</button>
+
+<script>
+  // dados fixos desse torneio (id precisa ser único)
+  const TORNEIO_INFO = {
+    id: 'cerrado-cup-csgo',
+    nome: 'Cerrado Cup CS:GO',
+    jogo: 'CS:GO • FPS • PC',
+    data: 'Início: 22/03/2026',
+    status: 'Em andamento',
+    statusClass: 'status-andamento', // opcional, mesma classe que você usa nos cards
+    banner: '/images/cerradocup.jpg',
+    link: '/torneio/cerradocup.html'
+  };
+
+  function addJoinedTournament(info) {
+    let arr = [];
+    try {
+      arr = JSON.parse(localStorage.getItem('vh_joinedTournaments') || '[]');
+    } catch (e) {
+      arr = [];
+    }
+
+    // evita duplicar
+    if (!arr.some(t => t.id === info.id)) {
+      arr.push(info);
+      localStorage.setItem('vh_joinedTournaments', JSON.stringify(arr));
+    }
+  }
+
+  document.getElementById('btnInscrever').addEventListener('click', () => {
+    addJoinedTournament(TORNEIO_INFO);
+    alert('Você foi inscrito neste torneio! Confira na aba "Participando" em Gerenciar Torneios.');
+  });
+</script>
+          
         </div>
 
         <div class="torneio-card-box">

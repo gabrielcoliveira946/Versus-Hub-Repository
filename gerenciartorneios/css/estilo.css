@@ -1,327 +1,133 @@
-/* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* ===== PÁGINA GERENCIAR TORNEIOS ===== */
 
-
-/* Base */
-body {
- background: linear-gradient(#0e0e0e);  ;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
+.manage-page {
+  max-width: 1100px;
+  margin: 110px auto 80px;    /* desce um pouco mais do header fixo */
+  padding: 0 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* Cartão principal */
+.manage-card {
+  background: #111116;
+  border-radius: 26px;
+  padding: 22px 26px 30px;
+  border: 2px solid #2c2c3b;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.7);
+}
 
-/* Header */
-.header {
-  width: 100%;
-  height: 64px;
-  background: rgb(158, 8, 8);
-  border-bottom: 3px solid rgb(38, 38, 48);
+/* Cabeçalho do cartão (avatar + nome) */
+.manage-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  gap: 12px;
-}
-
-
-.menu-button{
-
-
-  background: none;
-  border: none;
-}
-
-
-.menu-button img { width: 34px; height: 34px; display: block; background: none; border: none; }
-
-
-.logo img { height: 52px; width: 170px; display: block; position: relativ;}
-
-.header-center-buttons {
-  
-  position: relative;
-  right: 72px;
-  display: flex;
-  background: none;
-  max-width: 70%;
-  margin-left: 11px;
-  margin-right: 112px;
-  gap: 15px;
-  flex: 1;
-  justify-content: center;
-
-}
-
-.header-center-buttons button {
-  background: #000;
- position: relative;
- 
-  border: 10px solid #b61313;
-  color: #ffffff;
-  padding: 6px 14px;
-
-
-  cursor: pointer;
-  font-size: 13px;
-  transition: 1s;
-}
-.header-center-buttons button:hover {
-  background: #a31313;
-  transform: scale(1.2);
-}
-
-
-.user-icon img { width: 34px; height: 34px; display: block;
-}
-
-
-
-/* PARTE DE BAIXO DO SITE (NAV CLASS) */
-
-.espaco{
-  height: 50px;
-  width: 100px;
-}
-
-
-.info{
-  position: relative;
-  left: 10%;
-  background: rgb(255, 255, 255);
-  padding: 1%;
-  height: 95%;
-  width: 80%;
-  border-radius: 50px;
-}
-
-.container{
-    justify-items: start;
-    padding-top: 5px;
-    padding-left: 20px;
-    height: 110px;
-    width: 500px;
-    color: rgb(0, 0, 0);
-    background: rgb(255, 255, 255);
-    border-radius: 45px;
-}
-
-.perfil{
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-/* Parte das opções da conta */
-
-.linhacima{
-  height: 5px;
-  width:99%;
-  background: black;
-
-}
-.pags{
-  position: relative;
-  
-  height: 35px;
-  width: 99%;
-  margin-top: 10px;
+  gap: 18px;
   margin-bottom: 10px;
+}
+
+.manage-avatar img {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  background: #fff;
+}
+
+.manage-user-info .manage-label {
+  font-size: 11px;
+  color: #b1b1cf;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.manage-user-info h1 {
+  font-size: 21px;
+  margin-top: 4px;
+  color: #ffffff;
+}
+
+/* Abas */
+.manage-tabs {
+  margin-top: 16px;
+  background: #e3e3e3;
+  border-radius: 999px;
+  padding: 4px;
   display: flex;
-  align-items: center;
-  text-decoration: underline;
-  background: rgb(213, 210, 210);
-  border-radius: 10px;
-  color: black;
+  gap: 4px;
 }
 
+.tab-btn {
+  flex: 1;
+  border: none;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: transparent;
+  color: #222;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.2s ease-in-out;
+}
 
+.tab-btn:hover {
+  filter: brightness(0.9);
+}
 
-.pags a{
-  color: inherit;
+.tab-btn.active {
+  background: #d41111;
+  color: #fff;
+}
+
+/* linha separadora */
+.manage-divider {
+  height: 3px;
+  background: #d41111;
+  margin: 14px 0 18px;
+  border-radius: 999px;
+}
+
+/* Lista de torneios (grid) */
+.manage-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* Aproveita o estilo global .card-torneio, só limita a largura aqui */
+.manage-list .card-torneio {
+  max-width: 340px;
   margin: 0 auto;
-  position: relative;
-  right: 50%;
 }
 
-.primeiro{
-  height: 20px;
-  width: 200px;
-  margin: 0 auto;
-
+/* Mensagem quando não tem torneios */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #dddddd;
+  font-size: 15px;
+  padding: 32px 0;
 }
 
-.segundo{
-  height: 20px;
-  width: 200px;
-  margin: 0 auto;
-  
-}
-
-.terceira{
-  position: relative;
-  height: 10px;
-  width: 200px;
-  margin: 0 auto;
-  
+/* Botão Ver detalhes ocupa toda a largura dentro do gerenciador */
+.manage-list .btn-detalhes {
+  width: 100%;
+  text-align: center;
 }
 
 
-.linhabaixo{
-  height: 5px;
-  width: 99%;
-  background: #000;
-}
-
-
-.mensagem{
-  margin-top: 250px;
-  justify-content: end;
-}
-
-.seta{
-  margin-bottom: 20px;
+/* Faz o body ocupar a tela toda e “grudar” o footer no fim */
+.gerenciar-body {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #0e0e0e; /* mesmo fundo das outras páginas */
 }
 
-
-.aviso{
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-/* FOOTER */
-
-
-footer{
-display: block;
-margin-top: 80px;
-height: 60vh;
-background: #9b1010;
-width: 100%;
-margin-bottom: 0px;
-min-width: 1012px;
-}
-
-
-#logofooter {
-
-  height: 65%;
-  width: 20;
-  position: relative;
-  right: 2.5%;
-
-
-}
-
-.h1dofooter {
-color: cyan;
- font-size: 15px;
-font-family:   'Arial Narrow Bold', sans-serif
- 
-}
-
-#sobrenosft {
-
-position: relative;
-left: 13%;
-bottom: 45%;
-color: cyan;
- 
-font-family:   'Arial Narrow Bold', sans-serif
-
-
-}
-
-.paragrafosfooter {
-
-color: white;
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-font-size: 15px;
-}
-
-#parasobrenos {
-
-position: relative;
- bottom: 55%;
-left: 13%;
-width: 20%;
-
-}
-
-#vshft {
-
-position: relative;
-left: 47%;
-bottom: 107%;
-}
-
-#paravshft {
- 
-  position: relative;
-  left: 47%;
-  bottom: 103%;
-width: 20%;
-
-
-}
-
-
-#politicasft {
-
-position: relative;
-left: 75%;
-bottom: 145%;
-
-
-}
-
-#parapolift {
-
-position: relative;
-left: 75%;
-bottom: 140%;
-
-}
-
-.politicas {
-
-position: relative;
-bottom: 160%;
-
-}
-
-.versushubfooter {
-
-position: relative;
-bottom: 115%;
-
-
-}
-
-
-.sobrenosfooter {
-
-position: relative;
-bottom: 55%;
-
-}
-
-#linhafooter {
-
-position: static;
-border: solid 2px gray;
-bottom: -100px;
-
-}
-
-#pesquisa2 {
-
-width: 105%;
-height: 60%;
-
+/* O main ocupa o espaço entre header fixo e footer */
+.manage-page {
+  max-width: 1200px;
+  margin: 110px auto 40px;  /* desce um pouco por causa do header fixo */
+  padding: 0 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  flex: 1;                  /* empurra o footer para o fim da página */
 }
