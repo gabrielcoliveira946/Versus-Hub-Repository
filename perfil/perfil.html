@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil do Usuário - VersusHub</title>
+
+  <!-- ÍCONES FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- estilos globais -->
+  <link rel="stylesheet" href="/pagina_inicial/css/estilos.css">
+  <!-- estilos específicos do perfil -->
+  <link rel="stylesheet" href="/perfil/css/perfil.css">
+</head>
+<body class="perfil-body">
+
+<!-- HEADER (mesmo padrão das outras páginas) -->
+<header>
+  <nav class="navbar">
+    <div class="header-left">
+      <button id="menuToggle" class="menu-button">
+        <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
+      </button>
+
+      <div class="logo_header">
+        <a href="/pagina_inicial/index.html">
+          <img src="/image/logo plus tipo textura.png" alt="VersusHub">
+        </a>
+      </div>
+    </div>
+
+    <div class="botoes_header">
+      <a href="/aovivo/aovivo.html"><button id="aovivo_header">Ao Vivo</button></a>
+      <button id="criar_header">Criar Torneio</button>
+      <button id="equipes_header">Equipes</button>
+    </div>
+
+    <div class="header-right">
+      <form class="search-header" action="#" onsubmit="return false">
+        <input type="text" placeholder="Buscar torneios, jogos..." id="searchInput">
+        <button type="submit" id="searchBtn">🔍</button>
+      </form>
+
+      <a href="/login/login.html" id="btentrar">Entrar</a>
+      <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
+
+      <div class="user-icon">
+        <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
+        <ul id="menuUser" class="hidden">
+          <li><a href="/login/login.html">Login</a></li>
+          <hr>
+          <li><a href="/cadastro/cadastro.html">Cadastro</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- FIM HEADER -->
+
+<!-- SIDEBAR -->
+<aside id="sidebar" class="sidebar">
+  <h2 class="sidebar-title"></h2>
+  <nav class="sidebar-nav">
+    <a href="/pagina_inicial/index.html">🏠 Início</a>
+    <a href="/pagina_inicial/torneios.html">🏆 Torneios</a>
+    <a href="/gerenciartorneios/gerentornindex.html">📋 Gerenciar Torneios</a>
+    <a href="#feedback">⭐ Enviar feedback</a>
+    <a href="#suporte">❓ Suporte</a>
+  </nav>
+</aside>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+<!-- FIM SIDEBAR -->
+
+<!-- CONTEÚDO PERFIL -->
+<div class="perfil_container">
+
+  <!-- CARTÃO DO PERFIL -->
+  <div class="profile-card">
+
+    <div class="profile-left">
+      <div class="profile-image" id="profileImage"></div>
+
+      <!-- INPUT DE ARQUIVO ESCONDIDO -->
+      <input type="file" id="inputPhoto" accept="image/*" style="display:none">
+
+      <!-- BOTÃO PARA TROCAR FOTO -->
+      <button class="btn-photo" id="btnPhoto">
+        <i class="fa-solid fa-folder-open"></i> Mudar Foto de Perfil
+      </button>
+    </div>
+
+    <!-- LADO DIREITO -->
+    <div class="profile-right">
+
+      <!-- EMAIL -->
+      <div class="email-box">
+        <input
+          type="text"
+          placeholder="Seu email..."
+          class="email-input"
+          id="emailInput"
+        >
+        <button class="icon-edit-small" type="button" id="btnEmailFocus">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+      </div>
+
+      <!-- NOME DE USUÁRIO VISÍVEL -->
+      <div class="username-box">
+        <span class="username" id="displayName">Usuário</span>
+        <button class="btn-edit" type="button" id="btnNameFocus">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFIGURAÇÕES DE PERFIL -->
+  <h2 class="section-title">Configurações de Perfil</h2>
+
+  <div class="section">
+    <div class="form-block">
+      <label for="inputUsername">Nome de usuário</label>
+      <input class="input-box" id="inputUsername" type="text" placeholder="Seu nome no VersusHub">
+    </div>
+
+    <hr class="separator">
+
+    <div class="form-block">
+      <label for="bioTextarea">Biografia</label>
+      <textarea
+        class="textarea-box"
+        id="bioTextarea"
+        placeholder="Digite sua biografia..."
+      ></textarea>
+    </div>
+
+    <hr class="separator">
+
+    <div class="team-buttons">
+      <button class="team-name" type="button">NÃO_CHORAX TEAM</button>
+      <button class="leader" type="button">Líder</button>
+    </div>
+
+    <!-- BOTÃO SALVAR -->
+    <div class="save-row">
+      <button id="btnSaveProfile" class="btn-save-profile" type="button">
+        Salvar alterações
+      </button>
+    </div>
+  </div>
+
+  <!-- JOGOS PREFERIDOS (apenas visual por enquanto) -->
+<h2 class="section-title">Jogos preferidos</h2>
+
+<div class="section">
+  <div class="form-block">
+    <label for="jogoInput">Adicionar jogo preferido</label>
+
+    <!-- input onde o usuario digita o jogo -->
+    <div class="games-input-row">
+      <input
+        id="jogoInput"
+        type="text"
+        class="input-box games-input"
+        placeholder="Digite o nome do jogo e pressione Enter"
+      >
+    </div>
+
+    <!-- aqui aparecem os quadradinhos dos jogos -->
+    <div id="jogosTags" class="games-tags">
+      <!-- JS vai criar as tags aqui -->
+    </div>
+
+    <small class="games-hint">
+      Pressione Enter para adicionar. Clique no X para remover.
+    </small>
+  </div>
+</div>
+
+</div>
+<!-- FIM CONTEÚDO PERFIL -->
+
+ <!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
+
+    <footer>
+
+      <div id="footer_content">
+        <div id="footer_logo">
+          <img src="/image/logo.png" alt="" id="logofooter">
+
+        </div>
+      
+      <div id="footer_sobrenos">
+
+         <h1>Sobre Nós</h1>
+        <br>
+         <p>O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports em um só lugar. Oferecemos torneios competitivos, rankings dinâmicos e recompensas exclusivas para quem ama competir. Nosso objetivo é tornar a experiência gamer mais acessível, divertida e profissional — seja você um iniciante ou um pro player.</p>
+
+      </div>
+
+      <div id="footer_versushub">
+
+         <h1>Versus Hub</h1>
+        <br>
+          <p>
+              Torneios e Rankings atualizados 
+              <br><br> 
+              Sistema seguro e fácil de participar 
+              <br><br>
+              Suporte ativo todos os dias
+          </p>
+
+
+      </div>
+      
+      <div id="footer_politicas">
+
+          <h1>Políticas</h1><br>
+          <li>
+              Termos de uso  </li><br>
+<li>
+  Política de Privacidade  </li><br>
+   <li>
+  Política de Reembolso (para eventos pagos) </li>
+
+ </div>
+    </div>
+  
+   
+  </div>
+
+
+    
+    </footer>
+
+<!-- --------------------------------------------------- -->
+
+
+<!-- JS do perfil + JS global -->
+<script src="/perfil/js/perfil.js"></script>
+<script src="/pagina_inicial/js/scrip.js"></script>
+</body>
+</html>
+

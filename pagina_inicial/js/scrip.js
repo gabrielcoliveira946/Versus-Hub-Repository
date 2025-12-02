@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
       menuUser.innerHTML = `
         <li class="vh-user-name">Olá, <strong>${user.nome}</strong></li>
         <hr>
-        <li><a href="#" id="linkPerfil">Perfil</a></li>
+        <li><a href="/perfil/perfil.html" id="linkPerfil">Perfil</a></li>
         <li><a href="#" id="trocarConta">Mudar de conta</a></li>
         <li><a href="#" id="sairConta">Sair da conta</a></li>
       `;
@@ -268,6 +268,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+
+  
   // Aplica o estado inicial ao carregar a página
   aplicarEstadoHeader(loggedUser);
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const raw = localStorage.getItem('vh_loggedUser');
+    if (!raw) return;
+
+    const user = JSON.parse(raw);
+    if (!user || !user.avatar) return;
+
+    // pega todos os ícones de usuário (caso tenha em mais de um lugar)
+    const userImgs = document.querySelectorAll('#userBtn, .user-icon img');
+
+    userImgs.forEach(img => {
+      img.src = user.avatar;
+    });
+  } catch (err) {
+    console.error('Erro ao aplicar avatar no header:', err);
+  }
 });

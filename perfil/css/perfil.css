@@ -1,0 +1,311 @@
+/* BASE DA PÁGINA DE PERFIL */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+/* só o body desta página vira flex p/ empurrar o footer */
+
+/* CONTAINER PRINCIPAL DO PERFIL */
+.perfil_container {
+  max-width: 1000px;      /* deixa os quadrados mais estreitos */
+  padding: 30px;
+  margin: 10px auto 60px; /* desce um pouco por causa do header fixo */
+}
+
+ 
+
+
+/* PROFILE CARD */
+.profile-card {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 18px;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  align-self: start;
+}
+
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-image: url("/image/boneco_logo_ofc.png"); /* padrão */
+  background-size: cover;
+  background-position: center;
+  background-color: #333;
+}
+
+/* Botão mudar foto */
+.btn-photo {
+  margin-top: 10px;
+  background: #262626;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-photo:hover {
+  filter: brightness(1.1);
+}
+
+.profile-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* EMAIL BOX NO TOPO */
+.email-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2e2a2a;
+  border-radius: 10px;
+  padding: 6px 10px;
+  max-width: 320px;
+}
+
+.email-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.icon-edit-small {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* NOME DE USUÁRIO VISÍVEL */
+.username-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.username {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn-edit {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #ff4d4d;
+  cursor: pointer;
+}
+
+/* SECTION TITLE */
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0 10px 5px;
+}
+
+/* SECTION BOX */
+.section {
+  background-color: #1a1a1a;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.form-block {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #e0e0e0;
+}
+
+.input-box {
+  background-color: #2e2a2a;
+  width: 100%;
+  padding: 9px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  outline: none;
+}
+
+.textarea-box {
+  background-color: #2e2a2a;
+  width: 100%;
+  height: 120px;
+  padding: 9px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  resize: none;
+  outline: none;
+}
+
+/* LINHAS SEPARADORAS */
+.separator {
+  border: none;
+  border-top: 1px solid #3a3a3a;
+  margin: 25px 0;
+}
+
+/* TEAM BOX */
+.team-buttons {
+  display: inline-flex;
+  align-items: center;
+  background-color: #3a3333;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.team-buttons button {
+  background-color: #3a3333;
+  padding: 8px 25px;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  cursor: default;
+}
+
+/* Linha vertical entre os dois botões */
+.team-buttons .team-name {
+  border-right: 2px solid #6b5e5e;
+}
+
+/* Botão "Líder" */
+.team-buttons .leader {
+  background-color: #4c4444;
+}
+
+/* LINHA DO BOTÃO SALVAR */
+.save-row {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-save-profile {
+  background-color: #d41111;
+  border: none;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-save-profile:hover {
+  filter: brightness(1.05);
+}
+
+/* GAME BUTTONS */
+.game-btn {
+  background-color: #2e2a2a;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* RESPONSIVO SIMPLES */
+@media (max-width: 768px) {
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-right {
+    width: 100%;
+  }
+
+  .email-box {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.game-btn {
+  background-color: #2e2a2a;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.game-btn.selected {
+  background-color: #d41111;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+.games-input-row {
+  margin-bottom: 12px;
+}
+
+.games-input {
+  width: 100%;
+}
+
+/* container das tags */
+.games-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* cada tag de jogo */
+.game-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #2e2a2a;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* botão X dentro da tag */
+.game-tag button {
+  border: none;
+  background: transparent;
+  color: #f87171;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  line-height: 1;
+}
+
+.games-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: #b1b1b1;
+}
+ 
