@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/pagina_inicial/css/torneios.css" />
+  <link rel="stylesheet" href="/pagina_inicial/css/estilos.css">
   <title>Todos os Torneios - VersusHub</title>
 </head>
+
 <body>
 
     <!-- HEADER -->
@@ -46,7 +48,7 @@
           placeholder="Buscar torneios, jogos..."
           id="searchInput"
         >
-        <button type="submit" id="searchBtn">🔍</button>
+        <a href="#categorias"> <button type="submit" id="searchBtn">🔍</button> </a>
       </form>
 
       <!-- BOTÕES À DIREITA -->
@@ -75,21 +77,21 @@
 <!-- FIM HEADER -->
 
 
- <!-- SIDEBAR LATERAL (começa escondida) -->
 
+ <!-- ===== SIDEBAR ==== -->
   <aside id="sidebar" class="sidebar">
     <h2 class="sidebar-title"></h2>
-
     <nav class="sidebar-nav">
       <a href="/pagina_inicial/index.html">🏠 Início</a>
-      <a href="/pagina_inicial/torneios.html">🏆 Torneios</a>
-      <a href="/gerenciartorneios/gerentornindex.html">📋 Gerenciar Torneios</a>
+      <a href="/pagina_inicial/torneios.html">🏆 Todos os torneios</a>
+      <a href="/gerenciartorneios/gerentornindex.html">📄 Gerenciar torneios</a>
+     <a href="/termos/termos.html">💼 Termos de Uso</a>
       <a href="#feedback">⭐ Enviar feedback</a>
-      <a href="#suporte">❓ Suporte</a>
     </nav>
   </aside>
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-  <!-- Fundo escuro por trás da sidebar -->
+  <!-- ===== FIM SIDEBAR ===== -->
 
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
@@ -243,8 +245,7 @@
     </section>
   </main>
 
-  <!-- ========== FOOTER GLOBAL VERSUSHUB (COPIAR O MESMO DE SEMPRE) ========== -->
-    <!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
+  <!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
 
     <footer>
 
@@ -290,22 +291,13 @@
  </div>
     </div>
   
-     
-     
-
- 
-     
-
-
-
-     
-
-
+   
   </div>
 
 
     
     </footer>
+
 
 <!-- --------------------------------------------------- -->
 

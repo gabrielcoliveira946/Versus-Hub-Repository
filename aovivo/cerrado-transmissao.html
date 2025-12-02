@@ -6,7 +6,7 @@
   <!-- estilos globais -->
   <link rel="stylesheet" href="/pagina_inicial/css/estilos.css" />
   <!-- estilos específicos desta página -->
-  <link rel="stylesheet" href="/aovivo/css/transmissao.css" />
+  <link rel="stylesheet" href="/aovivo/css/transmissao.css"/>
   <title>Cerrado Cup CS:GO - Transmissão Ao Vivo</title>
 </head>
 
@@ -97,12 +97,21 @@
         <h1>Cerrado Cup CS:GO</h1>
         <p class="live-meta">CS:GO • FPS • PC</p>
         <p class="live-start">Iniciado às 19:00 (horário de Brasília)</p>
+      
 
         <div class="live-tags">
           <span>Formato 5x5</span>
           <span>Eliminação simples</span>
           <span>Servidor Brasil</span>
         </div>
+        
+        <!-- 👍 Like do torneio -->
+  <div class="torneio-like-box">
+    <button class="like-btn" data-id="cerrado-cup-csgo">
+      <span class="like-icon">👍</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
       </div>
     </section>
 
@@ -245,5 +254,6 @@
 
   <!-- JS global (sidebar, menu do usuário, etc.) -->
   <script src="/pagina_inicial/js/scrip.js"></script>
+  <script src="/torneio/js/likes.js"></script>
 </body>
 </html>
