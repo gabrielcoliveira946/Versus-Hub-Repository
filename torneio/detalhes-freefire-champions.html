@@ -154,7 +154,9 @@
             <li><span>Plataforma:</span> Free Fire (Mobile)</li>
             <li><span>Servidor:</span> Brasil</li>
           </ul>
-          <button class="btn-principal">Inscrever equipe</button>
+<button class="btn-principal" id="btnInscreverFF">
+  Inscrever equipe
+</button>
         </div>
 
         <div class="torneio-card-box">
@@ -213,6 +215,45 @@
     </div>
   </footer>
   <!-- ========= FIM FOOTER ========= -->
+<script>
+  // Dados fixos desse torneio (id precisa ser único)
+  const FF_TORNEIO_INFO = {
+    id: 'ff-champions-brasil',
+    nome: 'Free Fire Champions Brasil',
+    jogo: 'Free Fire • Battle Royale • Mobile',
+    data: 'Início: 03/01/2026 às 20h',
+    status: 'Inscrições abertas',
+    statusClass: 'status-aberto', // mesma classe usada nos cards
+    banner: '/images/ff_championsbrasil.jpg',
+    link: '/torneio/ff_championsbrasil.html' // caminho desta página
+  };
+
+  function addJoinedTournament(info) {
+    let arr = [];
+    try {
+      arr = JSON.parse(localStorage.getItem('vh_joinedTournaments') || '[]');
+    } catch (e) {
+      arr = [];
+    }
+
+    // evita duplicar este torneio na lista
+    if (!arr.some(t => t.id === info.id)) {
+      arr.push(info);
+      localStorage.setItem('vh_joinedTournaments', JSON.stringify(arr));
+    }
+  }
+
+  const btnInscreverFF = document.getElementById('btnInscreverFF');
+
+  if (btnInscreverFF) {
+    btnInscreverFF.addEventListener('click', () => {
+      addJoinedTournament(FF_TORNEIO_INFO);
+      alert('Você foi inscrito neste torneio! Confira na aba "Participando" em Gerenciar Torneios.');
+      // se quiser já mandar o usuário para Gerenciar Torneios, descomente a linha abaixo:
+      // window.location.href = '/gerenciartorneios/gerentornindex.html';
+    });
+  }
+</script>
 
   <script src="/pagina_inicial/js/scrip.js"></script>
     <script src="/torneio/js/likes.js"></script>
