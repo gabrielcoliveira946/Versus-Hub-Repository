@@ -64,19 +64,19 @@
   </header>
   <!-- ===== FIM HEADER ===== -->
 
-  <!-- ===== SIDEBAR ===== -->
+  <!-- ===== SIDEBAR ==== -->
   <aside id="sidebar" class="sidebar">
     <h2 class="sidebar-title"></h2>
     <nav class="sidebar-nav">
       <a href="/pagina_inicial/index.html">🏠 Início</a>
-      <a href="/aovivo/aovivo.html">🔴 Ao Vivo</a>
       <a href="/pagina_inicial/torneios.html">🏆 Todos os torneios</a>
-      <a href="/gerenciartorneios/gerentornindex.html">📋 Gerenciar torneios</a>
+      <a href="/gerenciartorneios/gerentornindex.html">📄 Gerenciar torneios</a>
+     <a href="/termos/termos.html">💼 Termos de Uso</a>
       <a href="#feedback">⭐ Enviar feedback</a>
-      <a href="#suporte">❓ Suporte</a>
     </nav>
   </aside>
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
   <!-- ===== FIM SIDEBAR ===== -->
 
   <!-- ===== CONTEÚDO ===== -->
@@ -97,6 +97,15 @@
         <h1>Fortnite Battle Cup</h1>
         <p class="live-meta">Fortnite • Battle Royale • Multi</p>
         <p class="live-start">Iniciado às 16:20</p>
+
+        
+  <!-- 👍 Like do torneio -->
+  <div class="torneio-like-box">
+    <button class="like-btn" data-id="cerrado-cup-csgo">
+      <span class="like-icon">👍</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
 
         <div class="live-tags">
           <span>Squads</span>
@@ -248,5 +257,6 @@
 
   <!-- JS global -->
   <script src="/pagina_inicial/js/scrip.js"></script>
+  <script src="/torneio/js/likes.js"></script>
 </body>
 </html>

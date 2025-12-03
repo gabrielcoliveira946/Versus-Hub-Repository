@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- estilos globais -->
+  <link rel="stylesheet" href="/pagina_inicial/css/estilos.css" />
+  <!-- estilos específicos desta página -->
+  <link rel="stylesheet" href="/criar_torneio/css/criar.css" />
+  <title>Criar Torneio - VersusHub</title>
+</head>
+<body>
+
+  <!-- ========= HEADER ========= -->
+  <header>
+    <nav class="navbar">
+
+      <div class="header-left">
+        <button id="menuToggle" class="menu-button">
+          <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
+        </button>
+
+        <div class="logo_header">
+          <a href="/pagina_inicial/index.html">
+            <img src="/image/logo plus tipo textura.png" alt="VersusHub">
+          </a>
+        </div>
+      </div>
+
+      <div class="botoes_header">
+        <a href="/aovivo/aovivo.html"><button id="aovivo_header">Ao Vivo</button></a>
+        <button id="criar_header">Criar Torneio</button>
+        <button id="equipes_header">Equipes</button>
+      </div>
+
+      <div class="header-right">
+        <form class="search-header" action="#" onsubmit="return false">
+          <input
+            type="text"
+            placeholder="Buscar torneios, jogos..."
+            id="searchInput"
+          >
+          <button type="submit" id="searchBtn">🔍</button>
+        </form>
+
+        <a href="/login/login.html" id="btentrar">Entrar</a>
+        <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
+
+        <div class="user-icon">
+          <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
+          <ul id="menuUser" class="hidden"></ul>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+  <!-- ========= FIM HEADER ========= -->
+
+  <!-- ========= SIDEBAR ========= -->
+  <aside id="sidebar" class="sidebar">
+    <h2 class="sidebar-title"></h2>
+    <nav class="sidebar-nav">
+      <a href="/pagina_inicial/index.html">🏠 Início</a>
+      <a href="/pagina_inicial/torneios.html">🏆 Todos os torneios</a>
+      <a href="/gerenciartorneios/gerentornindex.html">📋 Gerenciar torneios</a>
+      <a href="#feedback">⭐ Enviar feedback</a>
+      <a href="#suporte">❓ Suporte</a>
+    </nav>
+  </aside>
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+  <!-- ========= FIM SIDEBAR ========= -->
+
+  <!-- ========= CONTEÚDO: FORMULÁRIO DE CRIAÇÃO ========= -->
+  <main class="criar-torneio-page">
+
+    <section class="criar-header">
+      <h1>Criar novo torneio</h1>
+      <p>Preencha as informações abaixo para criar um torneio no VersusHub. Ele irá aparecer na aba <strong>“Seus torneios”</strong> em Gerenciar Torneios.</p>
+    </section>
+
+    <section class="torneio-form-card">
+      <form id="formCriarTorneio">
+
+        <!-- BANNER + preview -->
+        <div class="form-block full-row">
+          <label for="bannerInput">Banner do torneio</label>
+          <p class="hint">Recomendado: imagem widescreen (ex: 16:9). Esse banner aparecerá no card do seu torneio.</p>
+          <input type="file" id="bannerInput" accept="image/*">
+          <div class="banner-preview" id="bannerPreview">
+            <span>Nenhuma imagem selecionada</span>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <!-- Nome -->
+          <div class="form-block">
+            <label for="nomeTorneio">Nome do torneio</label>
+            <input
+              type="text"
+              id="nomeTorneio"
+              placeholder="Ex: Copa VersusHub CS:GO"
+              required
+            >
+          </div>
+
+          <!-- Jogo -->
+          <div class="form-block">
+            <label for="jogoNome">Jogo</label>
+            <input
+              type="text"
+              id="jogoNome"
+              placeholder="Ex: CS:GO, Free Fire, FIFA..."
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <!-- Categoria -->
+          <div class="form-block">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" required>
+              <option value="">Selecione...</option>
+              <option value="fps">FPS</option>
+              <option value="moba">MOBA</option>
+              <option value="battle-royale">Battle Royale</option>
+              <option value="esportes">Esportes</option>
+              <option value="cartas">Card Game</option>
+              <option value="outros">Outros</option>
+            </select>
+          </div>
+
+          <!-- Plataforma -->
+          <div class="form-block">
+            <label for="plataforma">Plataforma</label>
+            <select id="plataforma" required>
+              <option value="">Selecione...</option>
+              <option value="pc">PC</option>
+              <option value="console">Console</option>
+              <option value="mobile">Mobile</option>
+              <option value="multi">Multi-plataforma</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+  <div class="form-block">
+    <label for="inicioData">Data do torneio</label>
+    <input type="date" id="inicioData" required>
+  </div>
+
+  <div class="form-block">
+    <label for="inicioHora">Horário do torneio</label>
+    <input type="time" id="inicioHora" required>
+  </div>
+
+  <!-- Status inicial -->
+  <div class="form-block">
+    <label for="status">Status inicial</label>
+    <select id="status" required>
+      <option value="aberto">Inscrições abertas</option>
+      <option value="andamento">Em andamento</option>
+      <option value="encerrado">Encerrado</option>
+    </select>
+  </div>
+</div>
+
+
+
+        <!-- Descrição opcional (usada futuramente na página de detalhes dinâmica) -->
+        <div class="form-block full-row">
+          <label for="descricao">Descrição do torneio (opcional)</label>
+          <textarea
+            id="descricao"
+            rows="4"
+            placeholder="Explique o formato, regras principais, público-alvo..."
+          ></textarea>
+        </div>
+
+        <div class="actions-row">
+          <button type="submit" class="btn-principal-criar">
+            Criar torneio
+          </button>
+          <span class="feedback-msg" id="feedbackMsg"></span>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ========= FOOTER ========= -->
+  <footer>
+    <div id="footer_content">
+      <div id="footer_logo">
+        <img src="/image/logo.png" alt="" id="logofooter">
+      </div>
+
+      <div id="footer_sobrenos">
+        <h1>Sobre Nós</h1>
+        <br>
+        <p>O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports em um só lugar. Oferecemos torneios competitivos, rankings dinâmicos e recompensas exclusivas.</p>
+      </div>
+
+      <div id="footer_versushub">
+        <h1>Versus Hub</h1>
+        <br>
+        <p>
+          Torneios e Rankings atualizados <br><br>
+          Sistema seguro e fácil de participar <br><br>
+          Suporte ativo todos os dias
+        </p>
+      </div>
+
+      <div id="footer_politicas">
+        <h1>Políticas</h1><br>
+        <li>Termos de uso</li><br>
+        <li>Política de Privacidade</li><br>
+        <li>Política de Reembolso (para eventos pagos)</li><br>
+       </div>
+    </div>
+  </footer>
+  <!-- ========= FIM FOOTER ========= -->
+
+  <!-- JS global + JS desta página -->
+  <script src="/pagina_inicial/js/scrip.js"></script>
+  <script src="/criar_torneio/js/criar.js"></script>
+</body>
+</html>

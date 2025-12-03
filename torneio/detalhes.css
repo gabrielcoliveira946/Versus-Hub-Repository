@@ -179,7 +179,6 @@
   }
 }
 
-
 /* ===== LIKE DO TORNEIO (detalhes) ===== */
 
 .torneio-like-box {
@@ -214,3 +213,4 @@
 .like-btn.liked .like-icon {
   transform: scale(1.12);
 }
+

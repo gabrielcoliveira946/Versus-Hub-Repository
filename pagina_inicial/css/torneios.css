@@ -5,14 +5,18 @@
 
 
 /* Base */
-body {
- background: linear-gradient(#0e0e0e);
-  height: 120vh; 
-  background-size: cover;
-  padding-top: 70px; /* mesma altura do header fixo */
+html, body {
+  height: 100%;
 }
 
-
+body {
+  margin: 0;
+  background: #0e0e0e;
+  background-size: cover;
+  padding-top: 70px;      /* por causa do header fixo */
+  display: flex;
+  flex-direction: column; /* empurra o footer para baixo */
+}
 
 
 /* Header */
@@ -39,6 +43,7 @@ header {
   padding: 0 9px;
   background-color: rgb(158, 8, 8);
 }
+
 
 
 /* Bloco esquerdo: menu + logo */
