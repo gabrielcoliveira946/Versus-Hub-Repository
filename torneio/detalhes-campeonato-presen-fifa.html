@@ -74,7 +74,7 @@
   <!-- HERO -->
   <section class="torneio-hero">
     <div class="torneio-banner">
-      <img src="/images/" alt="Campeonato Presencial FIFA 22">
+      <img src="/images/torneio_fifa_22.jpg" alt="Campeonato Presencial FIFA 22">
 
       <div class="torneio-status-badge status-aberto">
         Inscrições abertas
@@ -91,7 +91,15 @@
         <span>Plataforma PS4 / PS5</span>
         <span>Partidas 1x1</span>
       </div>
+      <!-- 👍 Like do torneio -->
+  <div class="torneio-like-box">
+    <button class="like-btn" data-id="cerrado-cup-csgo">
+      <span class="like-icon">👍</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
     </div>
+    
   </section>
 
   <!-- LAYOUT -->
@@ -168,33 +176,61 @@
 
 </main>
 
-<!-- ========== FOOTER ========== -->
-<footer>
-  <div id="footer_content">
-    <div id="footer_logo">
-      <img src="/image/logo.png">
-    </div>
+<!-- PARTE DE BAIXO DO SITE< CHAMADA DE FOOTER -->
 
-    <div id="footer_sobrenos">
-      <h1>Sobre Nós</h1><br>
-      <p>O Versus Hub conecta jogadores e organizações em experiências competitivas únicas.</p>
-    </div>
+    <footer>
 
-    <div id="footer_versushub">
-      <h1>Versus Hub</h1><br>
-      <p>Torneios atualizados • Sistema seguro • Suporte ativo</p>
-    </div>
+      <div id="footer_content">
+        <div id="footer_logo">
+          <img src="/image/logo.png" alt="" id="logofooter">
 
-    <div id="footer_politicas">
-      <h1>Políticas</h1><br>
-      <li>Termos de uso</li><br>
-      <li>Privacidade</li><br>
-      <li>Reembolso</li>
+        </div>
+      
+      <div id="footer_sobrenos">
+
+         <h1>Sobre Nós</h1>
+        <br>
+         <p>O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports em um só lugar. Oferecemos torneios competitivos, rankings dinâmicos e recompensas exclusivas para quem ama competir. Nosso objetivo é tornar a experiência gamer mais acessível, divertida e profissional — seja você um iniciante ou um pro player.</p>
+
+      </div>
+
+      <div id="footer_versushub">
+
+         <h1>Versus Hub</h1>
+        <br>
+          <p>
+              Torneios e Rankings atualizados 
+              <br><br> 
+              Sistema seguro e fácil de participar 
+              <br><br>
+              Suporte ativo todos os dias
+          </p>
+
+
+      </div>
+      
+      <div id="footer_politicas">
+
+          <h1>Políticas</h1><br>
+          <li>
+              Termos de uso  </li><br>
+<li>
+  Política de Privacidade  </li><br>
+   <li>
+  Política de Reembolso (para eventos pagos) </li>
+
+ </div>
     </div>
+  
+
   </div>
-</footer>
 
+
+    
+    </footer>
+    
 <script src="/pagina_inicial/js/scrip.js"></script>
+<script src="/torneio/js/likes.js"></script>
 
 <script>
 // ===== INSCRIÇÃO DO TORNEIO NO LOCALSTORAGE =====
