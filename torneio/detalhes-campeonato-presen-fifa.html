@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- estilos globais -->
+  <link rel="stylesheet" href="/pagina_inicial/css/estilos.css" />
+  <!-- estilos específicos -->
+  <link rel="stylesheet" href="/torneio/detalhes.css" />
+
+  <title>Campeonato Presencial FIFA 22 - VersusHub</title>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header>
+  <nav class="navbar">
+
+    <div class="header-left">
+      <button id="menuToggle" class="menu-button">
+        <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
+      </button>
+
+      <div class="logo_header">
+        <a href="/pagina_inicial/index.html">
+          <img src="/image/logo plus tipo textura.png" alt="VersusHub">
+        </a>
+      </div>
+    </div>
+
+    <div class="botoes_header">
+      <a href="/aovivo/aovivo.html"><button id="aovivo_header">Ao Vivo</button></a>
+      <button id="criar_header">Criar Torneio</button>
+      <button id="equipes_header">Equipes</button>
+    </div>
+
+    <div class="header-right">
+      <form class="search-header" onsubmit="return false">
+        <input type="text" placeholder="Buscar torneios, jogos..." id="searchInput">
+        <button type="submit" id="searchBtn">🔍</button>
+      </form>
+
+      <a href="/login/login.html" id="btentrar">Entrar</a>
+      <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
+
+      <div class="user-icon">
+        <img src="/image/boneco_logo_ofc.png" id="userBtn">
+        <ul id="menuUser" class="hidden"></ul>
+      </div>
+
+    </div>
+
+  </nav>
+</header>
+<!-- ========== FIM HEADER ========== -->
+
+<!-- ========== SIDEBAR ========== -->
+<aside id="sidebar" class="sidebar">
+  <nav class="sidebar-nav">
+    <a href="/pagina_inicial/index.html">🏠 Início</a>
+    <a href="/pagina_inicial/torneios.html">🏆 Todos os torneios</a>
+    <a href="/gerenciartorneios/gerentornindex.html">📋 Gerenciar Torneios</a>
+    <a href="#feedback">⭐ Enviar feedback</a>
+  </nav>
+</aside>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+<!-- ========== FIM SIDEBAR ========== -->
+
+
+<!-- ========== CONTEÚDO PRINCIPAL ========== -->
+<main class="torneio-page">
+
+  <!-- HERO -->
+  <section class="torneio-hero">
+    <div class="torneio-banner">
+      <img src="/images/" alt="Campeonato Presencial FIFA 22">
+
+      <div class="torneio-status-badge status-aberto">
+        Inscrições abertas
+      </div>
+    </div>
+
+    <div class="torneio-hero-info">
+      <h1>Campeonato Presencial FIFA 22 – Arena TG</h1>
+      <p class="torneio-meta">FIFA 22 • Console • Presencial</p>
+      <p class="torneio-data">Data: 18/01/2026 – às 18h</p>
+
+      <div class="torneio-tags">
+        <span>Presencial</span>
+        <span>Plataforma PS4 / PS5</span>
+        <span>Partidas 1x1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYOUT -->
+  <section class="torneio-layout">
+
+    <!-- COLUNA ESQUERDA -->
+    <div class="torneio-col-info">
+
+      <div class="torneio-card-box">
+        <h2>Sobre o torneio</h2>
+        <p>
+          O Campeonato Presencial FIFA 22 da Arena TG proporciona uma experiência única para jogadores competitivos.
+          Com ambiente estruturado, organização profissional e transmissão local, os participantes competem em partidas eletrizantes para decidir quem é o verdadeiro campeão da cidade!
+        </p>
+      </div>
+
+      <div class="torneio-card-box">
+        <h2>Regras principais</h2>
+        <ul>
+          <li>Plataforma: PlayStation 4 / PlayStation 5</li>
+          <li>Partidas 1x1 (tempo padrão competitivo)</li>
+          <li>Fase de grupos seguida de eliminação simples</li>
+          <li>Controle próprio ou controle fornecido pela Arena TG</li>
+          <li>Atrasos acima de 10 minutos resultam em WO</li>
+        </ul>
+      </div>
+
+      <div class="torneio-card-box">
+        <h2>Cronograma</h2>
+        <ul>
+          <li><strong>18/01 – 18h:</strong> Abertura e credenciamento</li>
+          <li><strong>18/01 – 18h30:</strong> Início da fase de grupos</li>
+          <li><strong>18/01 – 20h:</strong> Eliminatórias</li>
+          <li><strong>18/01 – 21h:</strong> Final e premiação</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- COLUNA DIREITA -->
+    <aside class="torneio-col-side">
+
+      <div class="torneio-card-box destaque-inscricao">
+        <h2>Inscrições</h2>
+        <ul class="info-list">
+          <li><span>Taxa:</span> R$ 25,00</li>
+          <li><span>Vagas:</span> 32 jogadores</li>
+          <li><span>Local:</span> Arena TG – Contagem/MG</li>
+        </ul>
+
+        <button class="btn-principal" id="btnInscrever">Inscrever-se</button>
+      </div>
+
+      <div class="torneio-card-box">
+        <h2>Premiação</h2>
+        <ul>
+          <li><span>1º lugar:</span> R$ 500 + Troféu</li>
+          <li><span>2º lugar:</span> R$ 250</li>
+          <li><span>3º lugar:</span> Medalha</li>
+        </ul>
+      </div>
+
+      <div class="torneio-card-box">
+        <h2>Requisitos</h2>
+        <ul>
+          <li>Documento com foto</li>
+          <li>Pontualidade no credenciamento</li>
+          <li>Respeitar regras e árbitros</li>
+        </ul>
+      </div>
+
+    </aside>
+  </section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div id="footer_content">
+    <div id="footer_logo">
+      <img src="/image/logo.png">
+    </div>
+
+    <div id="footer_sobrenos">
+      <h1>Sobre Nós</h1><br>
+      <p>O Versus Hub conecta jogadores e organizações em experiências competitivas únicas.</p>
+    </div>
+
+    <div id="footer_versushub">
+      <h1>Versus Hub</h1><br>
+      <p>Torneios atualizados • Sistema seguro • Suporte ativo</p>
+    </div>
+
+    <div id="footer_politicas">
+      <h1>Políticas</h1><br>
+      <li>Termos de uso</li><br>
+      <li>Privacidade</li><br>
+      <li>Reembolso</li>
+    </div>
+  </div>
+</footer>
+
+<script src="/pagina_inicial/js/scrip.js"></script>
+
+<script>
+// ===== INSCRIÇÃO DO TORNEIO NO LOCALSTORAGE =====
+const TORNEIO_INFO = {
+  id: "fifa22-presencial",
+  nome: "Campeonato Presencial FIFA 22 – Arena TG",
+  jogo: "FIFA 22 • Console • Presencial",
+  data: "18/01/2026 às 18h",
+  status: "Inscrito",
+  statusClass: "status-andamento",
+  banner: "/images/fifa_banner_presencial.jpg",
+  link: "/torneio/fifa22.html"
+};
+
+document.getElementById("btnInscrever").addEventListener("click", () => {
+  let arr = JSON.parse(localStorage.getItem("vh_joinedTournaments") || "[]");
+
+  if (!arr.some(t => t.id === TORNEIO_INFO.id)) {
+    arr.push(TORNEIO_INFO);
+    localStorage.setItem("vh_joinedTournaments", JSON.stringify(arr));
+  }
+
+  alert("Inscrição confirmada! Veja em 'Participando' na aba Gerenciar Torneios.");
+});
+</script>
+
+</body>
+</html>
