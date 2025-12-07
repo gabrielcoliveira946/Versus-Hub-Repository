@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- estilos globais -->
+  <link rel="stylesheet" href="/pagina_inicial/css/estilos.css" />
+  <!-- pode reaproveitar o mesmo CSS de detalhes -->
+  <link rel="stylesheet" href="/torneio/detalhes.css" />
+  <title>Detalhes do Torneio - VersusHub</title>
+</head>
+<body>
+
+  <!-- ========= HEADER ========= -->
+  <header>
+    <nav class="navbar">
+      <div class="header-left">
+        <button id="menuToggle" class="menu-button">
+          <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
+        </button>
+
+        <div class="logo_header">
+          <a href="/pagina_inicial/index.html">
+            <img src="/image/logo plus tipo textura.png" alt="VersusHub">
+          </a>
+        </div>
+      </div>
+
+      <div class="botoes_header">
+        <a href="/aovivo/aovivo.html"><button id="aovivo_header">Ao Vivo</button></a>
+        <a href="/criar_torneio/criar_torneio.html"><button id="criar_header">Criar Torneio</button></a>
+        <button id="equipes_header">Equipes</button>
+      </div>
+
+      <div class="header-right">
+        <form class="search-header" action="#" onsubmit="return false">
+          <input type="text" placeholder="Buscar torneios, jogos..." id="searchInput">
+          <button type="submit" id="searchBtn">🔍</button>
+        </form>
+
+        <a href="/login/login.html" id="btentrar">Entrar</a>
+        <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
+
+        <div class="user-icon">
+          <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
+          <ul id="menuUser" class="hidden"></ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========= SIDEBAR ========= -->
+  <aside id="sidebar" class="sidebar">
+    <h2 class="sidebar-title"></h2>
+    <nav class="sidebar-nav">
+      <a href="/pagina_inicial/index.html">🏠 Início</a>
+      <a href="/pagina_inicial/torneios.html">🏆 Todos os torneios</a>
+      <a href="/gerenciartorneios/gerentornindex.html">📋 Gerenciar torneios</a>
+      <a href="#feedback">⭐ Enviar feedback</a>
+    </nav>
+  </aside>
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+  <!-- ========= FIM SIDEBAR ========= -->
+
+  <!-- ========= CONTEÚDO (vai ser preenchido via JS) ========= -->
+  <main class="torneio-page">
+
+    <section class="torneio-hero">
+      <div class="torneio-banner">
+        <img id="detBanner" src="" alt="Banner do torneio">
+        <div id="detStatusBadge" class="torneio-status-badge">
+          <!-- texto do status vem do JS -->
+        </div>
+      </div>
+
+      <div class="torneio-hero-info">
+        <h1 id="detNome">Carregando...</h1>
+        <p class="torneio-meta" id="detMeta"></p>
+        <p class="torneio-data" id="detData"></p>
+
+        <div class="torneio-tags">
+          <span id="tagCategoria"></span>
+          <span id="tagPlataforma"></span>
+          <span id="tagModalidade"></span>
+          <span id="tagTaxa"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="torneio-layout">
+      <!-- COLUNA ESQUERDA -->
+      <div class="torneio-col-info">
+        <div class="torneio-card-box">
+          <h2>Sobre o torneio</h2>
+          <p id="detDescricao">
+            <!-- descrição -->
+          </p>
+        </div>
+
+        <div class="torneio-card-box">
+          <h2>Regras principais</h2>
+          <p id="detRegras"></p>
+        </div>
+
+        <div class="torneio-card-box">
+          <h2>Requisitos dos jogadores</h2>
+          <p id="detRequisitos"></p>
+        </div>
+      </div>
+
+      <!-- COLUNA DIREITA -->
+      <aside class="torneio-col-side">
+        <div class="torneio-card-box destaque-inscricao">
+          <h2>Informações gerais</h2>
+          <ul class="info-list">
+            <li><span>Localização:</span> <span id="infoLocal"></span></li>
+            <li><span>Modalidade:</span> <span id="infoModalidade"></span></li>
+            <li><span>Taxa de inscrição:</span> <span id="infoTaxa"></span></li>
+          </ul>
+        </div>
+
+        <div class="torneio-card-box">
+          <h2>Premiação</h2>
+          <pre id="detPremiacao" style="white-space: pre-wrap; font-family: inherit; font-size: 14px;"></pre>
+        </div>
+      </aside>
+    </section>
+
+  </main>
+
+  <!-- ========= FOOTER ========= -->
+  <footer>
+    <div id="footer_content">
+      <div id="footer_logo">
+        <img src="/image/logo.png" alt="" id="logofooter">
+      </div>
+
+      <div id="footer_sobrenos">
+        <h1>Sobre Nós</h1><br>
+        <p>O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports.</p>
+      </div>
+
+      <div id="footer_versushub">
+        <h1>Versus Hub</h1><br>
+        <p>
+          Torneios e Rankings atualizados <br><br>
+          Sistema seguro <br><br>
+          Suporte ativo todos os dias
+        </p>
+      </div>
+
+      <div id="footer_politicas">
+        <h1>Políticas</h1><br>
+        <li>Termos de uso</li><br>
+        <li>Política de Privacidade</li><br>
+        <li>Reembolsos</li>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS global + JS dessa página -->
+  <script src="/pagina_inicial/js/scrip.js"></script>
+  <script src="/torneio/js/custom.js"></script>
+</body>
+</html>

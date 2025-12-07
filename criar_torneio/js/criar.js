@@ -13,9 +13,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const inicioHora = document.getElementById('inicioHora');
   const status = document.getElementById('status');
   const descricao = document.getElementById('descricao');
+  const localizacao = document.getElementById('localizacao');
+  const modalidade = document.getElementById('modalidade');
+  const regras = document.getElementById('regras');
+  const premiacao = document.getElementById('premiacao');
+  const taxaTipo = document.getElementById('taxaTipo');
+  const taxaValor = document.getElementById('taxaValor');
+  const requisitos = document.getElementById('requisitos');
   const feedbackMsg = document.getElementById('feedbackMsg');
 
   let bannerDataUrl = ''; // vamos guardar o banner aqui
+
+  // ===== PREMIAÇÃO =====
+let premiacaoLinhas = [];
+
+if (tipoPremio.value === "nenhuma") {
+  premiacaoLinhas.push("Não há premiação neste torneio.");
+} else {
+  const labelTipo = {
+    'dinheiro': 'Tipo: Dinheiro',
+    'itens': 'Tipo: Itens / Skins / Diamantes',
+    'dinheiro-itens': 'Tipo: Dinheiro + Itens',
+    'outro': 'Tipo: Outro'
+  }[tipoPremio.value] || '';
+
+  if (labelTipo) premiacaoLinhas.push(labelTipo);
+
+  if (premio1.value.trim()) premiacaoLinhas.push(`1º lugar: ${premio1.value.trim()}`);
+  if (premio2.value.trim()) premiacaoLinhas.push(`2º lugar: ${premio2.value.trim()}`);
+  if (premio3.value.trim()) premiacaoLinhas.push(`3º lugar: ${premio3.value.trim()}`);
+
+  if (premiacaoExtra.value.trim()) {
+    premiacaoLinhas.push(`Extras: ${premiacaoExtra.value.trim()}`);
+  }
+}
+
+const premiacaoFinal = premiacaoLinhas.join("\n");
+
+let taxaFinal = "Gratuito";
+if (taxaTipo.value === "pago") {
+  taxaFinal = `R$ ${parseFloat(taxaValor.value || 0).toFixed(2)}`;
+}
+
 
   // ===== PREVIEW DO BANNER =====
   bannerInput.addEventListener('change', (e) => {
@@ -132,8 +171,11 @@ if (dataValue && horaValue) {
   descricao: descricao.value.trim(),
   categoria: categoria.value,
   plataforma: plataforma.value,
+  taxa: taxaFinal,
+premiacao: premiacaoFinal,
   inicioIso, // agora variável real
-  link: '/gerenciartorneios/gerentornindex.html' // ou a URL que você for usar depois
+    link: '/torneio/custom.html?id=' + encodeURIComponent(id)
+
 };
 
     

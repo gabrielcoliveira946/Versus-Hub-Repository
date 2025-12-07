@@ -143,7 +143,7 @@
           </div>
         </div>
 
-        <div class="form-grid">
+       <div class="form-grid">
   <div class="form-block">
     <label for="inicioData">Data do torneio</label>
     <input type="date" id="inicioData" required>
@@ -167,6 +167,7 @@
 
 
 
+
         <!-- Descrição opcional (usada futuramente na página de detalhes dinâmica) -->
         <div class="form-block full-row">
           <label for="descricao">Descrição do torneio (opcional)</label>
@@ -177,14 +178,134 @@
           ></textarea>
         </div>
 
-        <div class="actions-row">
+       
+
+      
+
+    <div class="form-grid">
+  <div class="form-block">
+    <label for="localizacao">Localização (cidade/estado ou endereço)</label>
+    <input type="text" id="localizacao" placeholder="Ex: Arena TG - Contagem, MG">
+  </div>
+
+  <div class="form-block">
+    <label for="modalidade">Modalidade</label>
+    <select id="modalidade">
+      <option value="online">Online</option>
+      <option value="presencial">Presencial</option>
+    </select>
+  </div>
+</div>
+
+<!-- Regras -->
+<div class="form-block full-row">
+  <label for="regras">Regras do torneio</label>
+  <textarea id="regras" rows="4" placeholder="Explique as regras principais..."></textarea>
+</div>
+
+<!-- TAXA DE INSCRIÇÃO -->
+<div class="form-block full-row">
+  <label for="taxaTipo">Taxa de inscrição</label>
+  <select id="taxaTipo">
+    <option value="gratis">Gratuito</option>
+    <option value="pago">Pago</option>
+  </select>
+</div>
+
+<div class="form-block" id="taxaValorBlock" style="display: none;">
+  <label for="taxaValor">Valor da taxa (R$)</label>
+  <input
+    type="number"
+    id="taxaValor"
+    min="0"
+    step="0.01"
+    placeholder="Ex: 20.00"
+  >
+</div>
+
+<script>
+  // Mostrar / esconder campo valor da taxa
+  document.addEventListener("DOMContentLoaded", () => {
+    const taxaTipo = document.getElementById("taxaTipo");
+    const taxaValorBlock = document.getElementById("taxaValorBlock");
+
+    taxaTipo.addEventListener("change", () => {
+      taxaValorBlock.style.display = taxaTipo.value === "pago" ? "block" : "none";
+    });
+  });
+</script>
+
+
+<!-- Premiação -->
+ 
+<!-- Tipo de premiação -->
+
+<div class="form-block full-row">
+  <label for="tipoPremio">Premiação</label>
+  <select id="tipoPremio">
+    <option value="nenhuma">Sem premiação</option>
+    <option value="dinheiro">Dinheiro</option>
+    <option value="itens">Itens (skins, diamantes, etc.)</option>
+    <option value="dinheiro-itens">Dinheiro + Itens</option>
+    <option value="outro">Outro</option>
+  </select>
+</div>
+
+<div id="premiacaoCampos">
+  <div class="form-grid">
+    <div class="form-block">
+      <label for="premio1">1º lugar</label>
+      <input id="premio1" type="text" placeholder="Ex: R$ 2.000 + troféu">
+    </div>
+
+    <div class="form-block">
+      <label for="premio2">2º lugar</label>
+      <input id="premio2" type="text" placeholder="Ex: R$ 1.000">
+    </div>
+  </div>
+
+  <div class="form-grid">
+    <div class="form-block">
+      <label for="premio3">3º lugar</label>
+      <input id="premio3" type="text" placeholder="Ex: R$ 500 ou gift card">
+    </div>
+
+    <div class="form-block">
+      <label for="premiacaoExtra">Extras (opcional)</label>
+      <input id="premiacaoExtra" type="text" placeholder="Ex: MVP ganha item…">
+    </div>
+  </div>
+</div>
+
+<script>
+
+  // Esconde/mostra os campos de premiação dependendo do tipo escolhido
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const tipoPremio = document.getElementById("tipoPremio");
+    const premiacaoCampos = document.getElementById("premiacaoCampos");
+
+    tipoPremio.addEventListener("change", () => {
+      premiacaoCampos.style.display = tipoPremio.value === "nenhuma" ? "none" : "block";
+    });
+  });
+</script>
+
+
+<!-- Requisitos -->
+<div class="form-block full-row">
+  <label for="requisitos">Requisitos dos jogadores</label>
+  <textarea id="requisitos" rows="3" placeholder="Idade mínima, plataforma, Discord obrigatório..."></textarea>
+</div>
+
+ <div class="actions-row">
           <button type="submit" class="btn-principal-criar">
             Criar torneio
           </button>
           <span class="feedback-msg" id="feedbackMsg"></span>
         </div>
 
-      </form>
+</form>
     </section>
 
   </main>

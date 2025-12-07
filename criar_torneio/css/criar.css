@@ -51,13 +51,14 @@
 .form-block input,
 .form-block select,
 .form-block textarea {
-  background: #1f1f2b;
+  background: #42424f;
   border: 1px solid #2f3140;
   color: #ffffff;
   border-radius: 10px;
   padding: 8px 10px;
   font-size: 14px;
   outline: none;
+
 }
 
 .form-block textarea {
@@ -75,6 +76,8 @@
   color: #9ca3af;
   margin-bottom: 6px;
 }
+
+
 
 /* preview do banner */
 .banner-preview {
