@@ -133,6 +133,11 @@
   color: #a7f3d0; /* verdinho */
 }
 
+#listaJogos {
+ color: rebeccapurple;
+
+}
+
 /* responsivo */
 @media (max-width: 768px) {
   .form-grid {

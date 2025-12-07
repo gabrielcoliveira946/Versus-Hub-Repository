@@ -2,25 +2,34 @@
 document.addEventListener('DOMContentLoaded', () => {
   const STORAGE_KEY = 'vh_createdTournaments';
 
-  const form = document.getElementById('formCriarTorneio');
-  const bannerInput = document.getElementById('bannerInput');
-  const bannerPreview = document.getElementById('bannerPreview');
-  const nomeTorneio = document.getElementById('nomeTorneio');
-  const jogoNome = document.getElementById('jogoNome');
-  const categoria = document.getElementById('categoria');
-  const plataforma = document.getElementById('plataforma');
-  const inicioData = document.getElementById('inicioData');
-  const inicioHora = document.getElementById('inicioHora');
-  const status = document.getElementById('status');
-  const descricao = document.getElementById('descricao');
-  const localizacao = document.getElementById('localizacao');
-  const modalidade = document.getElementById('modalidade');
-  const regras = document.getElementById('regras');
-  const premiacao = document.getElementById('premiacao');
-  const taxaTipo = document.getElementById('taxaTipo');
-  const taxaValor = document.getElementById('taxaValor');
-  const requisitos = document.getElementById('requisitos');
-  const feedbackMsg = document.getElementById('feedbackMsg');
+  const form           = document.getElementById('formCriarTorneio');
+const bannerInput    = document.getElementById('bannerInput');
+const bannerPreview  = document.getElementById('bannerPreview');
+const nomeTorneio    = document.getElementById('nomeTorneio');
+const jogoNome       = document.getElementById('jogoNome');
+const categoria      = document.getElementById('categoria');
+const plataforma     = document.getElementById('plataforma');
+const inicioData     = document.getElementById('inicioData');
+const inicioHora     = document.getElementById('inicioHora');
+const status         = document.getElementById('status');
+const descricao      = document.getElementById('descricao');
+
+const localizacao    = document.getElementById('localizacao');
+const modalidade     = document.getElementById('modalidade');
+const regras         = document.getElementById('regras');
+
+const taxaTipo       = document.getElementById('taxaTipo');
+const taxaValor      = document.getElementById('taxaValor');
+
+const tipoPremio     = document.getElementById('tipoPremio');
+const premio1        = document.getElementById('premio1');
+const premio2        = document.getElementById('premio2');
+const premio3        = document.getElementById('premio3');
+const premiacaoExtra = document.getElementById('premiacaoExtra');
+
+const requisitos     = document.getElementById('requisitos');
+
+const feedbackMsg    = document.getElementById('feedbackMsg');
 
   let bannerDataUrl = ''; // vamos guardar o banner aqui
 
@@ -159,24 +168,45 @@ if (dataValue && horaValue) {
     // se o usuário não colocar banner, você pode usar uma imagem padrão
     const bannerFinal = bannerDataUrl || '/images/cerradocup.jpg'; // troque por um padrão seu
 
-    // objeto no MESMO formato que o Gerenciar Torneios espera
-   const novoTorneio = {
+   // objeto completo no MESMO formato que Gerenciar + template de detalhes vão usar
+const novoTorneio = {
   id,
+  // infos do card
   nome: nomeTorneio.value.trim(),
-  jogo: jogoDisplay,
-  data: dataDisplay,
-  status: statusText,
-  statusClass,
-  banner: bannerFinal,
+  jogo: jogoDisplay,          // "CS:GO • FPS • PC"
+  data: dataDisplay,          // "Início: 12/03/2026 às 19h"
+  status: statusText,         // "Inscrições abertas" / "Em andamento" / "Encerrado"
+  statusClass,                // "status-aberto", etc
+  banner: bannerFinal,        // DataURL ou imagem padrão
+
+  // detalhes do torneio
   descricao: descricao.value.trim(),
   categoria: categoria.value,
   plataforma: plataforma.value,
-  taxa: taxaFinal,
-premiacao: premiacaoFinal,
-  inicioIso, // agora variável real
-    link: '/torneio/custom.html?id=' + encodeURIComponent(id)
+  inicioIso,                  // "2026-03-12T19:00"
 
+  // novos campos
+  localizacao: localizacao.value.trim(),
+  modalidade: modalidade.value,                 // "online" ou "presencial"
+  regras: regras.value.trim(),
+
+  taxaTipo: taxaTipo.value,                     // "gratis" ou "pago"
+  taxaValor: taxaTipo.value === 'pago'
+    ? (taxaValor.value || '').trim()
+    : '',
+
+  tipoPremio: tipoPremio.value,                 // "nenhuma", "dinheiro", etc.
+  premio1: premio1.value.trim(),
+  premio2: premio2.value.trim(),
+  premio3: premio3.value.trim(),
+  premiacaoExtra: premiacaoExtra.value.trim(),
+
+  requisitos: requisitos.value.trim(),
+
+  // link que o "Ver detalhes" vai usar
+  link: '/torneio/custom.html?id=' + id
 };
+
 
     
 

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- estilos globais -->
   <link rel="stylesheet" href="/pagina_inicial/css/estilos.css" />
-  <!-- pode reaproveitar o mesmo CSS de detalhes -->
+  <!-- estilos específicos de detalhes -->
   <link rel="stylesheet" href="/torneio/detalhes.css" />
+  <link rel="icon" href="/image/logo.png" sizes="32x32"> 
   <title>Detalhes do Torneio - VersusHub</title>
 </head>
 <body>
@@ -14,6 +15,7 @@
   <!-- ========= HEADER ========= -->
   <header>
     <nav class="navbar">
+
       <div class="header-left">
         <button id="menuToggle" class="menu-button">
           <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
@@ -46,86 +48,121 @@
           <ul id="menuUser" class="hidden"></ul>
         </div>
       </div>
+
     </nav>
   </header>
+  <!-- ========= FIM HEADER ========= -->
 
-  <!-- ========= SIDEBAR ========= -->
+  <!-- ===== SIDEBAR ==== -->
   <aside id="sidebar" class="sidebar">
     <h2 class="sidebar-title"></h2>
     <nav class="sidebar-nav">
       <a href="/pagina_inicial/index.html">🏠 Início</a>
       <a href="/pagina_inicial/torneios.html">🏆 Todos os torneios</a>
-      <a href="/gerenciartorneios/gerentornindex.html">📋 Gerenciar torneios</a>
-      <a href="#feedback">⭐ Enviar feedback</a>
+     <a href="/criar_torneio/criar_torneio.html">🎖️ Criar Torneio</a>
+     <a href="#">👥 Equipes</a>
+      <a href="/gerenciartorneios/gerentornindex.html">📄 Gerenciar torneios</a>
+     <a href="/termos/termos.html">💼 Termos de Uso</a>
+      <a href="#feedback">⭐ Enviar feedback / Sugestão</a>
     </nav>
   </aside>
+
+  <!-- efeito da tela ficar escura no fundo -->
+
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
-  <!-- ========= FIM SIDEBAR ========= -->
 
-  <!-- ========= CONTEÚDO (vai ser preenchido via JS) ========= -->
-  <main class="torneio-page">
+  <!-- ===== FIM SIDEBAR ===== -->
 
+  <!-- ========= CONTEÚDO DINÂMICO ========= -->
+  <main class="torneio-page" id="torneioPage" style="display:none;">
+
+    <!-- HERO DO TORNEIO -->
     <section class="torneio-hero">
       <div class="torneio-banner">
-        <img id="detBanner" src="" alt="Banner do torneio">
-        <div id="detStatusBadge" class="torneio-status-badge">
-          <!-- texto do status vem do JS -->
+        <img id="torneioBanner" src="" alt="Banner do torneio">
+        <div class="torneio-status-badge" id="torneioStatusBadge">
+          <!-- texto do status aqui -->
         </div>
       </div>
 
       <div class="torneio-hero-info">
-        <h1 id="detNome">Carregando...</h1>
-        <p class="torneio-meta" id="detMeta"></p>
-        <p class="torneio-data" id="detData"></p>
+        <h1 id="torneioTitulo">Nome do Torneio</h1>
+        <p class="torneio-meta" id="torneioMeta">Jogo • Categoria • Plataforma</p>
+        <p class="torneio-data" id="torneioData">Início: --/--/----</p>
 
         <div class="torneio-tags">
-          <span id="tagCategoria"></span>
-          <span id="tagPlataforma"></span>
-          <span id="tagModalidade"></span>
-          <span id="tagTaxa"></span>
+          <span id="tagModalidade">Modalidade: --</span>
+          <span id="tagLocalizacao">Localização: --</span>
+          <span id="tagTaxa">Taxa: --</span>
         </div>
       </div>
     </section>
 
+    <!-- LAYOUT EM 2 COLUNAS -->
     <section class="torneio-layout">
+
       <!-- COLUNA ESQUERDA -->
       <div class="torneio-col-info">
+
         <div class="torneio-card-box">
           <h2>Sobre o torneio</h2>
-          <p id="detDescricao">
-            <!-- descrição -->
+          <p id="descrTorneio">
+            Nenhuma descrição informada.
           </p>
         </div>
 
         <div class="torneio-card-box">
           <h2>Regras principais</h2>
-          <p id="detRegras"></p>
+          <ul id="listaRegras">
+            <!-- regras em <li> -->
+          </ul>
         </div>
 
         <div class="torneio-card-box">
           <h2>Requisitos dos jogadores</h2>
-          <p id="detRequisitos"></p>
+          <p id="textoRequisitos">
+            Nenhum requisito especial informado.
+          </p>
         </div>
+
       </div>
 
       <!-- COLUNA DIREITA -->
       <aside class="torneio-col-side">
+
         <div class="torneio-card-box destaque-inscricao">
-          <h2>Informações gerais</h2>
+          <h2>Inscrições</h2>
           <ul class="info-list">
-            <li><span>Localização:</span> <span id="infoLocal"></span></li>
-            <li><span>Modalidade:</span> <span id="infoModalidade"></span></li>
-            <li><span>Taxa de inscrição:</span> <span id="infoTaxa"></span></li>
+            <li><span>Status:</span> <span id="textoStatus">--</span></li>
+            <li><span>Plataforma:</span> <span id="textoPlataforma">--</span></li>
+            <li><span>Taxa:</span> <span id="textoTaxa2">--</span></li>
           </ul>
         </div>
 
         <div class="torneio-card-box">
           <h2>Premiação</h2>
-          <pre id="detPremiacao" style="white-space: pre-wrap; font-family: inherit; font-size: 14px;"></pre>
-        </div>
-      </aside>
-    </section>
+          <p id="textoSemPremio" style="display:none;">Não há premiação definida para este torneio.</p>
 
+          <ul class="info-list" id="listaPremios">
+            <li id="liPremio1" style="display:none;"><span>1º lugar:</span> <span id="premio1Texto"></span></li>
+            <li id="liPremio2" style="display:none;"><span>2º lugar:</span> <span id="premio2Texto"></span></li>
+            <li id="liPremio3" style="display:none;"><span>3º lugar:</span> <span id="premio3Texto"></span></li>
+            <li id="liPremioExtra" style="display:none;"><span>Extras:</span> <span id="premioExtraTexto"></span></li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </section>
+  </main>
+
+  <!-- Caso o torneio não seja encontrado -->
+  <main id="erroTorneio" class="torneio-page" style="display:none;">
+    <section class="torneio-card-box">
+      <h2>Torneio não encontrado</h2>
+      <p>Não conseguimos localizar esse torneio nos seus dados locais.  
+      Verifique se ele ainda existe em <strong>Gerenciar torneios &gt; Seus torneios</strong>.</p>
+    </section>
   </main>
 
   <!-- ========= FOOTER ========= -->
@@ -136,12 +173,14 @@
       </div>
 
       <div id="footer_sobrenos">
-        <h1>Sobre Nós</h1><br>
+        <h1>Sobre Nós</h1>
+        <br>
         <p>O Versus Hub é uma plataforma criada para conectar jogadores, organizadores e fãs de e-sports.</p>
       </div>
 
       <div id="footer_versushub">
-        <h1>Versus Hub</h1><br>
+        <h1>Versus Hub</h1>
+        <br>
         <p>
           Torneios e Rankings atualizados <br><br>
           Sistema seguro <br><br>
@@ -157,9 +196,165 @@
       </div>
     </div>
   </footer>
+  <!-- ========= FIM FOOTER ========= -->
 
-  <!-- JS global + JS dessa página -->
+  <!-- ========= SCRIPTS ========= -->
   <script src="/pagina_inicial/js/scrip.js"></script>
-  <script src="/torneio/js/custom.js"></script>
+
+  <script>
+    // Pegar parâmetro ?id= da URL
+    function getParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+
+    function loadArray(key) {
+      try {
+        return JSON.parse(localStorage.getItem(key) || '[]');
+      } catch (e) {
+        return [];
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const id = getParam('id');
+
+      if (!id) {
+        document.getElementById('erroTorneio').style.display = 'block';
+        return;
+      }
+
+      const created  = loadArray('vh_createdTournaments');
+      const joined   = loadArray('vh_joinedTournaments');
+      const visited  = loadArray('vh_visitedTournaments');
+
+      // procura o torneio pelo id em qualquer um dos arrays
+      const todos = [...created, ...joined, ...visited];
+      const torneio = todos.find(t => t.id === id);
+
+      if (!torneio) {
+        document.getElementById('erroTorneio').style.display = 'block';
+        return;
+      }
+
+      // Mostra o bloco principal
+      document.getElementById('torneioPage').style.display = 'block';
+
+      // --- Preenche HERO ---
+      const bannerImg = document.getElementById('torneioBanner');
+      bannerImg.src = torneio.banner || '/images/cerradocup.jpg';
+      bannerImg.alt = torneio.nome || 'Banner do torneio';
+
+      const badge = document.getElementById('torneioStatusBadge');
+      badge.textContent = torneio.status || 'Status não informado';
+      badge.classList.add(torneio.statusClass || '');
+
+      document.getElementById('torneioTitulo').textContent = torneio.nome || 'Torneio sem nome';
+      document.getElementById('torneioMeta').textContent   = torneio.jogo || 'Jogo não informado';
+      document.getElementById('torneioData').textContent   = torneio.data || 'Data não informada';
+
+      // Tags
+      const modalidadeTexto = torneio.modalidade === 'presencial' ? 'Presencial' : 'Online';
+      document.getElementById('tagModalidade').textContent =
+        'Modalidade: ' + modalidadeTexto;
+
+      document.getElementById('tagLocalizacao').textContent =
+        'Localização: ' + (torneio.localizacao || 'Não informada');
+
+      // Taxa
+      let taxaText = 'Gratuito';
+      if (torneio.taxaTipo === 'pago') {
+        taxaText = 'Pago';
+        if (torneio.taxaValor) {
+          taxaText += ' - R$ ' + Number(torneio.taxaValor).toFixed(2).replace('.', ',');
+        }
+      }
+      document.getElementById('tagTaxa').textContent = 'Taxa: ' + taxaText;
+      document.getElementById('textoTaxa2').textContent = taxaText;
+
+      // Plataforma (a gente reaproveita texto que já vem em torneio.jogo)
+      document.getElementById('textoPlataforma').textContent =
+        torneio.jogo || '--';
+
+      // Status
+      document.getElementById('textoStatus').textContent =
+        torneio.status || '--';
+
+      // Descrição
+      document.getElementById('descrTorneio').textContent =
+        torneio.descricao && torneio.descricao.trim()
+          ? torneio.descricao
+          : 'Nenhuma descrição informada.';
+
+      // Regras (quebra por linha e cria <li>)
+      const listaRegras = document.getElementById('listaRegras');
+      listaRegras.innerHTML = '';
+      if (torneio.regras && torneio.regras.trim()) {
+        torneio.regras.split('\n').forEach(linha => {
+          const texto = linha.trim();
+          if (!texto) return;
+          const li = document.createElement('li');
+          li.textContent = texto;
+          listaRegras.appendChild(li);
+        });
+      } else {
+        const li = document.createElement('li');
+        li.textContent = 'Nenhuma regra específica informada.';
+        listaRegras.appendChild(li);
+      }
+
+      // Requisitos
+      document.getElementById('textoRequisitos').textContent =
+        torneio.requisitos && torneio.requisitos.trim()
+          ? torneio.requisitos
+          : 'Nenhum requisito especial informado.';
+
+      // Premiação
+      const tipoPremio = torneio.tipoPremio || 'nenhuma';
+      const textoSem = document.getElementById('textoSemPremio');
+      const li1 = document.getElementById('liPremio1');
+      const li2 = document.getElementById('liPremio2');
+      const li3 = document.getElementById('liPremio3');
+      const liExtra = document.getElementById('liPremioExtra');
+
+      // esconde tudo de início
+      textoSem.style.display = 'none';
+      li1.style.display = 'none';
+      li2.style.display = 'none';
+      li3.style.display = 'none';
+      liExtra.style.display = 'none';
+
+      if (tipoPremio === 'nenhuma') {
+        textoSem.style.display = 'block';
+      } else {
+        if (torneio.premio1 && torneio.premio1.trim()) {
+          li1.style.display = 'list-item';
+          document.getElementById('premio1Texto').textContent = torneio.premio1;
+        }
+        if (torneio.premio2 && torneio.premio2.trim()) {
+          li2.style.display = 'list-item';
+          document.getElementById('premio2Texto').textContent = torneio.premio2;
+        }
+        if (torneio.premio3 && torneio.premio3.trim()) {
+          li3.style.display = 'list-item';
+          document.getElementById('premio3Texto').textContent = torneio.premio3;
+        }
+        if (torneio.premiacaoExtra && torneio.premiacaoExtra.trim()) {
+          liExtra.style.display = 'list-item';
+          document.getElementById('premioExtraTexto').textContent = torneio.premiacaoExtra;
+        }
+
+        // se mesmo assim tudo vazio, mostra texto padrão
+        if (
+          li1.style.display === 'none' &&
+          li2.style.display === 'none' &&
+          li3.style.display === 'none' &&
+          liExtra.style.display === 'none'
+        ) {
+          textoSem.style.display = 'block';
+        }
+      }
+    });
+  </script>
 </body>
 </html>

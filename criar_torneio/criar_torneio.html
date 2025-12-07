@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/pagina_inicial/css/estilos.css" />
   <!-- estilos específicos desta página -->
   <link rel="stylesheet" href="/criar_torneio/css/criar.css" />
+  <link rel="icon" href="/image/logo.png" sizes="32x32"> 
   <title>Criar Torneio - VersusHub</title>
 </head>
 <body>
@@ -29,7 +30,8 @@
 
       <div class="botoes_header">
         <a href="/aovivo/aovivo.html"><button id="aovivo_header">Ao Vivo</button></a>
-        <button id="criar_header">Criar Torneio</button>
+        <a href="/criar_torneio/criar_torneio.html"> <button id="criar_header">Criar Torneio</button>
+      </a>
         <button id="equipes_header">Equipes</button>
       </div>
 
@@ -56,19 +58,25 @@
   </header>
   <!-- ========= FIM HEADER ========= -->
 
-  <!-- ========= SIDEBAR ========= -->
+<!-- ===== SIDEBAR ==== -->
   <aside id="sidebar" class="sidebar">
     <h2 class="sidebar-title"></h2>
     <nav class="sidebar-nav">
       <a href="/pagina_inicial/index.html">🏠 Início</a>
       <a href="/pagina_inicial/torneios.html">🏆 Todos os torneios</a>
-      <a href="/gerenciartorneios/gerentornindex.html">📋 Gerenciar torneios</a>
-      <a href="#feedback">⭐ Enviar feedback</a>
-      <a href="#suporte">❓ Suporte</a>
+     <a href="/criar_torneio/criar_torneio.html">🎖️ Criar Torneio</a>
+     <a href="#">👥 Equipes</a>
+      <a href="/gerenciartorneios/gerentornindex.html">📄 Gerenciar torneios</a>
+     <a href="/termos/termos.html">💼 Termos de Uso</a>
+      <a href="#feedback">⭐ Enviar feedback / Sugestão</a>
     </nav>
   </aside>
+
+  <!-- efeito da tela ficar escura no fundo -->
+
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
-  <!-- ========= FIM SIDEBAR ========= -->
+
+  <!-- ===== FIM SIDEBAR ===== -->
 
   <!-- ========= CONTEÚDO: FORMULÁRIO DE CRIAÇÃO ========= -->
   <main class="criar-torneio-page">
@@ -104,15 +112,35 @@
           </div>
 
           <!-- Jogo -->
-          <div class="form-block">
-            <label for="jogoNome">Jogo</label>
-            <input
-              type="text"
-              id="jogoNome"
-              placeholder="Ex: CS:GO, Free Fire, FIFA..."
-              required
-            >
-          </div>
+<div class="form-block">
+  <label for="jogoNome">Jogo</label>
+  <input
+    type="text"
+    id="jogoNome"
+    list="listaJogos"
+    placeholder="Digite ou escolha um jogo..."
+    required
+  >
+</div>
+<datalist id="listaJogos">
+  <option value="CS:GO">
+  <option value="Counter-Strike 2">
+  <option value="Valorant">
+  <option value="Free Fire">
+  <option value="League of Legends">
+  <option value="Wild Rift">
+  <option value="FIFA 25">
+  <option value="EA SPORTS FC 25">
+  <option value="Fortnite">
+  <option value="PUBG">
+  <option value="Apex Legends">
+  <option value="Rocket League">
+  <option value="Rainbow Six Siege">
+  <option value="Dota 2">
+  <option value="Clash Royale">
+  <option value="Brawl Stars">
+</datalist>
+
         </div>
 
         <div class="form-grid">
@@ -184,7 +212,7 @@
 
     <div class="form-grid">
   <div class="form-block">
-    <label for="localizacao">Localização (cidade/estado ou endereço)</label>
+    <label for="localizacao">Localização (cidade/estado ou endereço) ou Link da Localização</label>
     <input type="text" id="localizacao" placeholder="Ex: Arena TG - Contagem, MG">
   </div>
 
