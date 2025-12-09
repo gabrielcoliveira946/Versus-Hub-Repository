@@ -126,7 +126,7 @@ color: #ffffff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: #0e0e0e; /* mesmo fundo das outras páginas */
+   background: #050407; /* mesmo fundo das outras páginas */
 }
 
 /* O main ocupa o espaço entre header fixo e footer */

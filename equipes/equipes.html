@@ -18,50 +18,66 @@
 <header>
   <nav class="navbar">
 
+    <!-- ESQUERDA: menu + logo -->
     <div class="header-left">
+
+      <!-- Botão do menu lateral (hambúrguer) -->
       <button id="menuToggle" class="menu-button">
         <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
       </button>
 
+      <!-- LOGO -->
       <div class="logo_header">
         <a href="/pagina_inicial/index.html">
           <img src="/image/logo plus tipo textura.png" alt="VersusHub">
         </a>
       </div>
+
     </div>
 
+    <!-- CENTRO: botões principais -->
     <div class="botoes_header">
-      <a href="/aovivo/aovivo.html">
-        <button id="aovivo_header">Ao Vivo</button>
-      </a>
-
-      <a href="/criar_torneio/criar_torneio.html">
-        <button id="criar_header">Criar Torneio</button>
-      </a>
-
-      <a href="/equipes/equipes.html">
-      <a href="/equipes/equipes.html"> <button id="equipes_header">Equipes</button> </a>
-      </a>
+     <a href="/aovivo/aovivo.html"> <button id="aovivo_header">Ao Vivo</button></a>
+     <a href="/criar_torneio/criar_torneio.html"> <button id="criar_header">Criar Torneio</button> <a href="/equipes/equipes.html"> <button id="equipes_header">Equipes</button> </a>
     </div>
 
-    <!-- PESQUISA -->
+    <!-- DIREITA: pesquisa + entrar + cadastrar + usuário -->
     <div class="header-right">
-      <form class="search-header" onsubmit="return false">
-        <input type="text" id="searchEquipes" placeholder="Buscar equipes...">
-        <button type="button" id="btnPesquisar">🔍</button>
+
+      <!-- BARRA DE PESQUISA NO HEADER -->
+      <form class="search-header" action="#" onsubmit="return false">
+        <input
+          type="text"
+          placeholder="Buscar torneios, jogos..."
+          id="searchInput"
+        >
+        <a href="#categorias"> <button type="submit" id="searchBtn">🔍</button> </a>
       </form>
 
+      <!-- BOTÕES À DIREITA -->
       <a href="/login/login.html" id="btentrar">Entrar</a>
       <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
 
+      <!-- ÍCONE DO USUÁRIO -->
       <div class="user-icon">
-        <img src="/image/boneco_logo_ofc.png" id="userBtn">
-        <ul id="menuUser" class="hidden"></ul>
+        <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
+
+        <ul id="menuUser" class="hidden">
+          <li>
+            <a href="/login/login.html">
+              Login
+            </a>
+          </li>
+          <hr>
+          <li><a href="/cadastro/cadastro.html">Cadastro</a></li>
+        </ul>
       </div>
+
     </div>
 
   </nav>
 </header>
+<!-- FIM HEADER -->
 
 <!-- ===== SIDEBAR ==== -->
   <aside id="sidebar" class="sidebar">
