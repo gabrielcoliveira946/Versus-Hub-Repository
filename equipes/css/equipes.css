@@ -15,15 +15,28 @@
 
 .btn-criar {
   padding: 10px 18px;
-  background: #d41111;
-  border: 2px solid #d41111;
+  background: #2f2d2d;
+  border: 2px solid #ff0000;
   border-radius: 999px;
   color: #fff;
   cursor: pointer;
   font-weight: bold;
   float: right;
-
+transition: 0.7s;
 }
+
+.btn-criar:hover {
+
+  background: #dc0b0bd1;
+  border: 2px solid #e6e4ec83;
+  border-radius: 999px;
+  color: #ffffff;
+  filter: brightness(1.2);
+  cursor: pointer;
+  font-weight: bold;
+transition: 0.7s;
+}
+
 
 
 

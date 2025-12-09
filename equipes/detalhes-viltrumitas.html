@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viltrumitas - Detalhes da Equipe | VersusHub</title>
+
+  <!-- CSS Global -->
+  <link rel="stylesheet" href="/pagina_inicial/css/estilos.css">
+
+  <!-- CSS Exclusivo da Página -->
+  <style>
+    body {
+      background: #0b0b0d;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+    }
+
+    .team-page {
+      max-width: 1100px;
+      margin: 13px auto 40px;
+      padding: 0 20px;
+    }
+
+    /* HERO */
+
+    .team-hero {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      background: #141419;
+      padding: 20px;
+      border-radius: 14px;
+      border: 2px solid #282833;
+    }
+
+    .team-hero img {
+      width: 210px;
+      height: 210px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 2px solid #d41111;
+    }
+
+    .team-header-line {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .team-info h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #ff2c2c;
+    }
+
+    .btn-join-team {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 2px solid #d41111;
+      background: #d41111;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    .btn-join-team:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+   .btn-join-team:active {
+     
+      background: rgb(70, 67, 67);
+    }
+
+    .team-info p {
+      margin: 4px 0;
+      color: #dcdcdc;
+    }
+
+    .tags {
+      margin-top: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #222230;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-right: 6px;
+      border: 1px solid #353545;
+    }
+
+    /* SEÇÕES GENÉRICAS */
+
+    .section-box {
+      background: #141419;
+      border-radius: 12px;
+      border: 2px solid #2a2a38;
+      padding: 20px;
+      margin-top: 25px;
+    }
+
+    .section-box h2 {
+      color: #ff2c2c;
+      margin-bottom: 12px;
+    }
+
+    /* INTEGRANTES */
+
+    .member-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start; /* puxa tudo pra esquerda */
+    }
+
+    .member {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      background: #1b1b26;
+      border-radius: 10px;
+      border: 1px solid #32323f;
+      width: 100%;
+      max-width: 420px; /* não ocupa a tela toda */
+    }
+
+    .member img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #d41111;
+    }
+
+    .member span {
+      font-size: 14px;
+    }
+
+    /* GRID DE TORNEIOS */
+
+    .team-tournaments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .team-tournament-card {
+      background: #191921;
+      border-radius: 10px;
+      border: 2px solid #2c2c3b;
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: 0.2s ease-in-out;
+    }
+
+    .team-tournament-card h3 {
+      font-size: 15px;
+      margin-bottom: 2px;
+      color: #ffffff;
+    }
+
+    .team-tournament-card p {
+      font-size: 13px;
+      color: #c7c7e0;
+      margin: 0;
+    }
+
+    .team-tournament-card .badge {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      background: #1e1b2e;
+      border: 1px solid #3b3b77;
+      color: #d4d4ff;
+    }
+
+    .team-tournament-card:hover {
+      transform: translateY(-3px);
+      border-color: #d41111;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      .team-hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .team-hero img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="header-left">
+        <button id="menuToggle" class="menu-button">
+          <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
+        </button>
+
+        <div class="logo_header">
+          <a href="/pagina_inicial/index.html">
+            <img src="/image/logo plus tipo textura.png" alt="VersusHub">
+          </a>
+        </div>
+      </div>
+
+      <div class="botoes_header">
+        <a href="/aovivo/aovivo.html"><button id="aovivo_header">Ao Vivo</button></a>
+        <a href="/criar_torneio/criar_torneio.html"><button id="criar_header">Criar Torneio</button></a>
+        <a href="/equipes/equipes.html"><button id="equipes_header">Equipes</button></a>
+      </div>
+
+      <div class="header-right">
+        <form class="search-header" onsubmit="return false">
+          <input type="text" placeholder="Buscar torneios, equipes..." id="searchInput">
+          <button type="submit">🔍</button>
+        </form>
+
+        <a href="/login/login.html" id="btentrar">Entrar</a>
+        <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
+
+        <div class="user-icon">
+          <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
+          <ul id="menuUser" class="hidden"></ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+ <!-- ===== SIDEBAR ==== -->
+  <aside id="sidebar" class="sidebar">
+    <h2 class="sidebar-title"></h2>
+    <nav class="sidebar-nav">
+      <a href="/pagina_inicial/index.html">🏠 Início</a>
+      <a href="/pagina_inicial/torneios.html">🏆 Todos os torneios</a>
+     <a href="/criar_torneio/criar_torneio.html">🎖️ Criar Torneio</a>
+     <a href="/equipes/equipes.html">👥 Equipes</a>
+      <a href="/gerenciartorneios/gerentornindex.html">📄 Gerenciar torneios</a>
+     <a href="/termos/termos.html">💼 Termos de Uso</a>
+      <a href="#feedback">⭐ Enviar feedback / Sugestão</a>
+    </nav>
+  </aside>
+
+  <!-- efeito da tela ficar escura no fundo -->
+
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+  <!-- ===== FIM SIDEBAR ===== -->
+
+  <!-- CONTEÚDO -->
+  <main class="team-page">
+
+    <!-- HERO -->
+    <section class="team-hero">
+      <!-- Logo / imagem da equipe -->
+      <img src="/equipes/image/Viltrumitas.jpg" alt="Viltrumitas">
+
+      <div class="team-info">
+
+        <div class="team-header-line">
+          <h1>Viltrumitas</h1>
+          <button class="btn-join-team" type="button">
+            Pedir para entrar
+          </button>
+        </div>
+
+        <p><strong>Integrantes:</strong> 5 / 6</p>
+        <p><strong>Jogo principal:</strong> Valorant</p>
+        <p><strong>Plataforma:</strong> PC</p>
+        <p><strong>Região:</strong> Brasil</p>
+
+        <div class="tags">
+          <span class="tag">Competitivo</span>
+          <span class="tag">Valorant</span>
+          <span class="tag">Line fixa</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE A EQUIPE -->
+    <section class="section-box">
+      <h2>Sobre a equipe</h2>
+      <p>
+        Os <strong>Viltrumitas</strong> são uma equipe focada em alto desempenho no cenário competitivo de Valorant,
+        conhecida por sua agressividade estratégica, entry-frags rápidos e excelente comunicação.
+        Participam com frequência de campeonatos on-line e presenciais na região Sudeste.
+      </p>
+    </section>
+
+    <!-- INTEGRANTES -->
+    <section class="section-box">
+      <h2>Integrantes</h2>
+
+      <div class="member-list">
+        <div class="member">
+          <img src="/images/player_viltrumitas1.jpg" alt="Markus">
+          <span><strong>Markus</strong> — IGL / Duelista</span>
+        </div>
+
+        <div class="member">
+          <img src="/images/player_viltrumitas2.jpg" alt="Aegon">
+          <span><strong>Aegon</strong> — Controlador</span>
+        </div>
+
+        <div class="member">
+          <img src="/images/player_viltrumitas3.jpg" alt="Nova">
+          <span><strong>Nova</strong> — Sentinela</span>
+        </div>
+
+        <div class="member">
+          <img src="/images/player_viltrumitas4.jpg" alt="Orion">
+          <span><strong>Orion</strong> — Iniciador</span>
+        </div>
+
+        <div class="member">
+          <img src="/images/player_viltrumitas5.jpg" alt="Hex">
+          <span><strong>Hex</strong> — Flex / 6º player</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TORNEIOS CONQUISTADOS -->
+    <section class="section-box">
+      <h2>Torneios conquistados</h2>
+
+      <div class="team-tournaments-grid">
+
+        <div class="team-tournament-card">
+          <h3>Arena Fire Valorant Cup</h3>
+          <p><strong>Posição:</strong> 1º lugar</p>
+          <p><strong>Ano:</strong> 2024</p>
+          <p><strong>Formato:</strong> MD3 • Eliminação simples</p>
+          <span class="badge">Campeão</span>
+        </div>
+
+        <div class="team-tournament-card">
+          <h3>Circuito Sudeste Series #3</h3>
+          <p><strong>Posição:</strong> 1º lugar</p>
+          <p><strong>Região:</strong> Sudeste</p>
+          <p><strong>Times:</strong> 32 equipes</p>
+          <span class="badge">Título regional</span>
+        </div>
+
+        <div class="team-tournament-card">
+          <h3>Valorant Clash Night</h3>
+          <p><strong>Posição:</strong> 1º lugar</p>
+          <p><strong>Plataforma:</strong> Online</p>
+          <p><strong>Premiação:</strong> R$ 2.000 + skins</p>
+          <span class="badge">Invictos</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TORNEIOS EM QUE ESTÁ PARTICIPANDO -->
+    <section class="section-box">
+      <h2>Torneios em que está participando</h2>
+
+      <div class="team-tournaments-grid">
+
+        <div class="team-tournament-card">
+          <h3>Cerrado Cup Valorant</h3>
+          <p><strong>Status:</strong> Em andamento</p>
+          <p><strong>Etapa:</strong> Fase de grupos</p>
+          <p><strong>Servidor:</strong> Brasil – SP</p>
+          <span class="badge">Participando</span>
+        </div>
+
+        <div class="team-tournament-card">
+          <h3>Open Qualifier VCT BR</h3>
+          <p><strong>Status:</strong> Inscritos</p>
+          <p><strong>Formato:</strong> Eliminação dupla</p>
+          <p><strong>Vagas:</strong> Classificatória oficial</p>
+          <span class="badge">Qualificatória</span>
+        </div>
+
+        <div class="team-tournament-card">
+          <h3>VersusHub Invitational</h3>
+          <p><strong>Status:</strong> Confirmados</p>
+          <p><strong>Início:</strong> 15/03/2026</p>
+          <p><strong>Times:</strong> 16 convidados</p>
+          <span class="badge">Convidados</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div id="footer_content">
+      <div id="footer_logo">
+        <img src="/image/logo.png" alt="VersusHub" id="logofooter">
+      </div>
+
+      <div id="footer_sobrenos">
+        <h1>Sobre Nós</h1>
+        <p>O VersusHub conecta jogadores, equipes e organizadores em um ambiente competitivo completo.</p>
+      </div>
+
+      <div id="footer_versushub">
+        <h1>Versus Hub</h1>
+        <p><br>Torneios | Equipes | Rankings <br> Suporte ativo todos os dias</p>
+      </div>
+
+      <div id="footer_politicas">
+        <h1>Políticas</h1>
+        <li>Termos de uso</li>
+        <li>Política de Privacidade</li>
+        <li>Política de Reembolso (para eventos pagos)</li>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/pagina_inicial/js/scrip.js"></script>
+</body>
+</html>

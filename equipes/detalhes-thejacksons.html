@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Jacksons - Detalhes da Equipe | VersusHub</title>
+
+  <!-- CSS Global -->
+  <link rel="stylesheet" href="/pagina_inicial/css/estilos.css">
+
+  <!-- CSS Exclusivo da Página -->
+  <style>
+    body {
+      background: #0b0b0d;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+    }
+
+    .team-page {
+      max-width: 1100px;
+      margin: 13px auto 40px;
+      padding: 0 20px;
+    }
+
+    /* HERO */
+
+    .team-hero {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      background: #141419;
+      padding: 20px;
+      border-radius: 14px;
+      border: 2px solid #282833;
+    }
+
+    .team-hero img {
+      width: 210px;
+      height: 210px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 2px solid #d41111;
+    }
+
+    .team-header-line {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .team-info h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #f83838;
+    }
+
+    .btn-join-team {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 2px solid #d41111;
+      background: #d41111;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    .btn-join-team:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .team-info p {
+      margin: 4px 0;
+      color: #dcdcdc;
+    }
+
+    .tags {
+      margin-top: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #222230;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-right: 6px;
+      border: 1px solid #353545;
+      color: #bfdbfe;
+    }
+
+    /* SEÇÕES GENÉRICAS */
+
+    .section-box {
+      background: #141419;
+      border-radius: 12px;
+      border: 2px solid #2a2a38;
+      padding: 20px;
+      margin-top: 25px;
+    }
+
+    .section-box h2 {
+      color: #f83838;
+      margin-bottom: 12px;
+    }
+
+    /* INTEGRANTES */
+
+    .member-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .member {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      background: #1b1b26;
+      border-radius: 10px;
+      border: 1px solid #32323f;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .member img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #f83838;
+    }
+
+    .member span {
+      font-size: 14px;
+    }
+
+    /* GRID DE TORNEIOS */
+
+    .team-tournaments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .team-tournament-card {
+      background: #191921;
+      border-radius: 10px;
+      border: 2px solid #2c2c3b;
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: 0.2s ease-in-out;
+    }
+
+    .team-tournament-card h3 {
+      font-size: 15px;
+      margin-bottom: 2px;
+      color: #ffffff;
+    }
+
+    .team-tournament-card p {
+      font-size: 13px;
+      color: #c7c7e0;
+      margin: 0;
+    }
+
+    .team-tournament-card .badge {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      background: #1e1b2e;
+      border: 1px solid #3b3b77;
+      color: #d4d4ff;
+    }
+
+    .team-tournament-card:hover {
+      transform: translateY(-3px);
+      border-color: #f83838;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      .team-hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .team-hero img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="header-left">
+        <button id="menuToggle" class="menu-button">
+          <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
+        </button>
+
+        <div class="logo_header">
+          <a href="/pagina_inicial/index.html">
+            <img src="/image/logo plus tipo textura.png" alt="VersusHub">
+          </a>
+        </div>
+      </div>
+
+      <div class="botoes_header">
+        <a href="/aovivo/aovivo.html"><button id="aovivo_header">Ao Vivo</button></a>
+        <a href="/criar_torneio/criar_torneio.html"><button id="criar_header">Criar Torneio</button></a>
+        <a href="/equipes/equipes.html"><button id="equipes_header">Equipes</button></a>
+      </div>
+
+      <div class="header-right">
+        <form class="search-header" onsubmit="return false">
+          <input type="text" placeholder="Buscar torneios, equipes..." id="searchInput">
+          <button type="submit">🔍</button>
+        </form>
+
+        <a href="/login/login.html" id="btentrar">Entrar</a>
+        <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
+
+        <div class="user-icon">
+          <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
+          <ul id="menuUser" class="hidden"></ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+<!-- ===== SIDEBAR ==== -->
+  <aside id="sidebar" class="sidebar">
+    <h2 class="sidebar-title"></h2>
+    <nav class="sidebar-nav">
+      <a href="/pagina_inicial/index.html">🏠 Início</a>
+      <a href="/pagina_inicial/torneios.html">🏆 Todos os torneios</a>
+     <a href="/criar_torneio/criar_torneio.html">🎖️ Criar Torneio</a>
+     <a href="/equipes/equipes.html">👥 Equipes</a>
+      <a href="/gerenciartorneios/gerentornindex.html">📄 Gerenciar torneios</a>
+     <a href="/termos/termos.html">💼 Termos de Uso</a>
+      <a href="#feedback">⭐ Enviar feedback / Sugestão</a>
+    </nav>
+  </aside>
+
+  <!-- efeito da tela ficar escura no fundo -->
+
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+  <!-- ===== FIM SIDEBAR ===== -->
+
+
+  <!-- CONTEÚDO -->
+  <main class="team-page">
+
+    <!-- HERO -->
+    <section class="team-hero">
+      <!-- Logo / imagem da equipe -->
+      <img src="/equipes/image/jacksons.png" alt="The Jacksons">
+
+      <div class="team-info">
+
+        <div class="team-header-line">
+          <h1>The Jacksons</h1>
+          <button class="btn-join-team" type="button">
+            Pedir para entrar
+          </button>
+        </div>
+
+        <p><strong>Integrantes:</strong> 4 / 6</p>
+        <p><strong>Jogos principais:</strong> FIFA / FC & NBA 2K</p>
+        <p><strong>Plataformas:</strong> PlayStation & Xbox</p>
+        <p><strong>Região:</strong> Brasil</p>
+
+        <div class="tags">
+          <span class="tag">Futebol virtual</span>
+          <span class="tag">Basquete virtual</span>
+          <span class="tag">Equipe casual-competitiva</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE A EQUIPE -->
+    <section class="section-box">
+      <h2>Sobre a equipe</h2>
+      <p>
+        <strong>The Jacksons</strong> é uma equipe voltada para jogos de esporte, com foco em
+        campeonatos de FIFA / FC e NBA 2K. O time mistura jogadores competitivos e casuais que
+        gostam de disputar ligas, copas e amistosos valendo ranking, troféus e, claro, muita resenha.
+      </p>
+    </section>
+
+    <!-- INTEGRANTES -->
+    <section class="section-box">
+      <h2>Integrantes</h2>
+
+      <div class="member-list">
+        <div class="member">
+          <img src="/images/player_jacksons1.jpg" alt="Jax">
+          <span><strong>Jax</strong> — Capitão / Meia ofensivo (FIFA)</span>
+        </div>
+
+        <div class="member">
+          <img src="/images/player_jacksons2.jpg" alt="MJ">
+          <span><strong>MJ</strong> — Armador (NBA 2K) / Camisa 10 do time</span>
+        </div>
+
+        <div class="member">
+          <img src="/images/player_jacksons3.jpg" alt="Junior">
+          <span><strong>Junior</strong> — Goleiro (Pro Clubs) / Ala (NBA)</span>
+        </div>
+
+        <div class="member">
+          <img src="/images/player_jacksons4.jpg" alt="Tito">
+          <span><strong>Tito</strong> — Zagueiro / Especialista em bolas paradas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TORNEIOS CONQUISTADOS -->
+    <section class="section-box">
+      <h2>Torneios conquistados</h2>
+
+      <div class="team-tournaments-grid">
+
+        <div class="team-tournament-card">
+          <h3>FC Weekend League Brasil</h3>
+          <p><strong>Posição:</strong> Top 1 em grupo fechado</p>
+          <p><strong>Plataforma:</strong> PS5</p>
+          <p><strong>Destaque:</strong> Ataque mais positivo da liga</p>
+          <span class="badge">Campeões invictos</span>
+        </div>
+
+        <div class="team-tournament-card">
+          <h3>NBA 2K Street Finals</h3>
+          <p><strong>Posição:</strong> 1º lugar</p>
+          <p><strong>Formato:</strong> 3x3 • Melhor de 3</p>
+          <p><strong>Premiação:</strong> Gift cards e troféu virtual</p>
+          <span class="badge">MVP no garrafão</span>
+        </div>
+
+        <div class="team-tournament-card">
+          <h3>Pro Clubs Elite Cup</h3>
+          <p><strong>Posição:</strong> 1º lugar</p>
+          <p><strong>Times:</strong> 24 clubes</p>
+          <p><strong>Defesa:</strong> Menos gols sofridos da competição</p>
+          <span class="badge">Defesa de ferro</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TORNEIOS EM QUE ESTÁ PARTICIPANDO -->
+    <section class="section-box">
+      <h2>Torneios em que está participando</h2>
+
+      <div class="team-tournaments-grid">
+
+        <div class="team-tournament-card">
+          <h3>FIFA Global Series - VersusHub</h3>
+          <p><strong>Status:</strong> Em andamento</p>
+          <p><strong>Etapa:</strong> Fase de grupos</p>
+          <p><strong>Servidor:</strong> Brasil</p>
+          <span class="badge">Grupo B</span>
+        </div>
+
+        <div class="team-tournament-card">
+          <h3>VersusHub Esports Cup (NBA)</h3>
+          <p><strong>Status:</strong> Inscritos</p>
+          <p><strong>Formato:</strong> MD3 • Chave única</p>
+          <p><strong>Início:</strong> 10/05/2026</p>
+          <span class="badge">Aguardando início</span>
+        </div>
+
+        <div class="team-tournament-card">
+          <h3>Liga Amistosa Pro Clubs</h3>
+          <p><strong>Status:</strong> Liga contínua</p>
+          <p><strong>Times:</strong> 16 equipes</p>
+          <p><strong>Objetivo:</strong> Top 3 na tabela geral</p>
+          <span class="badge">Briga pelo topo</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div id="footer_content">
+      <div id="footer_logo">
+        <img src="/image/logo.png" alt="VersusHub" id="logofooter">
+      </div>
+
+      <div id="footer_sobrenos">
+        <h1>Sobre Nós</h1>
+        <p>O Versus Hub conecta jogadores, equipes e organizadores em um ambiente competitivo completo.</p>
+      </div>
+
+      <div id="footer_versushub">
+        <h1>Versus Hub</h1>
+        <p><br>Torneios | Equipes | Rankings <br> Suporte ativo todos os dias</p>
+      </div>
+
+      <div id="footer_politicas">
+        <h1>Políticas</h1>
+        <li>Termos de uso</li>
+        <li>Política de Privacidade</li>
+        <li>Política de Reembolso (para eventos pagos)</li>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/pagina_inicial/js/scrip.js"></script>
+</body>
+</html>
