@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!u.bio) u.bio = "";
     if (!u.avatar) u.avatar = "";
     if (!Array.isArray(u.jogosFavoritos)) u.jogosFavoritos = [];
+    if (!u.regiao) u.regiao = "Brasil";
+    if (!Array.isArray(u.plataformas)) u.plataformas = [];
+
 
     return u;
   }
@@ -52,11 +55,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const jogoInput       = document.getElementById("jogoInput");
   const jogosTags       = document.getElementById("jogosTags");
 
+  const spanRegiao      = document.getElementById("spanRegiao");
+  const spanPlataforma  = document.getElementById("spanPlataforma");
+
+  const platPC      = document.getElementById("platPC");
+  const platConsole = document.getElementById("platConsole");
+  const platMobile  = document.getElementById("platMobile");
+
+
   // --------- PREENCHE A TELA COM O QUE TEM NO LOCALSTORAGE ---------
   displayName.textContent = user.nome || "Usuário convidado";
   inputUsername.value     = user.nome || "";
   emailInput.value        = user.email || "";
   bioTextarea.value       = user.bio || "";
+
+  // Região (padrão Brasil)
+if (spanRegiao) {
+  spanRegiao.textContent = user.regiao || "Brasil";
+}
+
+// função pra atualizar o texto de plataforma no header
+function atualizarTextoPlataformas() {
+  if (!spanPlataforma) return;
+
+  if (!user.plataformas || user.plataformas.length === 0) {
+    spanPlataforma.textContent = "Não informado";
+  } else {
+    spanPlataforma.textContent = user.plataformas.join(" / ");
+  }
+}
+
+// atualiza texto ao carregar a página
+atualizarTextoPlataformas();
+
+// marcar checkboxes de plataformas conforme o que está salvo
+if (platPC)      platPC.checked      = user.plataformas.includes("PC");
+if (platConsole) platConsole.checked = user.plataformas.includes("Console");
+if (platMobile)  platMobile.checked  = user.plataformas.includes("Mobile");
 
   if (user.avatar) {
     imgProfile.style.backgroundImage = `url('${user.avatar}')`;
@@ -108,28 +143,48 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --------- SALVAR PERFIL (nome, email, bio) ---------
-  if (btnSaveProfile) {
-    btnSaveProfile.addEventListener("click", () => {
-      const novoNome  = inputUsername.value.trim();
-      const novoEmail = emailInput.value.trim();
-      const novaBio   = bioTextarea.value.trim();
+ if (btnSaveProfile) {
+  btnSaveProfile.addEventListener("click", () => {
+    const novoNome  = inputUsername.value.trim();
+    const novoEmail = emailInput.value.trim();
+    const novaBio   = bioTextarea.value.trim();
 
-      if (novoNome) {
-        user.nome = novoNome;
-      }
-      user.email = novoEmail;
-      user.bio   = novaBio;
+    if (novoNome) {
+      user.nome = novoNome;
+    }
+    user.email = novoEmail;
+    user.bio   = novaBio;
 
-      displayName.textContent = user.nome || "Usuário convidado";
+    // monta lista de plataformas selecionadas
+    const plataformasSelecionadas = [];
+    if (platPC && platPC.checked)      plataformasSelecionadas.push("PC");
+    if (platConsole && platConsole.checked) plataformasSelecionadas.push("Console");
+    if (platMobile && platMobile.checked)   plataformasSelecionadas.push("Mobile");
 
-      saveUser(user);
+    user.plataformas = plataformasSelecionadas;
 
-      btnSaveProfile.textContent = "Salvo!";
-      setTimeout(() => {
-        btnSaveProfile.textContent = "Salvar alterações";
-      }, 1500);
-    });
-  }
+    // região continua Brasil por padrão, mas se quiser mudar no futuro é só criar um campo
+    if (!user.regiao) {
+      user.regiao = "Brasil";
+    }
+
+    displayName.textContent = user.nome || "Usuário convidado";
+
+    // Atualiza os textos do topo
+    if (spanRegiao) {
+      spanRegiao.textContent = user.regiao || "Brasil";
+    }
+    atualizarTextoPlataformas();
+
+    saveUser(user);
+
+    btnSaveProfile.textContent = "Salvo!";
+    setTimeout(() => {
+      btnSaveProfile.textContent = "Salvar alterações";
+    }, 1500);
+  });
+}
+
 
   // --------- JOGOS PREFERIDOS (tags) ---------
   function renderTags() {
@@ -196,11 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const teams = loadTeamsProfile();
 
-    if (!teams.length) {
-      containerDynamic.innerHTML =
-        '<p class="empty-teams">Você ainda não criou nenhuma equipe.</p>';
-      return;
-    }
 
     containerDynamic.innerHTML = "";
 

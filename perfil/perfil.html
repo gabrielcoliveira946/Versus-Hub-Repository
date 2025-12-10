@@ -116,12 +116,22 @@
       </div>
 
       <!-- NOME DE USUÁRIO VISÍVEL -->
+
       <div class="username-box">
-        <span class="username" id="displayName">Usuário</span>
-        <button class="btn-edit" type="button" id="btnNameFocus">
-          <i class="fa-solid fa-pen"></i>
-        </button>
-      </div>
+
+  <span class="username" id="displayName">Usuário</span>
+  <button class="btn-edit" type="button" id="btnNameFocus">
+    <i class="fa-solid fa-pen"></i>
+  </button>
+</div>
+
+<p class="profile-meta">
+  <strong>Região:</strong> <span id="spanRegiao">Brasil</span>
+</p>
+<p class="profile-meta">
+  <strong>Plataforma:</strong> <span id="spanPlataforma">Não informado</span>
+</p>
+
     </div>
   </div>
 
@@ -144,6 +154,20 @@
         placeholder="Digite sua biografia..."
       ></textarea>
     </div>
+
+    <div class="form-block">
+  <label>Plataformas em que você joga</label>
+  <div class="platform-options">
+    <label><input type="checkbox" id="platPC" value="PC"> PC</label>
+    <label><input type="checkbox" id="platConsole" value="Console"> Console</label>
+    <label><input type="checkbox" id="platMobile" value="Mobile"> Mobile</label>
+  </div>
+  <small class="games-hint">
+    Você pode marcar mais de uma opção (ex: PC e Mobile).
+  </small>
+</div>
+
+
 
     <hr class="separator">
     <br>
