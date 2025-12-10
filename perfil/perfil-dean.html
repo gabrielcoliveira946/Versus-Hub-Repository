@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil de zZ_Dinho_Winchexxter_Zz | VersusHub</title>
+
+
+<link rel="stylesheet" href="/pagina_inicial/css/estilos.css">
+<link rel="icon" href="/image/logo.png" sizes="32x32">
+
+
+<style>
+body {
+  background: #0b0b0d;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+}
+main {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+
+/* ===== HEADER DO PERFIL ===== */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: #141419;
+  padding: 25px;
+  border-radius: 16px;
+  border: 2px solid #282833;
+}
+.profile-header img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid #d41111;
+  object-fit: cover;
+}
+.profile-info h1 {
+  font-size: 32px;
+  color: #ff2c2c;
+  margin-bottom: 5px;
+}
+.profile-info p {
+  color: #ccc;
+  margin: 4px 0;
+}
+.tagline {
+  font-style: italic;
+  color: #aaa;
+  margin-top: 6px;
+}
+
+
+/* ===== SEÇÕES ===== */
+.section-box {
+  background: #141419;
+  border-radius: 12px;
+  border: 2px solid #2a2a38;
+  padding: 20px;
+  margin-top: 25px;
+}
+.section-box h2 {
+  color: #ff2c2c;
+  margin-bottom: 10px;
+}
+
+
+/* ===== GRID DE ITENS ===== */
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+
+/* ===== CARD PADRÃO ===== */
+.card {
+  background: #191921;
+  border-radius: 10px;
+  border: 2px solid #2c2c3b;
+  padding: 12px;
+  transition: 0.2s ease-in-out;
+}
+.card:hover {
+  border-color: #d41111;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+}
+.card img {
+  width: 100%;
+  height: 140px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.card h3 {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #fff;
+}
+.card p {
+  font-size: 13px;
+  color: #c7c7e0;
+  margin: 2px 0;
+}
+.badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #1e1b2e;
+  border: 1px solid #3b3b77;
+  color: #d4d4ff;
+}
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .profile-header img {
+    width: 150px;
+    height: 150px;
+  }
+}
+</style>
+</head>
+
+
+<body>
+<header>
+  <nav class="navbar">
+    <div class="header-left">
+      <button id="menuToggle" class="menu-button">
+        <img src="/images/pngtree-menu-icon-image_1344445.png" alt="Menu">
+      </button>
+      <div class="logo_header">
+        <a href="/pagina_inicial/index.html">
+          <img src="/image/logo plus tipo textura.png" alt="VersusHub">
+        </a>
+      </div>
+    </div>
+
+
+    <div class="botoes_header">
+      <a href="/aovivo/aovivo.html"><button id="aovivo_header">Ao Vivo</button></a>
+      <a href="/criar_torneio/criar_torneio.html"><button id="criar_header">Criar Torneio</button></a>
+      <a href="/equipes/equipes.html"><button id="equipes_header">Equipes</button></a>
+    </div>
+
+
+    <div class="header-right">
+      <form class="search-header" onsubmit="return false">
+        <input type="text" placeholder="Buscar torneios, equipes..." id="searchInput">
+        <button type="submit">🔍</button>
+      </form>
+      <a href="/login/login.html" id="btentrar">Entrar</a>
+      <a href="/cadastro/cadastro.html" id="btcadastrar">Cadastrar-se</a>
+      <div class="user-icon">
+        <img src="/image/boneco_logo_ofc.png" alt="Usuário" id="userBtn">
+        <ul id="menuUser" class="hidden"></ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<aside id="sidebar" class="sidebar">
+  <nav class="sidebar-nav">
+    <a href="/pagina_inicial/index.html">🏠 Início</a>
+    <a href="/pagina_inicial/torneios.html">🏆 Todos os torneios</a>
+    <a href="/criar_torneio/criar_torneio.html">🎖️ Criar Torneio</a>
+    <a href="/equipes/equipes.html">👥 Equipes</a>
+    <a href="/gerenciartorneios/gerentornindex.html">📄 Gerenciar torneios</a>
+    <a href="/termos/termos.html">💼 Termos de Uso</a>
+  </nav>
+</aside>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+
+<main>
+  <!-- PERFIL -->
+  <section class="profile-header">
+    <img src="/equipes/images/dinhowinches.jpg" alt="Dean Winchester">
+    <div class="profile-info">
+      <h1>zZ_Dinho_Winchexxter_Zz</h1>
+      <p><strong>Nível:</strong> 48</p>
+      <p><strong>Função:</strong> Líder da equipe <a href="/equipes/viltrumitas.html" style="color:#ff4040;">Viltrumitas</a></p>
+      <p><strong>Plataforma:</strong> PC • Mobile</p>
+      <p class="tagline">"O inferno não é tão quente quanto o meu clutch."</p>
+    </div>
+  </section>
+
+
+  <!-- SOBRE -->
+  <section class="section-box">
+    <h2>Sobre mim</h2>
+    <p>Sou o líder dos <strong>Viltrumitas</strong> e apaixonado por jogos FPS e táticas de equipe.
+       Desde os 13 anos participo de torneios online e hoje foco em ajudar a comunidade gamer a crescer
+       no cenário competitivo do VersusHub.</p>
+  </section>
+
+
+  <!-- MINHAS EQUIPES -->
+  <section class="section-box">
+    <h2>Minhas equipes</h2>
+    <div class="item-grid">
+      <div class="card">
+        <img src="/equipes/image/viltrumitas.png" alt="Viltrumitas">
+        <h3>Viltrumitas</h3>
+        <p><strong>Função:</strong> Líder</p>
+        <p><strong>Categoria:</strong> FPS / Competitivo</p>
+        <span class="badge">Equipe ativa</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TORNEIOS PARTICIPANDO -->
+  <section class="section-box">
+    <h2>Meus torneios</h2>
+    <div class="item-grid">
+      <div class="card">
+        <img src="/images/cerradocup.jpg" alt="Cerrado Cup">
+        <h3>Cerrado Cup CS2</h3>
+        <p><strong>Status:</strong> Em andamento</p>
+        <p><strong>Função:</strong> Capitão</p>
+        <span class="badge">Quartas de final</span>
+      </div>
+
+
+      <div class="card">
+        <img src="/images/fifa_torneiofile1.jpg" alt="Brasil FPS League">
+        <h3>Brasil FPS League</h3>
+        <p><strong>Status:</strong> Finalizado</p>
+        <p><strong>Resultado:</strong> Campeão</p>
+        <span class="badge">🏆 Vitória</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer>
+  <div id="footer_content">
+    <div id="footer_logo">
+      <img src="/image/logo.png" alt="VersusHub" id="logofooter">
+    </div>
+    <div id="footer_sobrenos">
+      <h1>Sobre Nós</h1>
+      <p>O Versus Hub conecta jogadores, equipes e organizadores em um ambiente competitivo completo.</p>
+    </div>
+    <div id="footer_versushub">
+      <h1>Versus Hub</h1>
+      <p><br>Torneios | Equipes | Rankings <br>Suporte ativo todos os dias</p>
+    </div>
+    <div id="footer_politicas">
+      <h1>Políticas</h1>
+      <li>Termos de uso</li>
+      <li>Política de Privacidade</li>
+      <li>Política de Reembolso (para eventos pagos)</li>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/pagina_inicial/js/scrip.js"></script>
+</body>
+</html>
+
+
+
+

@@ -102,25 +102,38 @@
           </div>
 
           <div class="form-block">
-            <label for="tagEquipe">Tag da equipe (opcional)</label>
-            <input
-              type="text"
-              id="tagEquipe"
-              placeholder="Ex: NCTX"
-              maxlength="8"
-            >
-          </div>
+  <label for="tagEquipe">Tags da equipe</label>
+  <input
+    type="text"
+    id="tagEquipe"
+    placeholder="Ex: Competitivo, FPS, Amistoso... (separe por vírgula)"
+  >
+</div>
         </div>
 
         <div class="form-grid">
           <div class="form-block">
-            <label for="jogosEquipe">Jogos principais</label>
-            <input
-              type="text"
-              id="jogosEquipe"
-              placeholder="Ex: Valorant, CS2, Free Fire..."
-            >
-          </div>
+  <label for="jogosEquipe">Jogos principais</label>
+  <input
+    list="listaJogosEquipe"
+    type="text"
+    id="jogosEquipe"
+    placeholder="Ex: Valorant, CS2, Free Fire..."
+  >
+  <!-- Sugestões de jogos -->
+  <datalist id="listaJogosEquipe">
+    <option value="League of Legends">
+    <option value="Valorant">
+    <option value="CS2">
+    <option value="CS:GO">
+    <option value="Free Fire">
+    <option value="FIFA / EA FC">
+    <option value="Fortnite">
+    <option value="COD Mobile">
+    <option value="PUBG Mobile">
+    <option value="Rocket League">
+  </datalist>
+</div>
 
           <div class="form-block">
             <label for="plataformaEquipe">Plataformas</label>
@@ -134,15 +147,27 @@
           </div>
         </div>
 
-        <div class="form-grid">
-          <div class="form-block">
-            <label for="regiaoEquipe">Região</label>
-            <input
-              type="text"
-              id="regiaoEquipe"
-              placeholder="Ex: Brasil, São Paulo, Nordeste..."
-            >
-          </div>
+        <div class="form-block">
+  <label for="regiaoEquipe">Região</label>
+  <input
+    list="listaRegioesEquipe"
+    type="text"
+    id="regiaoEquipe"
+    placeholder="Ex: Brasil - Nordeste"
+  >
+  <!-- Sugestões de região -->
+  <datalist id="listaRegioesEquipe">
+    <option value="Brasil">
+    <option value="Brasil - Norte">
+    <option value="Brasil - Nordeste">
+    <option value="Brasil - Centro-Oeste">
+    <option value="Brasil - Sudeste">
+    <option value="Brasil - Sul">
+    <option value="América do Sul">
+    <option value="Global">
+  </datalist>
+</div>
+
 
           <div class="form-block">
             <label for="limiteMembros">Limite de integrantes</label>

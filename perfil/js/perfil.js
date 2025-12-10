@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!u || typeof u !== "object") u = {};
 
-    // garante campos
     if (!u.nome) u.nome = "Usuário convidado";
     if (!u.email) u.email = "";
     if (!u.bio) u.bio = "";
@@ -35,29 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
   let user = loadUser();
 
   // --------- ELEMENTOS DA TELA ---------
-  const headerUserImg = document.getElementById("userBtn");
+  const headerUserImg   = document.getElementById("userBtn");
 
-  const imgProfile  = document.getElementById("profileImage");
-  const inputPhoto  = document.getElementById("inputPhoto");
-  const btnPhoto    = document.getElementById("btnPhoto");
+  const imgProfile      = document.getElementById("profileImage");
+  const inputPhoto      = document.getElementById("inputPhoto");
+  const btnPhoto        = document.getElementById("btnPhoto");
 
-  const emailInput   = document.getElementById("emailInput");
-  const displayName  = document.getElementById("displayName");
-  const inputUsername = document.getElementById("inputUsername");
-  const bioTextarea   = document.getElementById("bioTextarea");
+  const emailInput      = document.getElementById("emailInput");
+  const displayName     = document.getElementById("displayName");
+  const inputUsername   = document.getElementById("inputUsername");
+  const bioTextarea     = document.getElementById("bioTextarea");
 
-  const btnSaveProfile = document.getElementById("btnSaveProfile");
-  const btnEmailFocus  = document.getElementById("btnEmailFocus");
-  const btnNameFocus   = document.getElementById("btnNameFocus");
+  const btnSaveProfile  = document.getElementById("btnSaveProfile");
+  const btnEmailFocus   = document.getElementById("btnEmailFocus");
+  const btnNameFocus    = document.getElementById("btnNameFocus");
 
-  const jogoInput = document.getElementById("jogoInput");
-  const jogosTags = document.getElementById("jogosTags");
+  const jogoInput       = document.getElementById("jogoInput");
+  const jogosTags       = document.getElementById("jogosTags");
 
   // --------- PREENCHE A TELA COM O QUE TEM NO LOCALSTORAGE ---------
   displayName.textContent = user.nome || "Usuário convidado";
-  inputUsername.value = user.nome || "";
-  emailInput.value = user.email || "";
-  bioTextarea.value = user.bio || "";
+  inputUsername.value     = user.nome || "";
+  emailInput.value        = user.email || "";
+  bioTextarea.value       = user.bio || "";
 
   if (user.avatar) {
     imgProfile.style.backgroundImage = `url('${user.avatar}')`;
@@ -72,8 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (inputPhoto) inputPhoto.click();
   }
 
-  if (btnPhoto)    btnPhoto.addEventListener("click", abrirSeletorFoto);
-  if (imgProfile)  imgProfile.addEventListener("click", abrirSeletorFoto);
+  if (btnPhoto)   btnPhoto.addEventListener("click", abrirSeletorFoto);
+  if (imgProfile) imgProfile.addEventListener("click", abrirSeletorFoto);
 
   if (inputPhoto) {
     inputPhoto.addEventListener("change", (e) => {
@@ -91,73 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
         saveUser(user);
       };
       reader.readAsDataURL(file);
-
-        // ========= EQUIPES CRIADAS – PERFIL =========
-  function loadTeamsProfile() {
-    try {
-      return JSON.parse(localStorage.getItem('vh_createdTeams') || '[]');
-    } catch (e) {
-      return [];
-    }
-  }
-
-  function renderTeamsProfile() {
-    const containerDynamic = document.getElementById('dynamicTeams');
-    if (!containerDynamic) return;
-
-    const teams = loadTeamsProfile();
-
-    if (!teams.length) {
-      containerDynamic.innerHTML = '<p class="empty-teams">Você ainda não criou nenhuma equipe.</p>';
-      return;
-    }
-
-    containerDynamic.innerHTML = '';
-
-    teams.forEach(team => {
-      const card = document.createElement('div');
-      card.className = 'profile-team-card';
-
-      const main = document.createElement('div');
-      main.className = 'profile-team-main';
-
-      const img = document.createElement('img');
-      img.className = 'profile-team-logo';
-      img.src = team.logo || '/image/logo.png';
-      img.alt = team.nome || 'Equipe';
-
-      const textBox = document.createElement('div');
-      textBox.className = 'profile-team-text';
-
-      const h3 = document.createElement('h3');
-      h3.textContent = team.nome || 'Equipe sem nome';
-
-      const p = document.createElement('p');
-      const jogos = team.jogos ? `Jogos: ${team.jogos}` : 'Jogos não informados';
-      const regiao = team.regiao ? ` • Região: ${team.regiao}` : '';
-      p.textContent = jogos + regiao;
-
-      textBox.appendChild(h3);
-      textBox.appendChild(p);
-
-      main.appendChild(img);
-      main.appendChild(textBox);
-
-      const link = document.createElement('a');
-      link.href = team.link || '#';
-      link.textContent = 'Ver detalhes';
-
-      card.appendChild(main);
-      card.appendChild(link);
-
-      containerDynamic.appendChild(card);
-    });
-  }
-
-  // chama ao carregar a página de perfil
-  renderTeamsProfile();
-
-
     });
   }
 
@@ -228,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  renderTags(); // mostra os jogos ao abrir a página
+  renderTags();
 
   if (jogoInput) {
     jogoInput.addEventListener("keydown", (event) => {
@@ -248,4 +180,70 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // ========= EQUIPES CRIADAS – PERFIL =========
+  function loadTeamsProfile() {
+    try {
+      return JSON.parse(localStorage.getItem("vh_createdTeams") || "[]");
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function renderTeamsProfile() {
+    const containerDynamic = document.getElementById("dynamicTeams");
+    if (!containerDynamic) return;
+
+    const teams = loadTeamsProfile();
+
+    if (!teams.length) {
+      containerDynamic.innerHTML =
+        '<p class="empty-teams">Você ainda não criou nenhuma equipe.</p>';
+      return;
+    }
+
+    containerDynamic.innerHTML = "";
+
+    teams.forEach((team) => {
+      const card = document.createElement("div");
+      card.className = "profile-team-card";
+
+      const main = document.createElement("div");
+      main.className = "profile-team-main";
+
+      const img = document.createElement("img");
+      img.className = "profile-team-logo";
+      img.src = team.logo || "/image/logo.png";
+      img.alt = team.nome || "Equipe";
+
+      const textBox = document.createElement("div");
+      textBox.className = "profile-team-text";
+
+      const h3 = document.createElement("h3");
+      h3.textContent = team.nome || "Equipe sem nome";
+
+      const p = document.createElement("p");
+      const jogos = team.jogos ? `Jogos: ${team.jogos}` : "Jogos não informados";
+      const regiao = team.regiao ? ` • Região: ${team.regiao}` : "";
+      p.textContent = jogos + regiao;
+
+      textBox.appendChild(h3);
+      textBox.appendChild(p);
+
+      main.appendChild(img);
+      main.appendChild(textBox);
+
+      const link = document.createElement("a");
+      link.href = team.link || "#";
+      link.textContent = "Ver detalhes";
+
+      card.appendChild(main);
+      card.appendChild(link);
+
+      containerDynamic.appendChild(card);
+    });
+  }
+
+  // chama ao carregar a página de perfil
+  renderTeamsProfile();
 });
