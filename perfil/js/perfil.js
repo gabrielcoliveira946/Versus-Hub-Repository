@@ -91,6 +91,73 @@ document.addEventListener("DOMContentLoaded", () => {
         saveUser(user);
       };
       reader.readAsDataURL(file);
+
+        // ========= EQUIPES CRIADAS – PERFIL =========
+  function loadTeamsProfile() {
+    try {
+      return JSON.parse(localStorage.getItem('vh_createdTeams') || '[]');
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function renderTeamsProfile() {
+    const containerDynamic = document.getElementById('dynamicTeams');
+    if (!containerDynamic) return;
+
+    const teams = loadTeamsProfile();
+
+    if (!teams.length) {
+      containerDynamic.innerHTML = '<p class="empty-teams">Você ainda não criou nenhuma equipe.</p>';
+      return;
+    }
+
+    containerDynamic.innerHTML = '';
+
+    teams.forEach(team => {
+      const card = document.createElement('div');
+      card.className = 'profile-team-card';
+
+      const main = document.createElement('div');
+      main.className = 'profile-team-main';
+
+      const img = document.createElement('img');
+      img.className = 'profile-team-logo';
+      img.src = team.logo || '/image/logo.png';
+      img.alt = team.nome || 'Equipe';
+
+      const textBox = document.createElement('div');
+      textBox.className = 'profile-team-text';
+
+      const h3 = document.createElement('h3');
+      h3.textContent = team.nome || 'Equipe sem nome';
+
+      const p = document.createElement('p');
+      const jogos = team.jogos ? `Jogos: ${team.jogos}` : 'Jogos não informados';
+      const regiao = team.regiao ? ` • Região: ${team.regiao}` : '';
+      p.textContent = jogos + regiao;
+
+      textBox.appendChild(h3);
+      textBox.appendChild(p);
+
+      main.appendChild(img);
+      main.appendChild(textBox);
+
+      const link = document.createElement('a');
+      link.href = team.link || '#';
+      link.textContent = 'Ver detalhes';
+
+      card.appendChild(main);
+      card.appendChild(link);
+
+      containerDynamic.appendChild(card);
+    });
+  }
+
+  // chama ao carregar a página de perfil
+  renderTeamsProfile();
+
+
     });
   }
 

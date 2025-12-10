@@ -180,6 +180,14 @@ label {
   background-color: #3a3333;
   border-radius: 6px;
   overflow: hidden;
+    cursor: pointer;
+}
+
+#equipes-clique text{
+
+  cursor: pointer;
+
+
 }
 
 .team-buttons button {
@@ -194,6 +202,7 @@ label {
 /* Linha vertical entre os dois botões */
 .team-buttons .team-name {
   border-right: 2px solid #6b5e5e;
+
 }
 
 /* Botão "Líder" */
@@ -308,3 +317,71 @@ label {
   color: #b1b1b1;
 }
  
+
+/* LISTA DE EQUIPES NO PERFIL (dinâmicas) */
+.teams-list-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Card de equipe criada pelo usuário */
+.profile-team-card {
+  background-color: #2e2a2a;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Parte esquerda do card (logo + textos) */
+.profile-team-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Logo pequena da equipe */
+.profile-team-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #000;
+}
+
+/* Texto da equipe */
+.profile-team-text h3 {
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.profile-team-text p {
+  font-size: 12px;
+  color: #b1b1b1;
+}
+
+/* Botão "Ver detalhes" */
+.profile-team-card a {
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #d41111;
+  border: 2px solid #d41111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.profile-team-card a:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Mensagem quando não há equipes */
+.empty-teams {
+  font-size: 13px;
+  color: #b1b1b1;
+}

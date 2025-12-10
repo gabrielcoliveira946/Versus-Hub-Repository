@@ -1,0 +1,139 @@
+.criar-equipe-page {
+  max-width: 1200px;
+  margin: 10px auto 40px;
+  padding: 0 16px 40px;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.criar-header h1 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.criar-header p {
+  font-size: 14px;
+  color: #b1b1cf;
+  margin-bottom: 18px;
+}
+
+.equipe-form-card {
+  background: #141419;
+  border-radius: 16px;
+  border: 2px solid #2c2c3b;
+  padding: 18px 20px 22px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.7);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-block.full-row {
+  grid-column: 1 / -1;
+}
+
+.form-block label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #e5e7eb;
+}
+
+.form-block input,
+.form-block select,
+.form-block textarea {
+  background: #1f1f2b;
+  border: 1px solid #2f3140;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-block textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-block input::placeholder,
+.form-block textarea::placeholder {
+  color: #9ca3af;
+}
+
+.hint {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+/* preview da logo */
+.logo-preview {
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px dashed #4b5563;
+  background: #101018;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-preview span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.logo-preview img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* linha do botão */
+.actions-row {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-principal-criar-equipe {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 2px solid #d41111;
+  background: #d41111;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-principal-criar-equipe:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.feedback-msg {
+  font-size: 13px;
+  color: #a7f3d0;
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
