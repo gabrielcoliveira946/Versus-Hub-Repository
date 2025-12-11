@@ -452,9 +452,9 @@ main {
 <script>
 /* Banco de solicitações fictícias */
 let solicitacoes = [
-  { nome: "Arthur Lima", img: "/images/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" },
-  { nome: "Caio Mendes", img: "/images/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" },
-  { nome: "Letícia Souza", img: "/images/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" }
+  { nome: "Cirilo_gamer343", img: "/images/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" },
+  { nome: "Zz_Stark_zZ", img: "/images/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" },
+  { nome: "60_PRA_1", img: "/images/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" }
 ];
 
 const panel = document.getElementById("solicPanel");
@@ -490,7 +490,7 @@ function renderSolicitacoes() {
       memberList.innerHTML += `
         <div class="member">
           <img src="${pessoa.img}">
-          <span><strong>${pessoa.nome}</strong> — Novo integrante</span>
+          <span><strong>${pessoa.nome}</strong></span>
         </div>
       `;
       solicitacoes.splice(i, 1);
