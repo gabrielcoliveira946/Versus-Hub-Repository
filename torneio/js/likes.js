@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const countSpan = btn.querySelector(".like-count");
 
   // objeto onde vamos guardar likes de todos os torneios
+
   let savedLikes = {};
   try {
     savedLikes = JSON.parse(localStorage.getItem("vh_torneioLikes") || "{}");
@@ -16,12 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     savedLikes = {};
   }
 
-  // se já tem like salvo pra esse torneio
+  // se ja tem like salvo pra esse torneio
+
   if (savedLikes[torneioId] && savedLikes[torneioId].liked) {
     btn.classList.add("liked");
   }
 
-  // contador (pode usar só 0/1 se quiser, aqui deixei geral)
+  // contador de like
   const initialCount = savedLikes[torneioId]?.count ?? 0;
   countSpan.textContent = initialCount;
 

@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2) carrega lista de torneios criados
+
+
   let torneios = [];
+
   try {
     torneios = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
   } catch (e) {
@@ -20,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 3) procura o torneio pelo id
+  
   const t = torneios.find(t => t.id === id);
   if (!t) {
     alert('Torneio não encontrado nos seus dados.');

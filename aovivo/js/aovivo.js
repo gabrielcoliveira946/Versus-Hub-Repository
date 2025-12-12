@@ -185,9 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ===========================
-  //  Lê usuário do localStorage
-  // ===========================
+  // 
+  //  Lê usuário do localstorage
+  // 
+  
   let loggedUser = null;
   const raw = localStorage.getItem("vh_loggedUser");
 
@@ -231,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const linkSair = document.getElementById("sairConta");
       const linkTrocar = document.getElementById("trocarConta");
 
-      // "Sair da conta" → limpa localStorage e recarrega
+      // sair da conta limpa localstorage e recarrega
       if (linkSair) {
         linkSair.addEventListener("click", (e) => {
           e.preventDefault();
@@ -240,7 +241,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // "Mudar de conta" → limpa e leva para login
+      // mudar de conta  limpa e leva para login
+
       if (linkTrocar) {
         linkTrocar.addEventListener("click", (e) => {
           e.preventDefault();
@@ -249,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     } else {
-      // ---------- NINGUÉM LOGADO ----------
+      // ---------- ninguem LOGADO ----------
 
       // mostra botões padrão
       if (btEntrar) btEntrar.style.display = "";
@@ -268,6 +270,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Aplica o estado inicial ao carregar a página
+  //header iniicial quando recarregar pagina quando tiver logado
   aplicarEstadoHeader(loggedUser);
 });
