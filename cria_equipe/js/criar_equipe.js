@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ========= FUNÇÕES LOCALSTORAGE =========
+  // ========= LOCALSTORAGE =========
+  
   function loadTeams() {
     try {
       return JSON.parse(localStorage.getItem(STORAGE_KEY_TEAMS) || '[]');
@@ -60,7 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // pega o usuário logado pra marcar como líder da equipe
+  // pega o usuário logado pra marcar como lider da equipe
+
   function getLoggedUser() {
     try {
       const raw = localStorage.getItem('vh_loggedUser');
@@ -72,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ========= SUBMIT DO FORM =========
+  // ========= codigos que fazem o criar equipe funciona =========
+
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();

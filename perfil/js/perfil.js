@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const STORAGE_KEY = "vh_loggedUser";
 
   // --------- UTILIDADES ---------
+
   function loadUser() {
     let u = null;
     try {
@@ -64,17 +65,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // --------- PREENCHE A TELA COM O QUE TEM NO LOCALSTORAGE ---------
+
   displayName.textContent = user.nome || "Usuário convidado";
   inputUsername.value     = user.nome || "";
   emailInput.value        = user.email || "";
   bioTextarea.value       = user.bio || "";
 
-  // Região (padrão Brasil)
+  // Região 
+  //padrão Brasil
+
 if (spanRegiao) {
   spanRegiao.textContent = user.regiao || "Brasil";
 }
 
 // função pra atualizar o texto de plataforma no header
+
 function atualizarTextoPlataformas() {
   if (!spanPlataforma) return;
 
@@ -86,6 +91,7 @@ function atualizarTextoPlataformas() {
 }
 
 // atualiza texto ao carregar a página
+
 atualizarTextoPlataformas();
 
 // marcar checkboxes de plataformas conforme o que está salvo
@@ -236,7 +242,7 @@ if (platMobile)  platMobile.checked  = user.plataformas.includes("Mobile");
     });
   }
 
-  // ========= EQUIPES CRIADAS – PERFIL =========
+  // ========= EQUIPES CRIADAS  PERFIL =========
   function loadTeamsProfile() {
     try {
       return JSON.parse(localStorage.getItem("vh_createdTeams") || "[]");
@@ -295,5 +301,6 @@ if (platMobile)  platMobile.checked  = user.plataformas.includes("Mobile");
   }
 
   // chama ao carregar a página de perfil
+  
   renderTeamsProfile();
 });

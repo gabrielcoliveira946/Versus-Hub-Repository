@@ -155,7 +155,7 @@ if (menuToggle && sidebar && sidebarOverlay) {
 }
 
 // =========================================
-//  LOGIN FAKE + MENU DO USUÁRIO NO HEADER
+//  LOGIN FAKE + MENU DO USUARIO NO HEADER
 // =========================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -165,7 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuUser = document.getElementById("menuUser"); // UL do menu
   const userIconDiv = document.querySelector(".user-icon");
 
-  // Se não tiver esses elementos, não faz nada (outra página)
+  // se não tiver esses elementos, não faz nada :
+
   if (!userBtn || !menuUser || !userIconDiv) return;
 
   // Garante menu escondido no início
@@ -173,8 +174,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Abre/fecha menu ao clicar no ícone
   userBtn.addEventListener("click", (e) => {
+
     e.stopPropagation(); // evita fechar pelo clique global
+
     menuUser.style.display =
+
       menuUser.style.display === "block" ? "none" : "block";
   });
 
@@ -186,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ===========================
-  //  Lê usuário do localStorage
+  //  Le usuário do localstorage
   // ===========================
   let loggedUser = null;
   const raw = localStorage.getItem("vh_loggedUser");
@@ -199,12 +203,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Função para aplicar o estado visual do header
+  // Função para aplicar o estado visual do header //
+
   function aplicarEstadoHeader(user) {
     if (user && user.nome) {
+
       // ---------- USUÁRIO LOGADO ----------
 
-      // some com "Entrar" e "Cadastrar-se"
+      // some com entrar e cadastrar
+
       if (btEntrar) btEntrar.style.display = "none";
       if (btCadastrar) btCadastrar.style.display = "none";
 
@@ -219,7 +226,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       nomeSpan.textContent = user.nome;
 
-      // monta menu do usuário logado
+      // monta menu do usuario logado
+
       menuUser.innerHTML = `
         <li class="vh-user-name">Olá, <strong>${user.nome}</strong></li>
         <hr>
@@ -231,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const linkSair = document.getElementById("sairConta");
       const linkTrocar = document.getElementById("trocarConta");
 
-      // "Sair da conta" → limpa localStorage e recarrega
+      // quando clica sair da conta o localstarage é apagado e carrega a pagina 
       if (linkSair) {
         linkSair.addEventListener("click", (e) => {
           e.preventDefault();
@@ -240,7 +248,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // "Mudar de conta" → limpa e leva para login
+      // aqui qundo o cara clica pra mudar conta o local storage é apagado e o user vai pra page de login
+
       if (linkTrocar) {
         linkTrocar.addEventListener("click", (e) => {
           e.preventDefault();
@@ -249,7 +258,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     } else {
-      // ---------- NINGUÉM LOGADO ----------
+
+      // ---------- ninguem LOGADO ----------
 
       // mostra botões padrão
       if (btEntrar) btEntrar.style.display = "";
@@ -270,7 +280,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   
-  // Aplica o estado inicial ao carregar a página
+  // deixa apenas a fotinha do cara n logado e os botões pra logar e cadastrar
+
   aplicarEstadoHeader(loggedUser);
 });
 

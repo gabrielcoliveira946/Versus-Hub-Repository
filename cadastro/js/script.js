@@ -1,4 +1,5 @@
 // ====== FUNÇÕES AUXILIARES ======
+
 function getUsers() {
   const usersJSON = localStorage.getItem('vh_users');
   return usersJSON ? JSON.parse(usersJSON) : [];
@@ -8,7 +9,8 @@ function saveUsers(users) {
   localStorage.setItem('vh_users', JSON.stringify(users));
 }
 
-// ====== LÓGICA DO CADASTRO ======
+// ====== LoGICA DO CadASTRO ======
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
   if (!form) return;
@@ -27,10 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // pega lista de usuários já cadastrados
+
     const raw = localStorage.getItem('vh_users');
     const usuarios = raw ? JSON.parse(raw) : [];
 
-    // impede e-mail repetido
+    // impede email repetido
+
     const jaExiste = usuarios.some(u => u.email === email);
     if (jaExiste) {
       alert('Já existe uma conta com esse e-mail.');
@@ -42,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     usuarios.push(novoUsuario);
     localStorage.setItem('vh_users', JSON.stringify(usuarios));
 
-    // já deixa logado
+    // ja deixa logado
+
     localStorage.setItem('vh_loggedUser', JSON.stringify(novoUsuario));
 
     alert('Cadastro realizado com sucesso!');
